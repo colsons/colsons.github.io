@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>绯色鱼的博客</title>
+  <title>聚类阶段整理（1）-随笔 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="绯色鱼的博客">
-<meta property="og:url" content="https://colsons.github.io/index.html">
+  <meta name="description" content="开始在此之前，写过几个聚类的方法，以笔记的方法再次做一个记录，方便以后查阅（下面简单说下k-mean，了解的可以跳过，然后记录两种多维标度数据的聚类方法，有兴趣的可以看看）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聚类阶段整理（1）-随笔">
+<meta property="og:url" content="https://colsons.github.io/archives/3366bb43.html">
 <meta property="og:site_name" content="绯色鱼的博客">
+<meta property="og:description" content="开始在此之前，写过几个聚类的方法，以笔记的方法再次做一个记录，方便以后查阅（下面简单说下k-mean，了解的可以跳过，然后记录两种多维标度数据的聚类方法，有兴趣的可以看看）。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200322204011743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
+<meta property="article:published_time" content="2018-11-23T13:07:15.000Z">
+<meta property="article:modified_time" content="2021-05-25T14:51:31.745Z">
 <meta property="article:author" content="绯色鱼">
+<meta property="article:tag" content="聚类">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200322204011743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -155,518 +162,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-聚类阶段整理（5）-系统聚类" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-聚类阶段整理（1）-随笔" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/bc5c2aae.html">聚类阶段整理（5）-系统聚类</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/archives/bc5c2aae.html" class="archive-article-date">
-  	<time datetime="2019-05-05T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-05</time>
-</a>
-
-        
-
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>简单介绍了系统聚类/层次聚类。</p>
-        
-      
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">聚类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/bc5c2aae.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聚类阶段整理（4）-评价指标【下】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/5b4295ff.html">聚类阶段整理（4）-评价指标【下】</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/archives/5b4295ff.html" class="archive-article-date">
-  	<time datetime="2019-04-04T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
-</a>
-
-        
-
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>简单介绍了剩余的评价指标，接上文</p>
-<p>关键词：Jaccard系数 FM指数（FMI） Rand指数（RI）DBI DI</p>
-        
-      
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">聚类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/5b4295ff.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聚类阶段整理（3）-评价指标【上】" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/98975d7d.html">聚类阶段整理（3）-评价指标【上】</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/archives/98975d7d.html" class="archive-article-date">
-  	<time datetime="2019-02-04T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-04</time>
-</a>
-
-        
-
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本篇介绍常用的评价指标，并介绍其原理，加上一些自己的理解。   </p>
-<p>关键词：NFL Accuracy Precision Recall F1 ROC+AUC</p>
-        
-      
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">聚类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/98975d7d.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聚类阶段整理（2）-聚类介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/d5527f55.html">聚类阶段整理（2）-聚类介绍</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/archives/d5527f55.html" class="archive-article-date">
-  	<time datetime="2019-01-20T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-20</time>
-</a>
-
-        
-
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于什么是聚类做了一个简单的介绍，方便理解（适合刚入门机器学习的小白食用）。</p>
-        
-      
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">聚类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/d5527f55.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-测试文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/4a17b156.html">测试文件</a>
-    </h1>
-  
-
-        
-        
-
-<a href="/archives/4a17b156.html" class="archive-article-date">
-  	<time datetime="2018-11-23T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
-</a>
-
-        
-
-        
-
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-        
-      
-
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      
-
-
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/4a17b156.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-聚类阶段整理（1）-随笔" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/archives/3366bb43.html">聚类阶段整理（1）-随笔</a>
+    <h1 class="article-title" itemprop="name">
+      聚类阶段整理（1）-随笔
     </h1>
   
 
@@ -680,6 +183,10 @@
         
 
         
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
 
 
       </header>
@@ -687,7 +194,49 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在此之前，写过几个聚类的方法，以笔记的方法再次做一个记录，方便以后查阅（下面简单说下k-mean，了解的可以跳过，然后记录两种多维标度数据的聚类方法，有兴趣的可以看看）。</p>
-        
+<span id="more"></span>
+<h2 id="一、K-means聚类"><a href="#一、K-means聚类" class="headerlink" title="一、K-means聚类"></a>一、K-means聚类</h2><p>k-means聚类是最简单的聚类，其大致流程如下：<br>①根据分类数k，首先随机得到k个中心。<br>②求得每一个样本与k个中心的聚类，距离哪个最近，即分到哪个中心的门下。<br>③在每一个类簇中，求每一个样本与其他所有样本的距离之和，取max/min者为新中心。<br>④循环②③过程，直到达到循环条件，break<br>⑤以评价指标评测方法的好坏。<br><strong>可能会遇到的问题：</strong><br>首先是中心的选取问题，虽然说是随机，为了保持效率，第一次随机取，后面根据评价指标可以选取更好的代替掉随机取得中心。在划分类簇时，不同的方法会有不同的处理，具体待方法而定，距离公式同样。循环截止的条件，有的是给定循环的次数，有的是看划分类簇是否会改变…方法也有很多。<br>个人推荐一手KMW，处理百万，千万量级数据，它真的很快，而且acc，pre都很高（与其他算法相比，其他算法需要跑几天的时候才出个0.7不到0.8的acc，而KMW只用了20多min就能跑到不到0.8，追求非常高精度，可能KMW会差一点，但是他真的很快）</p>
+<h2 id="二、TCM聚类（three-way-c-means）"><a href="#二、TCM聚类（three-way-c-means）" class="headerlink" title="二、TCM聚类（three-way c-means）"></a>二、TCM聚类（three-way c-means）</h2><blockquote>
+<p>论文：TCM—-A three-way c-means algorithm</p>
+</blockquote>
+<p>TCM是一个有些复杂的方法，理解了并不是很难。<br>其特殊的地方在于中心的定义，和类簇的划分。<br>具体流程如下：<br>1、第一次的中心随机取得，然后根据距离做第一次类簇的划分。<br>2、中心的定义<br>    首先定义4个公式：<br>    ①<strong>B</strong><br>    假设有$x_1~x_n$，n个样本，k=3。<br>    每一个样本都一个B集合，B中包括这个样本所属的类（包括正同域和边界域）。在这里不对B的性质做更多解释，下面几个同样。<br>    ②<strong>μ</strong></p>
+<script type="math/tex; mode=display">
+μ_{ij}=\frac{1}{\sum{_{l=1}^c}{(\frac{d_{ij}}{d_{lj}})^{\frac{2}{m-1}}}}</script><p>ps：c表示中心个数，1 ⩽ i ⩽ c, 1 ⩽ j ⩽ n,d表示距离，$d_{ij}$表示d($C_i$，$X_j$)，m为一个大于等于1的参数，属于input值。<br>    最终得到μ的k×n矩阵<br>    ③<strong>M</strong><br>    M是由B和μ得到的矩阵，如果$B_{x_j}$ = {1,3}，那么$M_{x_j}$ = {$µ_{1j}$, $µ_{3j}$}。</p>
+<script type="math/tex; mode=display">
+\sum(M_{x_j})=μ_{1j}+μ_{3j}</script><p>​    ④<strong>W</strong><br>​    W首先也是一个k×n的矩阵<br>​    $w_{ij}$：<br>​    如果|$B_{ij}$|=0或者i不属于$B_{ij}$的元素，那么$w_{ij}=0$。<br>​    如果|$B_{ij}$|&gt;1并且i属于$B_{ij}$的元素，那么$w_{ij}=\frac{μ_{ij}}{\sum{M_{x_j}}}$。<br>​    如果|$B_{ij}$|=1并且i属于$B_{ij}$的元素，那么$w_{ij}=1$。</p>
+<pre><code>综合上面的部分，可以得到中心，如下：
+mi = ∑正同域中的xj*wij / ∑正同域的wij
+</code></pre><p>3、划分类簇<br> <strong>R，f，G，L</strong>：<br> $r_{ij} = µ_{ij}$，<br> $f_j = max(µ_{1j}, µ_{2j}, . . . , µ_{cj})$，<br> $g_{ij} = f(r_{ij} , f_j)$ , (G=k×n矩阵,f(x,y) xy的关系可为+，-，×，/)<br> $l_{ij} = f(g_{ij} , ￡)$ ， ($￡$为一个参数具体而定，以$￡$为界，将L转化为G的0-1矩阵，  f(x,y)可为&gt;,&gt;=,&lt;,&lt;=)<br>ps：$￡$也有一种公式定义，可自行查阅。</p>
+<p>定义一种距离$v(m_i，x_j) = \frac{g_{ij}}{sum(: , j)}$  (ps：同样用于μ公式)<br>if  $v(m_i，x_j)$ &gt;= α：正同域<br>elif $β &lt;= v(m_i，x_j)$ &lt; α：边界域<br>else：负反域<br><strong>α，β</strong><br>$α = 1，β = \frac{￡}{sum(: , j)}$<br>ps：β不是一个固定不变的参数</p>
+<p>如此迭代以上过程…</p>
+<h2 id="三、KMW聚类（k-multi-weighted-modes）"><a href="#三、KMW聚类（k-multi-weighted-modes）" class="headerlink" title="三、KMW聚类（k-multi-weighted-modes）"></a>三、KMW聚类（k-multi-weighted-modes）</h2><blockquote>
+<p>论文：k-mw-modes—-An algorithm for clustering categorical matrix-object data</p>
+</blockquote>
+<p>样本特性：这种聚类属于多维度样本，一个样本包括多条记录，一个记录包括多条属性。</p>
+<p><strong>1、ACDM距离算法</strong><br>这里不解释公式，直接上例子：</p>
+<p><img src="https://img-blog.csdnimg.cn/20200322204011743.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>对以上俩样本，求$d(X_1,X_2)$<br>$d(X_1,X_2) = \frac{1}{2\sum{￡(X_1A_1,X_2A_1)}}$<br>以$X_1,X_2$的A1为例：<br>S = 0<br>U = {8,5,7,3,1} (并集)<br>For i in U：<br>S += |1/3-1/4| (i=8)<br>最终可求得$d(X_1,X_2)$<br><strong>2、中心算法</strong><br>这个方法包括两种中心算法，分别是HAFMWM,GAFMWM</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HAFMWM</td>
+<td>准确率偏低，运算速度快</td>
+</tr>
+<tr>
+<td>GAFMWM</td>
+<td>准确率偏高，运算速度慢</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>在这里只提供HAFMWM算法，如下：<br>定义 V = 0 ， input：μ<br>①在每一个类簇中，求每一个样本与其他所有样本的距离之和，取min者为新中心，将每一个min的距离相加得到W。<br>②判断|W-V|与μ的关系，若前者小则跳出循环，否则W-&gt;V并转入下一次循环。](<a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">https://hexo.io/docs/one-command-deployment.html</a>)</p>
+
       
 
       
@@ -698,6 +247,37 @@
 
 
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢打赏👍<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -728,16 +308,79 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/archives/3366bb43.html">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/3366bb43.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/archives/4a17b156.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          测试文件
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -752,13 +395,48 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81K-means%E8%81%9A%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">一、K-means聚类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81TCM%E8%81%9A%E7%B1%BB%EF%BC%88three-way-c-means%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">二、TCM聚类（three-way c-means）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81KMW%E8%81%9A%E7%B1%BB%EF%BC%88k-multi-weighted-modes%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">三、KMW聚类（k-multi-weighted-modes）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://colsons.github.io/archives/3366bb43.html",
+  owner: 'colsons',
+  repo: 'colsons.github.io',
+  oauth: {
+    client_id: '2d9d43607bc504e123d0',
+    client_secret: '55fbac98cb3fc229069f3747f04bb5e13e082817',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
@@ -796,8 +474,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
