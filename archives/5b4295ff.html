@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200713191729748.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200713191750924.png">
 <meta property="article:published_time" content="2019-04-04T13:07:15.000Z">
-<meta property="article:modified_time" content="2021-05-25T15:13:45.249Z">
+<meta property="article:modified_time" content="2021-05-30T02:01:02.475Z">
 <meta property="article:author" content="绯色鱼">
 <meta property="article:tag" content="聚类">
 <meta name="twitter:card" content="summary">
@@ -70,11 +70,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="/categories">分类</a></li>
+				<li><a href="../categories">分类</a></li>
 	        
-				<li><a href="/archives/index.html">归档</a></li>
+				<li><a href="../archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -96,9 +96,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -137,9 +137,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -148,11 +148,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -181,7 +181,7 @@
         
         
 
-<a href="/archives/5b4295ff.html" class="archive-article-date">
+<a href="" class="archive-article-date">
   	<time datetime="2019-04-04T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
 </a>
 
@@ -201,8 +201,7 @@
         <p>简单介绍了剩余的评价指标，接上文</p>
 <p>关键词：Jaccard系数 FM指数（FMI） Rand指数（RI）DBI DI</p>
 <span id="more"></span>
-<h2 id="介绍篇——评价指标"><a href="#介绍篇——评价指标" class="headerlink" title="介绍篇——评价指标"></a>介绍篇——评价指标</h2><pre><code>最新更改：2019-7-13
-</code></pre><p>咕咕咕…<br>补充 : 上一篇为针对二分类,如果为三类以上的分类时,对每一类单独分析,即分析A类: A类为正类,其他均为负类,然后按<strong>某方法</strong>综合分析:<br><strong>某方法</strong>:<br>1.宏平均（macro）:每一个指标的平均为综合指标。<br>2.加权平均（weighted）:每一个指标的加权平均为综合指标。<br>3.微平均（micro）:计算所有类别中假正例、假反例和真正例的总数，然后利用这些计数来计算指标。</p>
+<h2 id="介绍篇——评价指标"><a href="#介绍篇——评价指标" class="headerlink" title="介绍篇——评价指标"></a>介绍篇——评价指标</h2><p>咕咕咕…<br>补充 : 上一篇为针对二分类,如果为三类以上的分类时,对每一类单独分析,即分析A类: A类为正类,其他均为负类,然后按<strong>某方法</strong>综合分析:<br><strong>某方法</strong>:<br>1.宏平均（macro）:每一个指标的平均为综合指标。<br>2.加权平均（weighted）:每一个指标的加权平均为综合指标。<br>3.微平均（micro）:计算所有类别中假正例、假反例和真正例的总数，然后利用这些计数来计算指标。</p>
 <p><strong>外部评价指标分成2部分，1是根据《机器学习》-周志华个人理解，2是资料查阅的（与sklearn库嵌合），两者存在一些差异，如果有知道这是咋回事的欢迎评论区交流。</strong></p>
 <h2 id="外部评价指标1"><a href="#外部评价指标1" class="headerlink" title="外部评价指标1"></a>外部评价指标1</h2><p>主要介绍三个指标，分别是JC，FMI，RI。</p>
 <p>首先，我们有这样一个定义：<br>对于数据集D = {$x_1,x_2,x_3…,x_m$},假定根据某聚类方法得到类簇划分C = {$c_1,c_2,…c_k$},参考模型的类簇划分C* = {c*1，c*2，…，c*k}，相应的用 λ 与 λ* 表示C和C*表示的类簇向量：</p>
@@ -358,22 +357,45 @@ d = 集合DD: 包含了在C中属于不同簇, 同时在C*中属于不同簇的�
 </tbody>
 </table>
 </div>
-<p>PS：第i行j列个元素表示样本第i个和第j个是否为同一类簇。同则1，否则0.<br>由于公式要求i&lt;j，所以只用上三角矩阵（加粗の数据）。<br>a = $n_{SS}$ = 2<br>b = $n_{SD}$ = 4<br>c = $n_{DS}$ = 4<br>d = $n_{DD}$ = 9<br>a+b+c+d = m<em>(m-1)/2 = 6</em>5/2 = 15 </p>
+<p>PS：第i行j列个元素表示样本第i个和第j个是否为同一类簇。同则1，否则0.<br>由于公式要求i&lt;j，所以只用上三角矩阵（加粗の数据）。<br>a = $n_{SS}$ = 2<br>b = $n_{SD}$ = 4<br>c = $n_{DS}$ = 4<br>d = $n_{DD}$ = 9<br>a+b+c+d = m(m-1)/2 = 6×5/2 = 15 </p>
 <p>Jaccard系数（JC） = a/（a+b+c）<br>FM指数（FMI） = 根号下（a^2/（（a+b）×（a+c））<br>Rand指数（RI） = 2（a+d）/（m×（m-1））</p>
 <p>以上三个性能区间为 [0,1] ，越大越好.</p>
 <h2 id="外部评价指标2"><a href="#外部评价指标2" class="headerlink" title="外部评价指标2"></a>外部评价指标2</h2><p>网上查阅得到的做法类似上一篇，先求类似混淆矩阵的矩阵。还是拿上面的例子：</p>
 <pre class=" language-lang-python"><code class="language-lang-python">聚类类簇划分：[0,0,0,1,1,1]
 真实类簇划分：[0,0,1,1,1,0]
 </code></pre>
-<p>可以得到矩阵如下<br>| C    | 0    | 1    |<br>| —— | —— | —— |<br>| 0    | M00  | M01  |<br>| 1    | M10  | M11  |<br>该例子结果：<br>$M_{00} = 2$<br>$M_{01} = 1$<br>$M_{10} = 1$<br>$M_{11} = 2$<br>jaccard系数（JC）= M11/(M01+M10+M11)</p>
+<p>可以得到矩阵如下</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>C</th>
+<th>0</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>M00</td>
+<td>M01</td>
+</tr>
+<tr>
+<td>1</td>
+<td>M10</td>
+<td>M11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>该例子结果：<br>$M_{00} = 2$<br>$M_{01} = 1$<br>$M_{10} = 1$<br>$M_{11} = 2$<br>jaccard系数（JC）= $M_{11}/(M_{01}+M_{10}+M_{11})$</p>
 <script type="math/tex; mode=display">
-Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标"><a href="#内部评价指标" class="headerlink" title="内部评价指标"></a>内部评价指标</h2><p>考虑到类簇划分结果为C={c1,c2,c3,…,ck}.定义：</p>
-<p>①簇C内样本间的平均距离：<br><img src="https://img-blog.csdnimg.cn/20200713185945906.png" alt=""><br>②簇C内样本间的最远距离：<br><img src="https://img-blog.csdnimg.cn/20200713190001443.png" alt="在这里插入图片描述"><br>③簇Ci与簇Cj最近样本间的距离<br><img src="https://img-blog.csdnimg.cn/20200713190016780.png" alt="在这里插入图片描述"><br>④簇Ci与簇句中心点间的距离<br><img src="https://img-blog.csdnimg.cn/2020071319002459.png" alt="在这里插入图片描述"><br>其中dist(x，y)表示x和y的距离，μ表示中心，|Ck|表示Ck类的个数。</p>
+Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标"><a href="#内部评价指标" class="headerlink" title="内部评价指标"></a>内部评价指标</h2><p>考虑到类簇划分结果为C=${c_1,c_2,c_3,…,c_k}$定义：</p>
+<p>①簇C内样本间的平均距离：<br><img src="https://img-blog.csdnimg.cn/20200713185945906.png" alt=""><br>②簇C内样本间的最远距离：<br><img src="https://img-blog.csdnimg.cn/20200713190001443.png" alt="在这里插入图片描述"><br>③簇Ci与簇Cj最近样本间的距离<br><img src="https://img-blog.csdnimg.cn/20200713190016780.png" alt="在这里插入图片描述"><br>④簇Ci与簇句中心点间的距离<br><img src="https://img-blog.csdnimg.cn/2020071319002459.png" alt="在这里插入图片描述"><br>其中dist(x，y)表示x和y的距离，μ表示中心，$|C_k|$表示Ck类的个数。</p>
 <p>那么评价指标公式为：</p>
 <p>DB指数（DBI）：<br><img src="https://img-blog.csdnimg.cn/20200713191729748.png" alt="在这里插入图片描述"><br>Dunn指数（DI）：<br><img src="https://img-blog.csdnimg.cn/20200713191750924.png" alt="在这里插入图片描述"><br>DBI的值越小越好，而DI则相反，值越大越好.</p>
 <p>以上是评价指标主要内容，欢迎指正。</p>
-<pre><code>最新更改：2019-7-13
-询问了下老师，周志华老师的评价系数是针对评价算法本身，而网上的是针对具体数据，应用领域不同。
+<pre><code>询问了下老师，周志华老师的评价系数是针对评价算法本身，而网上的是针对具体数据，应用领域不同。
 </code></pre>
       
 
@@ -507,7 +529,7 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
   
 <nav id="article-nav">
   
-    <a href="/archives/bc5c2aae.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="bc5c2aae.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
@@ -517,8 +539,8 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
     </a>
   
   
-    <a href="/archives/98975d7d.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">聚类阶段整理（3）-评价指标【上】</div>
+    <a href="6ada926f.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">什么是爬虫-个人理解向</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -570,7 +592,7 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://colsons.github.io/archives/5b4295ff.html",
+  id: "https://colsons.github.io",
   owner: 'colsons',
   repo: 'colsons.github.io',
   oauth: {
@@ -725,6 +747,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cv2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">降维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
@@ -781,15 +823,15 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
+              <a href="../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
+              <a href="../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
+              <a href="../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
             </li>
           
         </ul>

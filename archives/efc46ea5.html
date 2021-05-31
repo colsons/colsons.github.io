@@ -8,15 +8,21 @@
   <link rel="dns-prefetch" href="https://colsons.github.io">
   <title>一篇文章了解PCA,MDS的推导过程 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="对于PCA和MDS降维两种方法，在数据分析，还是建模中我用到了很多次，很多时候都是直接在sklearn中调函数，或者直接网上找现成的，现在终于到了分析它的处理原理（数学角度）。">
+<meta property="og:type" content="article">
 <meta property="og:title" content="一篇文章了解PCA,MDS的推导过程">
 <meta property="og:url" content="https://colsons.github.io/archives/efc46ea5.html">
 <meta property="og:site_name" content="绯色鱼的博客">
+<meta property="og:description" content="对于PCA和MDS降维两种方法，在数据分析，还是建模中我用到了很多次，很多时候都是直接在sklearn中调函数，或者直接网上找现成的，现在终于到了分析它的处理原理（数学角度）。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-26T02:57:52.000Z">
-<meta property="article:modified_time" content="2021-05-26T02:57:52.068Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20210215212548993.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2021021521382122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-02-15T02:57:52.000Z">
+<meta property="article:modified_time" content="2021-05-30T01:43:54.849Z">
 <meta property="article:author" content="绯色鱼">
+<meta property="article:tag" content="降维">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20210215212548993.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -60,11 +66,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="/categories">分类</a></li>
+				<li><a href="../categories">分类</a></li>
 	        
-				<li><a href="/archives/index.html">归档</a></li>
+				<li><a href="../archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -86,9 +92,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -127,9 +133,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -138,11 +144,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,8 +177,8 @@
         
         
 
-<a href="/archives/efc46ea5.html" class="archive-article-date">
-  	<time datetime="2021-05-26T02:57:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
+<a href="" class="archive-article-date">
+  	<time datetime="2021-02-15T02:57:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-15</time>
 </a>
 
         
@@ -188,7 +194,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
+        <p>对于PCA和MDS降维两种方法，在数据分析，还是建模中我用到了很多次，很多时候都是直接在sklearn中调函数，或者直接网上找现成的，现在终于到了分析它的处理原理（数学角度）。</p>
+<span id="more"></span>
+<h2 id="PCA降维"><a href="#PCA降维" class="headerlink" title="PCA降维"></a>PCA降维</h2><p>PCA可谓是我用的第二多的，我知道的要晚一些，（我看好多人都是先知道PCA，然后知道MDS，我竟然是反的）这里只推导它的过程，矩阵的处理啥的。</p>
+<h3 id="公式推导"><a href="#公式推导" class="headerlink" title="公式推导"></a>公式推导</h3><p>首先有个数据矩阵X，大小为m*n，一行为一个样本，也就是$x_i$，共有n个样本，m表示数据的维度。</p>
+<blockquote>
+<p>$X$</p>
+</blockquote>
+<p>然后求X的平均值$\overline{X}$后定义新的矩阵A</p>
+<blockquote>
+<p>$A=X-\overline{X}$</p>
+</blockquote>
+<p>定义矩阵B，B为A的转置矩阵*A</p>
+<blockquote>
+<p>$B=A^{T}A$</p>
+</blockquote>
+<p>然后求B矩阵的特征值，特征向量。将特征值进行大到小排序，如果你想降维到2维，那么只需要找到前两个特征值对应的特征向量，并将其组成2*m的矩阵P，然后即可求得降维后的矩阵D</p>
+<blockquote>
+<p>$D = XP$</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20210215212548993.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="MDS降维"><a href="#MDS降维" class="headerlink" title="MDS降维"></a>MDS降维</h2><h3 id="公式推导-1"><a href="#公式推导-1" class="headerlink" title="公式推导"></a>公式推导</h3><p>第一步，需要定义一个距离函数，一般纯数据多采用欧氏距离，其他距离也可以具体数据具体分析。</p>
+<p>数据矩阵为X，大小为m*n，一行为一个样本，也就是$x_i$，共有n个样本，m表示数据的维度。</p>
+<blockquote>
+<p>$X$</p>
+</blockquote>
+<p>首先求得两两样本的距离矩阵D(主对角线元素为0)</p>
+<blockquote>
+<p>$D: d_{ij}=dist(x_i,x_j)$</p>
+</blockquote>
+<p>然后分别定义3个dist函数</p>
+<blockquote>
+<p>$dist_{i*}: d_{ij}=\frac{1}{m}\sum_{j=1}^{m}{dist_{ij}^2}$</p>
+<p>$dist_{j*}: d_{ij}=\frac{1}{m}\sum_{i=1}^{m}{dist_{ij}^2}$</p>
+<p>$dist_{ij*}: d_{ij}=\frac{1}{m}\sum_{i=1}^{m}\sum_{j=1}^{m}{dist_{ij}^2}$</p>
+</blockquote>
+<p>然后根据以上3个dist求得矩阵B</p>
+<blockquote>
+<p>$B：b_{ij}=-\frac{1}{2}(dist_{ij}^2-dist_{i<em>}-dist_{j</em>}+dist_{ij*})$</p>
+</blockquote>
+<p>然后求B的特征值和特征向量，并对特征值排序并将其转换为矩阵，特征值在对角线，其他位置补充0，特征向量按特征值顺序也进行排序然后进行归一化处理（与PCA不同）。如果降维至2维，那么只需要从左上角开始取2*2的特征值，取前2个特征向量，分别定义为$B_e$，$B_n$那么最终降维结果为</p>
+<blockquote>
+<p>$Z=\sqrt{B_e}B_n^T$</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/2021021521382122.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 
       
 
@@ -236,7 +285,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">降维</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -300,18 +371,18 @@
   
 <nav id="article-nav">
   
-    <a href="/archives/9b594b83.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="2cc27fd2.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Matlab-感知器-02
+          机器学习-评估假设与比较检验-04
         
       </div>
     </a>
   
   
-    <a href="/archives/2cc27fd2.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习-评估假设与比较检验-04</div>
+    <a href="8bafc714.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">“DLL load failed: 找不到指定的模块。”的一种解法，可以尝试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,7 +409,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PCA%E9%99%8D%E7%BB%B4"><span class="toc-number">1.</span> <span class="toc-text">PCA降维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-number">1.1.</span> <span class="toc-text">公式推导</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MDS%E9%99%8D%E7%BB%B4"><span class="toc-number">2.</span> <span class="toc-text">MDS降维</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC-1"><span class="toc-number">2.1.</span> <span class="toc-text">公式推导</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -363,7 +434,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://colsons.github.io/archives/efc46ea5.html",
+  id: "https://colsons.github.io",
   owner: 'colsons',
   repo: 'colsons.github.io',
   oauth: {
@@ -518,6 +589,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cv2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">降维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
@@ -574,15 +665,15 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
+              <a href="../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
+              <a href="../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
+              <a href="../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
             </li>
           
         </ul>

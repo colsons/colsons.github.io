@@ -8,15 +8,20 @@
   <link rel="dns-prefetch" href="https://colsons.github.io">
   <title>机器学习-评估假设与比较检验-04 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="介绍了一些标题方法的求解过程。 关键词：估计方差 估计偏差 McNemar检验 Friedman检验 Nemenyi后续检验">
+<meta property="og:type" content="article">
 <meta property="og:title" content="机器学习-评估假设与比较检验-04">
 <meta property="og:url" content="https://colsons.github.io/archives/2cc27fd2.html">
 <meta property="og:site_name" content="绯色鱼的博客">
+<meta property="og:description" content="介绍了一些标题方法的求解过程。 关键词：估计方差 估计偏差 McNemar检验 Friedman检验 Nemenyi后续检验">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-05-26T02:57:50.000Z">
-<meta property="article:modified_time" content="2021-05-26T02:57:50.100Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201013205023622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="article:published_time" content="2021-02-16T02:57:50.000Z">
+<meta property="article:modified_time" content="2021-05-30T01:37:30.826Z">
 <meta property="article:author" content="绯色鱼">
+<meta property="article:tag" content="模型评估">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201013205023622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -60,11 +65,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="/categories">分类</a></li>
+				<li><a href="../categories">分类</a></li>
 	        
-				<li><a href="/archives/index.html">归档</a></li>
+				<li><a href="../archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -86,9 +91,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -127,9 +132,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://github.com/colsons" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -138,11 +143,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -171,8 +176,8 @@
         
         
 
-<a href="/archives/2cc27fd2.html" class="archive-article-date">
-  	<time datetime="2021-05-26T02:57:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-26</time>
+<a href="" class="archive-article-date">
+  	<time datetime="2021-02-16T02:57:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-16</time>
 </a>
 
         
@@ -188,7 +193,256 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <span id="more"></span>
+        <p>介绍了一些标题方法的求解过程。</p>
+<p>关键词：估计方差 估计偏差 McNemar检验 Friedman检验 Nemenyi后续检验</p>
+<span id="more"></span>
+<h1 id="一、评估假设"><a href="#一、评估假设" class="headerlink" title="一、评估假设"></a>一、评估假设</h1><h3 id="估计偏差和估计方差"><a href="#估计偏差和估计方差" class="headerlink" title="估计偏差和估计方差"></a>估计偏差和估计方差</h3><h5 id="估计偏差"><a href="#估计偏差" class="headerlink" title="估计偏差"></a>估计偏差</h5><p>我们知道训练误差和测试误差，如果只有一个数据集，拿着它去喂我们的模型，然后拿它再去测试模型会出现一种看上去指标很高，但是很假的情况，总之就是模型看上去很“乐观”。所以我们通常会分出一部分来当做未来数据，这样我们可以都对未来的数据做一个无偏估计。</p>
+<h5 id="估计方差"><a href="#估计方差" class="headerlink" title="估计方差"></a>估计方差</h5><p>继续上一段的话，如果我们两次得到错误率为0.3，一次样本数量100个一次是10000个，那么你能说这俩个0.3是一样的吗，很明显10000个样本的显得更真实。结论是我们使用的样本越多估计方差越小。</p>
+<h3 id="样本错误率和真实错误率"><a href="#样本错误率和真实错误率" class="headerlink" title="样本错误率和真实错误率"></a>样本错误率和真实错误率</h3><p><strong>样本错误率：</strong>在某个数据样本的假设错误率。</p>
+<script type="math/tex; mode=display">
+errors_s(h)=\frac{1}{n}\sum_{x\in S}{δ(f(x),h(x))}</script><p>例子，如果10个数据，3个测试为负例，那么就是3/10=0.3。</p>
+<p><strong>真实错误率：</strong>分布在D的整个实例集合上的假设错误率。</p>
+<script type="math/tex; mode=display">
+errors_D(h)=\Pr_{x\in D}[f(x)≠h(x)]</script><p>按这种分布不断进行随机试验，最后得到的分错的样本数/总的样本数。</p>
+<h3 id="离散值假设的置信区间"><a href="#离散值假设的置信区间" class="headerlink" title="离散值假设的置信区间"></a>离散值假设的置信区间</h3><p>上面说了很多看上去没啥用的话，从这才算开始，我们评估的时候更想要的是真实错误率而不是样本错误率，而真实错误率我们通常是得不到的，所以我们就要用样本错误率去代替它，当然不能直接代替。</p>
+<p>引入置信区间置信度（学过高数应该了解这个词，没学过假装一下，有这么个名词就行了）。假设大约有95%（置信度）的可能性，真实错误率存在于下面的区间中：</p>
+<script type="math/tex; mode=display">
+errors_D(h): errors_S(h)±1.96\sqrt{\frac{errors_s(h)(1-errors_s(h))}{n}}</script><p>n是样本数，1.96对应95%，为什么是1.96，因为我们有一张被规定好的表告诉了我们怎么转换：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>置信度</th>
+<th>50%</th>
+<th>68%</th>
+<th>80%</th>
+<th>90%</th>
+<th>95%</th>
+<th>98%</th>
+<th>99%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>常量</td>
+<td>0.67</td>
+<td>1.00</td>
+<td>1.28</td>
+<td>1.64</td>
+<td>1.96</td>
+<td>2.33</td>
+<td>2.58</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>上面公式使用有几个前提，也就是说有些时候我们是无法将样本错误率转化为真实错误率的。</p>
+<p>前提：</p>
+<p>①样本数量也就是n至少为30。</p>
+<p>②样本错误率不能太接近0或1。</p>
+<h3 id="正态分布代替二项分布"><a href="#正态分布代替二项分布" class="headerlink" title="正态分布代替二项分布"></a>正态分布代替二项分布</h3><h5 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h5><p>直接上例子吧，好理解</p>
+<p>10个样本3个分错</p>
+<p>分对，分错的概率P(r)分别为0.7,0.3</p>
+<p><strong>X的期望：</strong></p>
+<script type="math/tex; mode=display">
+E[X]=np</script><p>例子=10*0.7=7</p>
+<p><strong>X的方差：</strong></p>
+<script type="math/tex; mode=display">
+Var(X)=np(1-p)</script><p><strong>X的标准差：</strong></p>
+<script type="math/tex; mode=display">
+σ_X=\sqrt{np(1-p)}</script><p>我们已得的随机变量样本错误率服从二项分布，再次回到前面的问题，这俩个错误率之前的差异是多少呢？如果我们用二项分布的话那么重新定义：</p>
+<script type="math/tex; mode=display">
+errors_s(h)=\frac{r}{n}</script><script type="math/tex; mode=display">
+errors_D(h)=p</script><p>在统计学中，我们称样本错误率为真实错误率的一个估计量，如果要用他，我们就要关心下他的平均数能不能产生正确的估计，于是定义了任意参数p的估计量Y的<strong>估计偏差</strong>：</p>
+<script type="math/tex; mode=display">
+E[Y]-p</script><p>如果估计偏差为0，我们称Y为p的无偏估计量。</p>
+<p><strong>以上便是二项分布有关问题，下面开始转换</strong></p>
+<p>对于给定N如何计算区间大小以及包含N%的概率质量？对于二项分布来说，这是很繁琐的，虽然大多情况下，我们用了近似值，而且他要求我们要有足够大的样本。二项分布可以有正态分布来近似，为什么选择正态分布，原因还有很多，这里不一一解释了。</p>
+<p><strong>概率密度函数：</strong></p>
+<script type="math/tex; mode=display">
+p(x)=\frac{1}{\sqrt{2πσ^2}}e^{-\frac{1}{2}(\frac{x-μ}{σ})^2}</script><p><strong>X落入[a，b]概率：</strong></p>
+<script type="math/tex; mode=display">
+\int_{a}^{b}{p(x)dx}</script><p><strong>X的期望/均值：</strong></p>
+<script type="math/tex; mode=display">
+E[X]=μ</script><p><strong>X的方差：</strong></p>
+<script type="math/tex; mode=display">
+Var(X)=σ^2</script><p><strong>X的标准差：</strong></p>
+<script type="math/tex; mode=display">
+σ_X=σ</script><h3 id="单双侧置信区间-置信度为α"><a href="#单双侧置信区间-置信度为α" class="headerlink" title="单双侧置信区间(置信度为α)"></a>单双侧置信区间(置信度为α)</h3><p>上面我们使用的置信区间均为双侧的，某些情况下我们需要用单侧的。</p>
+<p>如果有一个含上界L和下界U的双侧置信区间为100(1-α)%，那么可以得到一个只含下界或只含上界的100(1-2α)%的单侧置信区间。</p>
+<h1 id="二、比较检验"><a href="#二、比较检验" class="headerlink" title="二、比较检验"></a>二、比较检验</h1><h3 id="交叉验证t检验"><a href="#交叉验证t检验" class="headerlink" title="交叉验证t检验"></a>交叉验证t检验</h3><h5 id="k折"><a href="#k折" class="headerlink" title="k折"></a>k折</h5><p>对于学习器A和B，使用k折交叉验证得到的错误率为</p>
+<script type="math/tex; mode=display">
+ε_1^A，ε_2^A，...ε_k^A和ε_1^B，ε_2^B，...ε_k^B</script><p>如果两个学习器性能相同，那么k个对应的ε都应该相同，也就是说：</p>
+<script type="math/tex; mode=display">
+ε_i^A=ε_i^B</script><p>建立一个式子：</p>
+<script type="math/tex; mode=display">
+△_i=ε_i^A-ε_i^B</script><p>对于k个△组成的列表，求得其均值μ和方差σ^2，在显著度α下，t检验为：</p>
+<script type="math/tex; mode=display">
+T_t=|\frac{\sqrt{k}μ}{σ}|</script><p>当它小于临界值<strong>t（α/2，k-1）</strong>时，认为两个学习器没有显著性区别，否则平均错误率小的优。</p>
+<p><strong>加粗部分：有了显著度的α/2，k-1，根据对照表（可自行查阅）可以得到一个临界值。</strong></p>
+<h5 id="n次k折"><a href="#n次k折" class="headerlink" title="n次k折"></a>n次k折</h5><p>t检验公式定义做了一些改变，以5次2折交叉验证为例（n=5，k=2）</p>
+<p>对于A和B两个学习器，第 i 次2折交叉验证产生两对错误率，对他们分别求差，得到第1折第2折插值</p>
+<script type="math/tex; mode=display">
+△_i^1和△_i^2</script><p>计算第一次（注意看好，只求第一次的）k折交叉验证的平均值</p>
+<script type="math/tex; mode=display">
+μ=0.5(△_1^1+△_1^2)</script><p>计算每一次k折交叉验证的方差</p>
+<script type="math/tex; mode=display">
+σ^2=(△_i^1-\frac{△_i^1+△_i^2}{2})^2+(△_i^2-\frac{△_i^1+△_i^2}{2})^2</script><p>t检验公式转化为：</p>
+<script type="math/tex; mode=display">
+T_t=\frac{μ}{\sqrt{0.2\sum_{i=1}^{5}{σ_i^2}}}</script><p>服从自由度为5的t分布，检验方式如上。</p>
+<h3 id="McNemar检验"><a href="#McNemar检验" class="headerlink" title="McNemar检验"></a>McNemar检验</h3><p>对于两分类器的分类结果，两两对比无非就是俩都对，俩都错，你对我错，你错我对，根据这个关系，我们得到一个表，名为列联表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>算法A</th>
+<th>算法A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法B</td>
+<td>正确</td>
+<td>错误</td>
+</tr>
+<tr>
+<td>正确</td>
+<td>e00</td>
+<td>e01</td>
+</tr>
+<tr>
+<td>错误</td>
+<td>e10</td>
+<td>e11</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>变量|e10-e01|服从正态分布，均值为1，方差为e10+e01，卡方检验为：</p>
+<script type="math/tex; mode=display">
+Tx^2=\frac{(|e10-e01|-1)^2}{e10+e01}</script><p>服从自由度为1的卡方分布，给定显著度α，比较检验结果和临界值，小于临界值时，两个学习器性能差别不显著。否则平均错误率小的优。</p>
+<h3 id="Friedman检验和Nemenyi后续检验"><a href="#Friedman检验和Nemenyi后续检验" class="headerlink" title="Friedman检验和Nemenyi后续检验"></a>Friedman检验和Nemenyi后续检验</h3><h4 id="Friedman检验"><a href="#Friedman检验" class="headerlink" title="Friedman检验"></a>Friedman检验</h4><p>前面的两个检验都是在一个数据集比较两个算法，如果我们需要比较多个数据集多个算法是肿么办呢？</p>
+<p>这就要用到这个小节了：</p>
+<p>如果我们此时得到了五个数据集在四个算法上的指标，我们按照优劣排序1,2,3,4。</p>
+<p>然后得到平均序值。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数据集</th>
+<th>NB</th>
+<th>TAN</th>
+<th>SETAN</th>
+<th>3WD-TAN</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">M</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">V</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">Br</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">Ba</td>
+<td>4</td>
+<td>3</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align:left">C</td>
+<td>4</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td style="text-align:left">平均序值</td>
+<td>3.6</td>
+<td>3.2</td>
+<td>2</td>
+<td>1.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>得到：</p>
+<script type="math/tex; mode=display">
+r_i=\{3.6,3.2,2,1.2\}</script><p>n：数据集个数，k：算法个数</p>
+<p>卡方分布</p>
+<script type="math/tex; mode=display">
+T_{x^2} = \frac{12n}{k(k+1)}(\sum^{k}_{i=1}{r_i^2}-\frac{k(k+1)^2}{4})</script><p>F分布</p>
+<script type="math/tex; mode=display">
+T_f=\frac{(n-1)T_{x^2}}{n(k-1)-T_{x^2}}</script><p>$T_f$服从自由度为k-1和(k-1)(n-1)的F分布，根据对照表的临界值，对比检验结果，方法如上。当算法性能不同时引入Nemenyi后续检验。</p>
+<h4 id="Nemenyi后续检验"><a href="#Nemenyi后续检验" class="headerlink" title="Nemenyi后续检验"></a>Nemenyi后续检验</h4><p>首先计算出平均序列差别的临界值域</p>
+<script type="math/tex; mode=display">
+CD=q_α\sqrt{\frac{k(k+1)}{6n}}</script><p>k和n都是已知量，那么还剩下一个qα值，这个值和检验一样需要对照一个表，根据显著度和算法个数k得到：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>α</th>
+<th>k=2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05</td>
+<td>0.960</td>
+<td>2.344</td>
+<td>2.569</td>
+<td>2.728</td>
+<td>2.850</td>
+<td>2.949</td>
+<td>3.031</td>
+<td>3.102</td>
+<td>3.164</td>
+</tr>
+<tr>
+<td>0.1</td>
+<td>1.645</td>
+<td>2.052</td>
+<td>2.291</td>
+<td>2.459</td>
+<td>2.589</td>
+<td>2.693</td>
+<td>2.780</td>
+<td>2.855</td>
+<td>2.920</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>（软件问题，可能画的不好）</p>
+<p>然后得到如下一个检验图</p>
+<p><img src="https://img-blog.csdnimg.cn/20201013205023622.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p><strong>解释：</strong>每一条线长度相同都是CD的大小，也就是临界值域，每一个点对应每个算法的平均序值。</p>
+<p><strong>这个图怎么看：</strong>如果两个算法的线段没有交叠，那说明两个算法有显著性区别；如果有交叠，说明两个算法没有显著差别。如果有差别的话，点对应的x值，也就是平均序值越小，算法性能越好。</p>
 
       
 
@@ -236,7 +490,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">模型评估</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -300,18 +576,18 @@
   
 <nav id="article-nav">
   
-    <a href="/archives/efc46ea5.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="702c472.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          一篇文章了解PCA,MDS的推导过程
+          推荐给刚开始使用python的小白
         
       </div>
     </a>
   
   
-    <a href="/archives/6a10ae94.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">机器学习-ROC与AUC详解-03</div>
+    <a href="efc46ea5.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">一篇文章了解PCA,MDS的推导过程</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -338,7 +614,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%AF%84%E4%BC%B0%E5%81%87%E8%AE%BE"><span class="toc-number">1.</span> <span class="toc-text">一、评估假设</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E5%81%8F%E5%B7%AE%E5%92%8C%E4%BC%B0%E8%AE%A1%E6%96%B9%E5%B7%AE"><span class="toc-number">1.0.1.</span> <span class="toc-text">估计偏差和估计方差</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E5%81%8F%E5%B7%AE"><span class="toc-number">1.0.1.0.1.</span> <span class="toc-text">估计偏差</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E6%96%B9%E5%B7%AE"><span class="toc-number">1.0.1.0.2.</span> <span class="toc-text">估计方差</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B7%E6%9C%AC%E9%94%99%E8%AF%AF%E7%8E%87%E5%92%8C%E7%9C%9F%E5%AE%9E%E9%94%99%E8%AF%AF%E7%8E%87"><span class="toc-number">1.0.2.</span> <span class="toc-text">样本错误率和真实错误率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%80%BC%E5%81%87%E8%AE%BE%E7%9A%84%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-number">1.0.3.</span> <span class="toc-text">离散值假设的置信区间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E4%BB%A3%E6%9B%BF%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="toc-number">1.0.4.</span> <span class="toc-text">正态分布代替二项分布</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83"><span class="toc-number">1.0.4.0.1.</span> <span class="toc-text">二项分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%8F%8C%E4%BE%A7%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4-%E7%BD%AE%E4%BF%A1%E5%BA%A6%E4%B8%BA%CE%B1"><span class="toc-number">1.0.5.</span> <span class="toc-text">单双侧置信区间(置信度为α)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C"><span class="toc-number">2.</span> <span class="toc-text">二、比较检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E5%8F%89%E9%AA%8C%E8%AF%81t%E6%A3%80%E9%AA%8C"><span class="toc-number">2.0.1.</span> <span class="toc-text">交叉验证t检验</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#k%E6%8A%98"><span class="toc-number">2.0.1.0.1.</span> <span class="toc-text">k折</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#n%E6%AC%A1k%E6%8A%98"><span class="toc-number">2.0.1.0.2.</span> <span class="toc-text">n次k折</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#McNemar%E6%A3%80%E9%AA%8C"><span class="toc-number">2.0.2.</span> <span class="toc-text">McNemar检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Friedman%E6%A3%80%E9%AA%8C%E5%92%8CNemenyi%E5%90%8E%E7%BB%AD%E6%A3%80%E9%AA%8C"><span class="toc-number">2.0.3.</span> <span class="toc-text">Friedman检验和Nemenyi后续检验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Friedman%E6%A3%80%E9%AA%8C"><span class="toc-number">2.0.3.1.</span> <span class="toc-text">Friedman检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Nemenyi%E5%90%8E%E7%BB%AD%E6%A3%80%E9%AA%8C"><span class="toc-number">2.0.3.2.</span> <span class="toc-text">Nemenyi后续检验</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -363,7 +639,7 @@
 <script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "https://colsons.github.io/archives/2cc27fd2.html",
+  id: "https://colsons.github.io",
   owner: 'colsons',
   repo: 'colsons.github.io',
   oauth: {
@@ -518,6 +794,26 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">图像处理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">cv2</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">降维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
@@ -574,15 +870,15 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
+              <a href="../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
+              <a href="../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
+              <a href="../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
             </li>
           
         </ul>
