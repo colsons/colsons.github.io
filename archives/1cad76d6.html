@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>测试文件 | 绯色鱼的博客</title>
+  <title>考研之数据结构编程笔记 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="记录考研生活">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试文件">
-<meta property="og:url" content="https://colsons.github.io/archives/4a17b156.html">
+<meta property="og:title" content="考研之数据结构编程笔记">
+<meta property="og:url" content="https://colsons.github.io/archives/1cad76d6.html">
 <meta property="og:site_name" content="绯色鱼的博客">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta property="og:description" content="记录考研生活">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2018-08-23T13:07:15.000Z">
-<meta property="article:modified_time" content="2021-05-26T02:58:26.707Z">
+<meta property="article:published_time" content="2021-06-05T13:53:38.000Z">
+<meta property="article:modified_time" content="2021-06-05T13:54:54.229Z">
 <meta property="article:author" content="绯色鱼">
-<meta property="article:tag" content="测试">
+<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
@@ -160,14 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-测试文件" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-考研之数据结构编程笔记" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      测试文件
+      考研之数据结构编程笔记
     </h1>
   
 
@@ -175,7 +176,7 @@
         
 
 <a href="" class="archive-article-date">
-  	<time datetime="2018-08-23T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-23</time>
+  	<time datetime="2021-06-05T13:53:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-05</time>
 </a>
 
         
@@ -191,55 +192,249 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        <p>记录考研生活</p>
 <span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-lang-bash"><code class="language-lang-bash">$ hexo new "My New Post"
+<p>学习王道考研</p>
+<p>使用编程工具菜鸟编程在线C++</p>
+<h4 id="1、输出元素大小，int为4B"><a href="#1、输出元素大小，int为4B" class="headerlink" title="1、输出元素大小，int为4B"></a>1、输出元素大小，int为4B</h4><pre class=" language-lang-c++"><code class="language-lang-c++">#include <iostream>
+using namespace std;
+
+typedef struct &#123;
+    int num;
+    int people;
+&#125; Customer;
+
+int main()
+&#123;
+    int num;
+    printf("%d\n", sizeof(num));
+    printf("%d", sizeof(Customer));
+    return 0;
+&#125;;
 </code></pre>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<script type="math/tex; mode=display">
-H^1</script><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">实际结果</th>
-<th style="text-align:center">正例（预测）</th>
-<th style="text-align:center">反例（预测）</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">正例</td>
-<td style="text-align:center">TP</td>
-<td style="text-align:center">FN</td>
-</tr>
-<tr>
-<td style="text-align:center">反例</td>
-<td style="text-align:center">FP</td>
-<td style="text-align:center">TN</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>这是行内公式$x_1$.测试了</p>
+<h4 id="2、顺序表的初始化"><a href="#2、顺序表的初始化" class="headerlink" title="2、顺序表的初始化"></a>2、顺序表的初始化</h4><pre class=" language-lang-c++"><code class="language-lang-c++">#include <iostream>
+using namespace std;
+
+// 定义了一种新的数据类型叫做 SqList 由两个整数组成
+typedef struct&#123;
+    //此时从内存拨拉了10个地址过来，可能里面为0 也可能有其他脏数据
+    int data[10];
+    // 数据表当前长度，也就是10个地址用了几个
+    int length;
+&#125; SqList;
+
+void InitList(SqList &L)&#123;
+    //将10个地址中的数据初始化 都为0
+    for(int i=0; i<10; i++)
+        L.data[i]=0;
+    //初始长度0
+    L.length=0;
+&#125;
+
+int main()
+&#123;
+    //新建立L 类型为SqList
+    SqList L;
+    //初始化L
+    InitList(L);
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+
+    return 0;
+&#125;;
+</code></pre>
+<h4 id="3、顺序表插入方法C-实现"><a href="#3、顺序表插入方法C-实现" class="headerlink" title="3、顺序表插入方法C++实现"></a>3、顺序表插入方法C++实现</h4><p>（1）自己研究的，平均时间复杂度O(n)，而且遇到了一些问题！【官方的平均复杂度$O(\frac{n}{2})$】</p>
+<p>PS：修正 下面问题貌似是连接两个表地址出的问题。</p>
+<pre class=" language-lang-c++"><code class="language-lang-c++">#include <iostream>
+using namespace std;
+
+
+typedef struct&#123;
+    int *data;
+    //指示动态分配数组的指针
+    int MaxSize;
+    //顺序表的最大容量
+    int length;
+    //顺序表的当前长度
+&#125;SeqList;
+
+void InitList(SeqList &L)&#123;
+    int InitSize = 10;
+    //用malloc函数申请一片连续的存储空间
+    L.data=(int *)malloc(InitSize*sizeof(int));
+    L.length=0;
+    L.MaxSize=InitSize;
+&#125;
+
+//自己改造的插入函数
+void IncreaseSize(SeqList &L, int ind,int ad)&#123;
+    int *p=L.data;
+    //重新申请，这一行去掉之后发现只有下角标4 5变了 3210有的是脏数据有的0，
+    //为什么？没查明白！
+    //自己推导：p得到了L的复制品，然后从L[5]《-p[4]...一次给到3，也就是L[2]停止
+    //然后L[ind=2]=ad，L角标0 1 不变 ，感觉推理没问题
+    //实际：L[3]也换了，但是最后[0-3]又都变了
+    //★暂时先记住必须要初始化，然后在...
+    L.data=(int *)malloc((L.MaxSize+1)*sizeof(int));
+    int i=L.length;
+    for(i; i>ind; i--)&#123;
+        L.data[i]=p[i-1]; //将数据复制到新区域
+    &#125;
+    for(i=0; i<ind;i++)&#123;
+        L.data[i]=p[i];
+    &#125;
+    L.data[ind]=ad;
+    L.MaxSize=L.MaxSize+1; //顺序表最大长度增加 len
+    L.length = L.length+1;
+
+
+    free(p);
+    //释放原来的内存空间
+&#125;
+
+int main() &#123;
+    SeqList L;
+    //声明一个顺序表
+    InitList(L);
+    //初始化顺序表
+    //往顺序表中随便插入几个元素....
+    L.data[0]=1;
+    L.data[1]=2;
+    L.data[2]=3;
+    L.data[3]=4;
+    L.data[4]=5;
+    L.length = 5;
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    //在次序为3（下角标2）的位置插入5
+    IncreaseSize(L,2,5);
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<11; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    return 0;
+&#125;
+</code></pre>
+<p>（2）正解,(看这个洗洗眼睛，发现自己写的太乱了，感觉就是在硬写，不在状态)</p>
+<p>如果为了增加代码的健壮性，可以考虑插入函数中加一些判断，比如表满了不能插入，只有5个元素却要插入第8个位置，这种首先开始就是错的，要先辨别出来，给出反馈。</p>
+<pre class=" language-lang-c++"><code class="language-lang-c++">#include <iostream>
+using namespace std;
+
+
+typedef struct&#123;
+    int data[10];
+    int length;
+&#125;SqList;
+
+void InitList(SqList &L)&#123;
+    //将10个地址中的数据初始化 都为0
+    for(int i=0; i<10; i++)
+        L.data[i]=0;
+    L.length=0;
+&#125;
+
+void ListInsert(SqList &L, int i,int e)&#123;
+    //不用建新表根本，傻了傻了
+    for(int j=L.length; j>i; j--)
+        L.data[j]=L.data[j-1];
+    L.data[i]=e;
+    L.length++;
+&#125;
+
+int main() &#123;
+    SqList L;
+    //声明一个顺序表
+    InitList(L);
+    //初始化顺序表
+    //往顺序表中随便插入几个元素....
+    L.data[0]=1;
+    L.data[1]=2;
+    L.data[2]=3;
+    L.data[3]=4;
+    L.data[4]=5;
+    L.length = 5;
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    //在次序为3（下角标2）的位置插入5
+    ListInsert(L,2,5);
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    return 0;
+&#125;
+</code></pre>
+<h4 id="4、顺序表删除方法C-实现"><a href="#4、顺序表删除方法C-实现" class="headerlink" title="4、顺序表删除方法C++实现"></a>4、顺序表删除方法C++实现</h4><pre class=" language-lang-c++"><code class="language-lang-c++">#include <iostream>
+using namespace std;
+
+
+typedef struct&#123;
+    int data[10];
+    int length;
+&#125;SqList;
+
+void InitList(SqList &L)&#123;
+    //将10个地址中的数据初始化 都为0
+    for(int i=0; i<10; i++)
+        L.data[i]=0;
+    L.length=0;
+&#125;
+
+bool ListDelete(SqList &L, int i,int &e)&#123;
+    //判断i的范围是否有效
+    if(i<1 || i>L.length)
+        return false;
+    e = L.data[i-1];       //将被删除的元素赋值给e
+    for(int j=i;j<L.length;j++) //将第i个位置后的元素移动
+        L.data[j-1]=L.data[j];
+    L.length--;
+    //线性表长度减1
+    return true;
+&#125;
+
+
+int main() &#123;
+    SqList L;
+    //声明一个顺序表
+    InitList(L);
+    //初始化顺序表
+    //往顺序表中随便插入几个元素....
+    L.data[0]=1;
+    L.data[1]=2;
+    L.data[2]=3;
+    L.data[3]=4;
+    L.data[4]=5;
+    L.length = 5;
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    //变量e将删除的元素返回
+    int e = -1;
+    // 下面一定要有外层括号！！！
+    if (ListDelete(L,3,e))
+        printf("已删除第3个元素,删除元素值为=%d\n",e);
+    else
+        printf("位序i不合法，删除失败\n");
+    //取出数据并打印，注意此时操作不正当，应该用GetElem()，因为你不知道L的长度。
+    //我们这里这样写，完全是因为 我们用的“上帝视角”
+    for(int i=0; i<10; i++)
+        printf("data[%d]=%d\n",i,L.data[i]);
+    return 0;
+&#125;
+</code></pre>
 
       
 
       
       
-        <div class="declare">
-          <strong>本文作者：</strong>
-          
-            绯色鱼
-          
-          <br>
-          <strong>本文链接：</strong>
-          https://colsons.github.io/archives/4a17b156.html
-          <br>
-          <strong>版权声明：</strong>
-          转载请注明出处！
-          
-          
-        </div>
+        <div class="declare" hidden="hidden"></div>
       
 
 
@@ -286,7 +481,11 @@ H^1</script><div class="table-container">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">C++</a>
         		</li>
       		
 		</ul>
@@ -298,7 +497,7 @@ H^1</script><div class="table-container">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/测试//" class="article-tag-list-link color3">测试</a>
+        			<a href="/categories/考研//" class="article-tag-list-link color3">考研</a>
         		</li>
       		
 		</ul>
@@ -353,7 +552,7 @@ H^1</script><div class="table-container">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/4a17b156.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/1cad76d6.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -367,15 +566,11 @@ H^1</script><div class="table-container">
   
 <nav id="article-nav">
   
-    <a href="3366bb43.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          聚类阶段整理（1）-随笔
-        
-      </div>
-    </a>
   
+    <a href="a0e5a0c1.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">dos批处理pip安装库</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -400,7 +595,7 @@ H^1</script><div class="table-container">
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81%E8%BE%93%E5%87%BA%E5%85%83%E7%B4%A0%E5%A4%A7%E5%B0%8F%EF%BC%8Cint%E4%B8%BA4B"><span class="toc-number">1.</span> <span class="toc-text">1、输出元素大小，int为4B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">2、顺序表的初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E6%8F%92%E5%85%A5%E6%96%B9%E6%B3%95C-%E5%AE%9E%E7%8E%B0"><span class="toc-number">3.</span> <span class="toc-text">3、顺序表插入方法C++实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81%E9%A1%BA%E5%BA%8F%E8%A1%A8%E5%88%A0%E9%99%A4%E6%96%B9%E6%B3%95C-%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.</span> <span class="toc-text">4、顺序表删除方法C++实现</span></a></li></ol>
                     </div>
                 </span>
             </div>
