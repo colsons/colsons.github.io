@@ -57,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -115,7 +115,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -195,10 +195,10 @@
 <span id="more"></span>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用bat命令，我习惯于创建TXT直接强制改后缀BAT，这导致一个中文编码问题，TXT的默认一般UTF-8编码，而DOS是ASCII编码。</p>
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在写BAT命令内容之前加一行：</p>
-<pre><code>chcp 65001
-</code></pre><p>我的感觉，这和python不是很像吗</p>
-<pre><code># coding:utf-8
-</code></pre><h2 id="另一个引发的问题"><a href="#另一个引发的问题" class="headerlink" title="另一个引发的问题:"></a>另一个引发的问题:</h2><p>rem或::都是注释，他的编码仍属于TXT自身编码，加入chcp 65001只是改变了cmd显示的编码，rem注释编码仍会存在问题。<br><strong>这个只能另存的时候调整成ASCII编码了</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br></pre></td></tr></table></figure>
+<p>我的感觉，这和python不是很像吗</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># coding:utf-8</span><br></pre></td></tr></table></figure>
+<h2 id="另一个引发的问题"><a href="#另一个引发的问题" class="headerlink" title="另一个引发的问题:"></a>另一个引发的问题:</h2><p>rem或::都是注释，他的编码仍属于TXT自身编码，加入chcp 65001只是改变了cmd显示的编码，rem注释编码仍会存在问题。<br><strong>这个只能另存的时候调整成ASCII编码了</strong></p>
 
       
 
@@ -727,5 +727,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

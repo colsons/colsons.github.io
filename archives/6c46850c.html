@@ -60,7 +60,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -118,7 +118,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -197,20 +197,10 @@
         <p>使用anonymous-microsoft web.data的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。</p>
 <span id="more"></span>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近做聚类的时候发现在做一个名为anonymous-microsoft web.data的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。因为python用的比较多一直以来对py看的很重，以为他那个方面都很厉害。这不问题就来了：<br><img src="https://img-blog.csdnimg.cn/20200327212905870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>调用方法如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">from sklearn.manifold import MDS
-
-mds = MDS()
-data = mds.fit_transform(这里面放距离矩阵哦)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.manifold <span class="keyword">import</span> MDS</span><br><span class="line"></span><br><span class="line">mds = MDS()</span><br><span class="line">data = mds.fit_transform(这里面放距离矩阵哦)</span><br></pre></td></tr></table></figure>
 <p>可这蓝茫茫的一片也没啥效果啊….<br>然后在网上看了一些其他人自己写的这个MDS降维算法，发现和这个是差不多的。郁闷了好一阵子..</p>
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>后来在一篇论文中发现MATLAB中也有这类算法，并且人家有成功的例子，我赶紧拿来试一试，哇咔咔<br><img src="https://img-blog.csdnimg.cn/20200327213528263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>而且MATLAB是专门处理矩阵的工具，python做这个用了我笔记本30min左右才跑出来，MATLAB只用了不到5min。哦对了附上引用代码：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">%这是MATLAB里面哦
-data = csvread('distance.csv');
-data_xy = mdscale(data,2,'criterion','metricsstress');
-'''
-mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
-'''
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%这是MATLAB里面哦</span><br><span class="line">data = csvread(<span class="string">&#x27;distance.csv&#x27;</span>);</span><br><span class="line">data_xy = mdscale(data,<span class="number">2</span>,<span class="string">&#x27;criterion&#x27;</span>,<span class="string">&#x27;metricsstress&#x27;</span>);</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">mdscale()里面的后2个参数保证了同一个地方有两个点不会报错</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
 <p>我果然现在还是个渣渣。<br>另外，我感觉sklearn中的MDS应该是另有用处，只是它的价值我没用好吧，如果有带劳能给我解除疑惑，为什么这两种方法的不同，欢迎评论留言…</p>
 
       
@@ -740,5 +730,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

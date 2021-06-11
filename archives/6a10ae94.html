@@ -60,7 +60,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -118,7 +118,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -200,15 +200,7 @@
 <p><img src="https://img-blog.csdnimg.cn/20201010190953997.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
 <p>图中曲线为ROC曲线，曲线下的面积的具体数值为AUC指标。</p>
 <p>α越接近α0，分类器性能越好，当ROC曲线降到红线以下时，说明用这个分类器分，我还不如瞎分（瞎分二分类按正确率0.5算的话）</p>
-<pre class=" language-lang-mermaid"><code class="language-lang-mermaid">graph LR
-学习器A-->评价
-学习器B-->评价
-评价-->ROC指标
-ROC指标-->如果A与B的ROC曲线无交点
-ROC指标-->如果A与B的ROC曲线有交点
-如果A与B的ROC曲线有交点-->AUC值大的性能好
-如果A与B的ROC曲线无交点-->能完全覆盖另一个的性能好
-</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">学习器A--&gt;评价</span><br><span class="line">学习器B--&gt;评价</span><br><span class="line">评价--&gt;ROC指标</span><br><span class="line">ROC指标--&gt;如果A与B的ROC曲线无交点</span><br><span class="line">ROC指标--&gt;如果A与B的ROC曲线有交点</span><br><span class="line">如果A与B的ROC曲线有交点--&gt;AUC值大的性能好</span><br><span class="line">如果A与B的ROC曲线无交点--&gt;能完全覆盖另一个的性能好</span><br></pre></td></tr></table></figure>
 <h3 id="2-AUC值求取案例（理解原理）"><a href="#2-AUC值求取案例（理解原理）" class="headerlink" title="2.AUC值求取案例（理解原理）"></a>2.AUC值求取案例（理解原理）</h3><div class="table-container">
 <table>
 <thead>
@@ -994,5 +986,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

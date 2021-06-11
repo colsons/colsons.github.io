@@ -63,7 +63,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -121,7 +121,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -200,18 +200,11 @@
         <p>使用dos批处理指令 自动安装多个python包</p>
 <span id="more"></span>
 <h2 id="这个是我的情况，想直接看dos往下翻下一个标题"><a href="#这个是我的情况，想直接看dos往下翻下一个标题" class="headerlink" title="这个是我的情况，想直接看dos往下翻下一个标题"></a>这个是我的情况，想直接看dos往下翻下一个标题</h2><p>今天在github找了个项目打算学习下，结果第一次使用requirements.txt这个文件批处理安装库出了很多问题（古陶半天到现在也没弄懂）我使用如下命令安装：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pip install -r requirements.txt
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
 <p>结果就像下面<br><img src="https://img-blog.csdnimg.cn/20200611121517955.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>用pip list查看仍没有库 ，离线安装也试了不行，然后发现好像是把包下载没安装？那么下的包去哪里，缓存里面？反正是没弄明白，现在也很meng，后面果断放弃了，我直接用dos读txt一行一行用命令安装不好么（=v=…<br>）</p>
 <h2 id="dos使用txt文件批量安装库"><a href="#dos使用txt文件批量安装库" class="headerlink" title="dos使用txt文件批量安装库"></a>dos使用txt文件批量安装库</h2><p><img src="https://img-blog.csdnimg.cn/20200611122312149.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>pip.txt内容就是这样<br><img src="https://img-blog.csdnimg.cn/20200611122345846.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>在桌面新建一个txt文件后缀改成bat，然后记事本打开编辑内容：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">cd /dZ:
-
-for /f %%i in (pip.txt) do start "" cmd /k "activate django207&pip install %%i -i https://pypi.tuna.tsinghua.edu.cn/simple"
-
-::taskkill /f /im cmd.exe /t
-::将上面一行命令关闭所有命令窗口
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /dZ:</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (pip.txt) do start <span class="string">&quot;&quot;</span> cmd /k <span class="string">&quot;activate django207&amp;pip install %%i -i https://pypi.tuna.tsinghua.edu.cn/simple&quot;</span></span><br><span class="line"></span><br><span class="line">::taskkill /f /im cmd.exe /t</span><br><span class="line">::将上面一行命令关闭所有命令窗口</span><br></pre></td></tr></table></figure>
 <p>记得每个人文件位置不同，说明如下：<br><img src="https://img-blog.csdnimg.cn/20200611123428475.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>希望对大家有所帮助！</p>
 
       
@@ -745,5 +738,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

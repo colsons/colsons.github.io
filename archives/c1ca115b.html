@@ -60,7 +60,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -118,7 +118,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -197,16 +197,12 @@
         <p>python3.7 环境window10 64位 cv2包问题。</p>
 <span id="more"></span>
 <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>做图片处理用opencv-python做模板匹配的时候会用个sift模型，就会用到cv2.xfeatures2d_SIFT.create()这个函数，在我正要用它增加自己知识，巴拉巴啦….的时候，咦？！<br><img src="https://img-blog.csdnimg.cn/2020032721502779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这是个什么鬼哦，没有这个函数呢。<br>百度发现需要什么卸载原版本，换成opencv-contrib-python，我然后按照他说的将</p>
-<pre class=" language-lang-python"><code class="language-lang-python">pip install opencv_python==3.4.2.16
-pip install opencv-contrib-python==3.4.2.16
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install opencv_python==<span class="number">3.4</span><span class="number">.2</span><span class="number">.16</span></span><br><span class="line">pip install opencv-contrib-python==<span class="number">3.4</span><span class="number">.2</span><span class="number">.16</span></span><br></pre></td></tr></table></figure>
 <p>这俩都下了，结果仍然没有。<br><strong>解决</strong><br>实际上其实你原本的opencv-python跟本不用动，只需要下载3.4.2.16版的opencv-contrib-python就可以了，原因是这个版本之后的它部分收费（吐槽：当初说好滴开源捏），貌似是这个原因。</p>
 <h2 id="另外一个冲突问题说明"><a href="#另外一个冲突问题说明" class="headerlink" title="另外一个冲突问题说明"></a>另外一个冲突问题说明</h2><p>在做物体检测有时候会用到这个函数</p>
-<pre class=" language-lang-python"><code class="language-lang-python">c = sorted(cut, key=cv2.contourArea, reverse=True)[i]
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = <span class="built_in">sorted</span>(cut, key=cv2.contourArea, reverse=<span class="literal">True</span>)[i]</span><br></pre></td></tr></table></figure>
 <p>需要opencv-python模板<br>模板匹配时，有一个函数是</p>
-<pre class=" language-lang-python"><code class="language-lang-python">sift = cv2.xfeatures2d_SIFT.create()
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sift = cv2.xfeatures2d_SIFT.create()   </span><br></pre></td></tr></table></figure>
 <p>需要opencv-contrib-python模板<br>我在做的时候安装cv2后在安装contrib，发现第二个函数可用，第一个报错；而先安装contrib后安装cv2则第一个函数可用，第二个不能用。<br>导致我只能分两个虚拟环境做，很麻烦，有懂得希望评论区告诉一下问题原因。</p>
 
       
@@ -740,5 +736,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

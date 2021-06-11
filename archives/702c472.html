@@ -57,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -115,7 +115,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -195,20 +195,14 @@
 <p>小白食用。</p>
 <span id="more"></span>
 <p>最近给刚入门的人配乱七八糟的，调环境，随手写。</p>
-<p>不知道你现在用什么写代码，看完这篇相信你会对python的开发环境有一个更好的理解<br><strong>首先给出几个选择</strong></p>
-<pre><code>Anaconda+pycharm或jupyter notebook或其他
-</code></pre><p><strong>适合自己的</strong><br>安装python的时候一定要考虑好自己安装python是长期用，还是说简单的学习一下：<br>如果不长期使用，推荐步骤如下<br>①直接在python官网下载想要的版本即可<br>（ps：如果要玩神经网络，深度学习之类的建议python3.6，其他的建议python3.7。至于为什么不推荐最新的3.8，等你用的模板多了，有的模板版本之间会有冲突，而你要找解决办法，网上大多都是3.7 3.6..靠前的版本的解决方案，有的并不适用于3.8）<br>②配置路径path（方法网上都有，这里就不多说）<br>③下载IDLE开发环境（比较适合初学者）<br>如果长期使用，推荐如下<br>①Anaconda官网下载后安装（具体安装的时候各种选项bd都有，Anaconda的使用好处，他可以设置多个虚拟环境，环境出问题可以直接删除，而且安装Anaconda后不用去python官网下载python，配置虚拟环境会直接安装）<br>②安装好了会有一个命令台图标（name：“Anaconda Prompt (Anaconda3)”，打开直接使用下面命令）</p>
-<pre><code>conda create -n name python=3.7
-# name是虚拟环境名字，可以随便换
-# 3.7是版本，也是可以换的
-</code></pre><p>虚拟环境配好后用下面命令切换到新建的虚拟环境就可以使用pip或conda安装各种喜欢的库了</p>
-<pre><code>activate name
-# name是环境名字
-</code></pre><p>如果是conda安装，下载速度大部分情况是没问题<br>如果是pip安装，速度会有些慢，建议后面加一个镜像源：</p>
-<pre><code>例子：
-pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple
-PS：使用清华镜像源安装numpy库
-</code></pre><p>③安装pycharm/jupyter notebook/其他<br>这些东西都属于集成开发环境，都有不同的偏向：<br>pycharm（官网下载即可）：<br>优点：适合写一个项目工程<br>缺点：虽然有内置的console可以有一个交互体检，但是不能单独运行一个代码块<br>jupyter notebook（这是一个python库，用pip就可以安装）：<br>优点：可以单独运行代码块，有点类似MATLAB，每次运行参数会保留在一个工作空间，可以单独查看<br>缺点：文件类型是ipynb，只能用jupyter notebook打开，其他打开需要转化成py文件<br>其他：<br>ptpython（pip可以安装）：有交互操作（我是把这个当小工具用的，比如突然想研究某个函数又懒得建个项目）<br>其他还有很多，用的多了会有自己单独的见解。</p>
+<p>不知道你现在用什么写代码，看完这篇相信你会对python的开发环境有一个更好的理解<br><strong>首先给出几个选择</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Anaconda+pycharm或jupyter notebook或其他</span><br></pre></td></tr></table></figure></p>
+<p><strong>适合自己的</strong><br>安装python的时候一定要考虑好自己安装python是长期用，还是说简单的学习一下：<br>如果不长期使用，推荐步骤如下<br>①直接在python官网下载想要的版本即可<br>（ps：如果要玩神经网络，深度学习之类的建议python3.6，其他的建议python3.7。至于为什么不推荐最新的3.8，等你用的模板多了，有的模板版本之间会有冲突，而你要找解决办法，网上大多都是3.7 3.6..靠前的版本的解决方案，有的并不适用于3.8）<br>②配置路径path（方法网上都有，这里就不多说）<br>③下载IDLE开发环境（比较适合初学者）<br>如果长期使用，推荐如下<br>①Anaconda官网下载后安装（具体安装的时候各种选项bd都有，Anaconda的使用好处，他可以设置多个虚拟环境，环境出问题可以直接删除，而且安装Anaconda后不用去python官网下载python，配置虚拟环境会直接安装）<br>②安装好了会有一个命令台图标（name：“Anaconda Prompt (Anaconda3)”，打开直接使用下面命令）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n name python=3.7</span><br><span class="line"># name是虚拟环境名字，可以随便换</span><br><span class="line"># 3.7是版本，也是可以换的</span><br></pre></td></tr></table></figure>
+<p>虚拟环境配好后用下面命令切换到新建的虚拟环境就可以使用pip或conda安装各种喜欢的库了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">activate name</span><br><span class="line"># name是环境名字</span><br></pre></td></tr></table></figure>
+<p>如果是conda安装，下载速度大部分情况是没问题<br>如果是pip安装，速度会有些慢，建议后面加一个镜像源：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">PS：使用清华镜像源安装numpy库</span><br></pre></td></tr></table></figure>
+<p>③安装pycharm/jupyter notebook/其他<br>这些东西都属于集成开发环境，都有不同的偏向：<br>pycharm（官网下载即可）：<br>优点：适合写一个项目工程<br>缺点：虽然有内置的console可以有一个交互体检，但是不能单独运行一个代码块<br>jupyter notebook（这是一个python库，用pip就可以安装）：<br>优点：可以单独运行代码块，有点类似MATLAB，每次运行参数会保留在一个工作空间，可以单独查看<br>缺点：文件类型是ipynb，只能用jupyter notebook打开，其他打开需要转化成py文件<br>其他：<br>ptpython（pip可以安装）：有交互操作（我是把这个当小工具用的，比如突然想研究某个函数又懒得建个项目）<br>其他还有很多，用的多了会有自己单独的见解。</p>
 
       
 
@@ -737,5 +731,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

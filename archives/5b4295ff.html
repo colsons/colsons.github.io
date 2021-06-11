@@ -64,7 +64,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -122,7 +122,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -205,15 +205,9 @@
 <p><strong>外部评价指标分成2部分，1是根据《机器学习》-周志华个人理解，2是资料查阅的（与sklearn库嵌合），两者存在一些差异，如果有知道这是咋回事的欢迎评论区交流。</strong></p>
 <h2 id="外部评价指标1"><a href="#外部评价指标1" class="headerlink" title="外部评价指标1"></a>外部评价指标1</h2><p>主要介绍三个指标，分别是JC，FMI，RI。</p>
 <p>首先，我们有这样一个定义：<br>对于数据集D = {$x_1,x_2,x_3…,x_m$},假定根据某聚类方法得到类簇划分C = {$c_1,c_2,…c_k$},参考模型的类簇划分C* = {c*1，c*2，…，c*k}，相应的用 λ 与 λ* 表示C和C*表示的类簇向量：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">a = 集合SS: 包含了在C中属于相同簇, 同时在C*中也属于相同簇的样本对数
-b = 集合SD: 包含了在C中属于相同簇, 同时在C*中属于不同簇的样本对数        
-c = 集合DS: 包含了在C中属于不同簇, 同时在C*中属于相同簇的样本对数  
-d = 集合DD: 包含了在C中属于不同簇, 同时在C*中属于不同簇的样本对数
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 集合SS: 包含了在C中属于相同簇, 同时在C*中也属于相同簇的样本对数</span><br><span class="line">b = 集合SD: 包含了在C中属于相同簇, 同时在C*中属于不同簇的样本对数        </span><br><span class="line">c = 集合DS: 包含了在C中属于不同簇, 同时在C*中属于相同簇的样本对数  </span><br><span class="line">d = 集合DD: 包含了在C中属于不同簇, 同时在C*中属于不同簇的样本对数</span><br></pre></td></tr></table></figure>
 <p>为了更好地理解，举一个例子</p>
-<pre class=" language-lang-python"><code class="language-lang-python">聚类类簇划分：[0,0,0,1,1,1]
-真实类簇划分：[0,0,1,1,1,0]
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">聚类类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">真实类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>根据类簇划分构造两个矩阵：   </p>
 <div class="table-container">
 <table>
@@ -361,9 +355,7 @@ d = 集合DD: 包含了在C中属于不同簇, 同时在C*中属于不同簇的�
 <p>Jaccard系数（JC） = a/（a+b+c）<br>FM指数（FMI） = 根号下（a^2/（（a+b）×（a+c））<br>Rand指数（RI） = 2（a+d）/（m×（m-1））</p>
 <p>以上三个性能区间为 [0,1] ，越大越好.</p>
 <h2 id="外部评价指标2"><a href="#外部评价指标2" class="headerlink" title="外部评价指标2"></a>外部评价指标2</h2><p>网上查阅得到的做法类似上一篇，先求类似混淆矩阵的矩阵。还是拿上面的例子：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">聚类类簇划分：[0,0,0,1,1,1]
-真实类簇划分：[0,0,1,1,1,0]
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">聚类类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">真实类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
 <p>可以得到矩阵如下</p>
 <div class="table-container">
 <table>
@@ -394,9 +386,8 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
 <p>①簇C内样本间的平均距离：<br><img src="https://img-blog.csdnimg.cn/20200713185945906.png" alt=""><br>②簇C内样本间的最远距离：<br><img src="https://img-blog.csdnimg.cn/20200713190001443.png" alt="在这里插入图片描述"><br>③簇Ci与簇Cj最近样本间的距离<br><img src="https://img-blog.csdnimg.cn/20200713190016780.png" alt="在这里插入图片描述"><br>④簇Ci与簇句中心点间的距离<br><img src="https://img-blog.csdnimg.cn/2020071319002459.png" alt="在这里插入图片描述"><br>其中dist(x，y)表示x和y的距离，μ表示中心，$|C_k|$表示Ck类的个数。</p>
 <p>那么评价指标公式为：</p>
 <p>DB指数（DBI）：<br><img src="https://img-blog.csdnimg.cn/20200713191729748.png" alt="在这里插入图片描述"><br>Dunn指数（DI）：<br><img src="https://img-blog.csdnimg.cn/20200713191750924.png" alt="在这里插入图片描述"><br>DBI的值越小越好，而DI则相反，值越大越好.</p>
-<p>以上是评价指标主要内容，欢迎指正。</p>
-<pre><code>询问了下老师，周志华老师的评价系数是针对评价算法本身，而网上的是针对具体数据，应用领域不同。
-</code></pre>
+<p>以上是评价指标主要内容，欢迎指正。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">询问了下老师，周志华老师的评价系数是针对评价算法本身，而网上的是针对具体数据，应用领域不同。</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -924,5 +915,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

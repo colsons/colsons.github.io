@@ -63,7 +63,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -121,7 +121,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -200,35 +200,19 @@
         <p>随手记录，第一次用爬虫</p>
 <span id="more"></span>
 <h2 id="首先说一下环境部分"><a href="#首先说一下环境部分" class="headerlink" title="首先说一下环境部分"></a>首先说一下环境部分</h2><p><strong>我的环境：</strong></p>
-<pre class=" language-lang-python"><code class="language-lang-python">python3.7
-Anconda虚拟环境
-所应用库：pandas，json，requests，time（time库因为要爬取数据类型而用的，非必须库）
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python3<span class="number">.7</span></span><br><span class="line">Anconda虚拟环境</span><br><span class="line">所应用库：pandas，json，requests，time（time库因为要爬取数据类型而用的，非必须库）</span><br></pre></td></tr></table></figure>
 <p>环境不同不会影响太大（似乎基本没啥影响）</p>
 <h2 id="爬虫开始"><a href="#爬虫开始" class="headerlink" title="爬虫开始"></a>爬虫开始</h2><p>这里只说一些基础中的基础，适合python没怎么用过的小白食用。<br>费话不多少，开始…</p>
 <p>首先，爬虫就是伪装成浏览器去看数据，并把看到的数据记录下来，然后把记录的数据下载下来。这就叫爬数据，下面直接讲操作：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">import pandas as pd
-import requests
-import json
-import time
-
-headers = &#123;
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36'&#125;
-
-url = 'https://c.m.163.com/ug/api/wuhan/app/data/list-total'
-key = requests.get(url, headers=headers)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;https://c.m.163.com/ug/api/wuhan/app/data/list-total&#x27;</span></span><br><span class="line">key = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure>
 <p><strong>1、headers</strong><br>这个headers就是我们伪装成的浏览器，那你们应该问了，这后面一大长串字符咋来的，举个例子如果你要爬这个网页中的数据：</p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1">https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1</a></p>
 </blockquote>
 <p>这是网易新闻网页<br>如果你要伪装成谷歌浏览器，那么复制网址到谷歌浏览器，摁F12，会有以下界面：<br><img src="https://img-blog.csdnimg.cn/20200417094746308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>①选中Network<br>②再选中XHR<br>③摁F5刷新<br>④会出来name之下有一系列list，那个是数据存储地址，通过查看发现在第二个里面有我们想要的数据<br><img src="https://img-blog.csdnimg.cn/20200417100124219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>拉到headers最下面<br><img src="https://img-blog.csdnimg.cn/20200417100340700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个东西复制改动一下（记得加引号<em>2）<br>那么那个伪装头就做好了（我们伪装的浏览器就弄好了）<br><em>*2、url</em></em><br>在同一页<br><img src="https://img-blog.csdnimg.cn/20200417100559137.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到url 把‘？t=317…’删了复制到url代码就可以了（‘记得引号’）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">key = requests.get(url, headers=headers)
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure>
 <p>如果把key输出等于200（上面图中绿色小点后面的数字）那么就说明爬虫武器做好了，可以进网站去爬数据了。<br><strong>3、爬取数据</strong><br>通过网页可以发现数据是字典类型，那么我们用</p>
-<pre class=" language-lang-python"><code class="language-lang-python">data_json = json.loads(r.text)
-data = data_json['data']
-</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">data_json = json.loads(r.text)</span><br><span class="line">data = data_json[<span class="string">&#x27;data&#x27;</span>]</span><br></pre></td></tr></table></figure>
 <p>后面字典数据具体怎么筛选就是python基本操作了，其他大神肯定写了很多，我就不多说了。</p>
 
       
@@ -762,5 +746,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>

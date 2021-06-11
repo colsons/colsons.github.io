@@ -57,7 +57,7 @@
 		  <h1 class="header-author"><a href="/">绯色鱼</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">努力学习，打工赚钱</p>
+		<p class="header-subtitle">努力，考研人。</p>
 		
 
 		<nav class="header-menu">
@@ -115,7 +115,7 @@
 			  <h1 class="header-author js-header-author">绯色鱼</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力学习，打工赚钱<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>努力，考研人。<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -193,24 +193,13 @@
       
         <p>案例学习多元线性拟合。</p>
 <span id="more"></span>
-<p><strong>从案例中学习新知识是比较快的，所以我们直接上例子：</strong><br>（本文为基础学习，以理解为主）<br><strong>案例一：拟合一元一次</strong></p>
-<pre><code>x = [143,145,146,148]
-y = [11,13,14,15]
-# 我们现在拟合这个y = bx+a
-</code></pre><p>这里要介绍一个写好的包，regress()使用参数如下：</p>
-<pre><code>[B,BINT,R,RINT,STATS] = regress(Y,X)
-</code></pre><p>B：回归系数。（可以当斜率来理解）<br>BINT：回归系数的95%置信区间，可以暂时理解为B的一个取值范围（想要详细理解的可以bd）<br>R：残差。（这不用解释吧）<br>RINT：同BINT理解。<br>STATS:检验模型的统计量，它包括四个值：①判定系数R^2，②统计量观测值F，③检验的p的值，④误差方差的估计。（这里简单说下判定系数，他可以评价模型好坏，取值范围[0,1]，越接近于1模型越好）</p>
-<pre><code>X = [143,145,146,148]&#39;;
-Y = [11,13,14,15]&#39;;
-X = [ones(size(Y)),X];
-[b,bint,r,rint,stats] = regress(Y,X);
-</code></pre><p>这里对x做了一点改动，加了一列1，（加与不加的区别是预测的结果有没有‘y=bx+a’的‘a’）<br><strong>案例二：拟合二元二次</strong></p>
-<pre><code>X1 = [143,145,146,148]&#39;;
-X2 = [56,58,59,61]&#39;;
-Y = [11,13,14,15]&#39;;
-X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
-[b,bint,r,rint,stats] = regress(Y,X);
-</code></pre><p>其他的可以举一反三。</p>
+<p><strong>从案例中学习新知识是比较快的，所以我们直接上例子：</strong><br>（本文为基础学习，以理解为主）<br><strong>案例一：拟合一元一次</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">x = [143,145,146,148]</span><br><span class="line">y = [11,13,14,15]</span><br><span class="line"># 我们现在拟合这个y = bx+a</span><br></pre></td></tr></table></figure><br>这里要介绍一个写好的包，regress()使用参数如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[B,BINT,R,RINT,STATS] = regress(Y,X)</span><br></pre></td></tr></table></figure>
+<p>B：回归系数。（可以当斜率来理解）<br>BINT：回归系数的95%置信区间，可以暂时理解为B的一个取值范围（想要详细理解的可以bd）<br>R：残差。（这不用解释吧）<br>RINT：同BINT理解。<br>STATS:检验模型的统计量，它包括四个值：①判定系数R^2，②统计量观测值F，③检验的p的值，④误差方差的估计。（这里简单说下判定系数，他可以评价模型好坏，取值范围[0,1]，越接近于1模型越好）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = [143,145,146,148]&#x27;;</span><br><span class="line">Y = [11,13,14,15]&#x27;;</span><br><span class="line">X = [ones(size(Y)),X];</span><br><span class="line">[b,bint,r,rint,stats] = regress(Y,X);</span><br></pre></td></tr></table></figure>
+<p>这里对x做了一点改动，加了一列1，（加与不加的区别是预测的结果有没有‘y=bx+a’的‘a’）<br><strong>案例二：拟合二元二次</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">X1 = [143,145,146,148]&#x27;;</span><br><span class="line">X2 = [56,58,59,61]&#x27;;</span><br><span class="line">Y = [11,13,14,15]&#x27;;</span><br><span class="line">X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];</span><br><span class="line">[b,bint,r,rint,stats] = regress(Y,X);</span><br></pre></td></tr></table></figure>
+<p>其他的可以举一反三。</p>
 
       
 
@@ -739,5 +728,12 @@ MathJax.Hub.Queue(function() {
 
 </div>
   </div>
+
+  <!-- 代码块复制功能 -->
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="/js/clipboard.js"></script>  -->
+  <script type="text/javascript" src="/js/clipboard_use.js"></script>
+
 </body>
 </html>
