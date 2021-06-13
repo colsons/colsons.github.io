@@ -207,7 +207,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;https://c.m.163.com/ug/api/wuhan/app/data/list-total&#x27;</span></span><br><span class="line">key = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure>
 <p><strong>1、headers</strong><br>这个headers就是我们伪装成的浏览器，那你们应该问了，这后面一大长串字符咋来的，举个例子如果你要爬这个网页中的数据：</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1">https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1</a></p>
+<p><a href="https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1">https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1</a></p>
 </blockquote>
 <p>这是网易新闻网页<br>如果你要伪装成谷歌浏览器，那么复制网址到谷歌浏览器，摁F12，会有以下界面：<br><img src="https://img-blog.csdnimg.cn/20200417094746308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>①选中Network<br>②再选中XHR<br>③摁F5刷新<br>④会出来name之下有一系列list，那个是数据存储地址，通过查看发现在第二个里面有我们想要的数据<br><img src="https://img-blog.csdnimg.cn/20200417100124219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>拉到headers最下面<br><img src="https://img-blog.csdnimg.cn/20200417100340700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个东西复制改动一下（记得加引号<em>2）<br>那么那个伪装头就做好了（我们伪装的浏览器就弄好了）<br><em>*2、url</em></em><br>在同一页<br><img src="https://img-blog.csdnimg.cn/20200417100559137.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到url 把‘？t=317…’删了复制到url代码就可以了（‘记得引号’）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">key = requests.get(url, headers=headers)</span><br></pre></td></tr></table></figure>
@@ -557,11 +557,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">debug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">debug</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,7 +577,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color3">降维</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,19 +585,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">降维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">聚类</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
+                <a href="javascript:void(0)" class="js-tag color3">聚类</a>
               </li>
              
               <li class="article-tag-list-item">
