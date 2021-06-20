@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>推荐给刚开始使用python的小白 | 绯色鱼的博客</title>
+  <title>推荐给刚开始使用Python的小白 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="python如何给自己的电脑搭建开发环境，只是介绍经验，不是介绍如何安装（安装方法自行百度） 小白食用。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推荐给刚开始使用python的小白">
+<meta property="og:title" content="推荐给刚开始使用Python的小白">
 <meta property="og:url" content="https://colsons.github.io/archives/702c472.html">
 <meta property="og:site_name" content="绯色鱼的博客">
 <meta property="og:description" content="python如何给自己的电脑搭建开发环境，只是介绍经验，不是介绍如何安装（安装方法自行百度） 小白食用。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-26T02:57:38.000Z">
-<meta property="article:modified_time" content="2021-05-30T01:41:26.903Z">
+<meta property="article:modified_time" content="2021-06-15T04:40:56.596Z">
 <meta property="article:author" content="绯色鱼">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      推荐给刚开始使用python的小白
+      推荐给刚开始使用Python的小白
     </h1>
   
 
@@ -196,13 +196,19 @@
 <span id="more"></span>
 <p>最近给刚入门的人配乱七八糟的，调环境，随手写。</p>
 <p>不知道你现在用什么写代码，看完这篇相信你会对python的开发环境有一个更好的理解<br><strong>首先给出几个选择</strong><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Anaconda+pycharm或jupyter notebook或其他</span><br></pre></td></tr></table></figure></p>
-<p><strong>适合自己的</strong><br>安装python的时候一定要考虑好自己安装python是长期用，还是说简单的学习一下：<br>如果不长期使用，推荐步骤如下<br>①直接在python官网下载想要的版本即可<br>（ps：如果要玩神经网络，深度学习之类的建议python3.6，其他的建议python3.7。至于为什么不推荐最新的3.8，等你用的模板多了，有的模板版本之间会有冲突，而你要找解决办法，网上大多都是3.7 3.6..靠前的版本的解决方案，有的并不适用于3.8）<br>②配置路径path（方法网上都有，这里就不多说）<br>③下载IDLE开发环境（比较适合初学者）<br>如果长期使用，推荐如下<br>①Anaconda官网下载后安装（具体安装的时候各种选项bd都有，Anaconda的使用好处，他可以设置多个虚拟环境，环境出问题可以直接删除，而且安装Anaconda后不用去python官网下载python，配置虚拟环境会直接安装）<br>②安装好了会有一个命令台图标（name：“Anaconda Prompt (Anaconda3)”，打开直接使用下面命令）</p>
+<p><strong>适合自己的</strong><br>安装python的时候一定要考虑好自己安装python是长期用，还是说简单的学习一下：<br>如果不长期使用：</p>
+<blockquote>
+<p>①直接在python官网下载想要的版本即可<br>（ps：如果要玩神经网络，深度学习之类的建议python3.6，其他的建议python3.7。至于为什么不推荐最新的3.8，等你用的模板多了，有的模板版本之间会有冲突，而你要找解决办法，网上大多都是3.7 3.6..靠前的版本的解决方案，有的并不适用于3.8）<br>②配置路径path（方法网上都有，这里就不多说）</p>
+</blockquote>
+<p>如果长期使用：</p>
+<p>①Anaconda官网下载后安装（具体安装的时候各种选项bd都有，Anaconda的使用好处，他可以设置多个虚拟环境，环境出问题可以直接删除，而且安装Anaconda后不用去python官网下载python，配置虚拟环境会直接安装）<br>②安装好了会有一个命令台图标（name：“Anaconda Prompt (Anaconda3)”，打开直接使用下面命令）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n name python=3.7</span><br><span class="line"># name是虚拟环境名字，可以随便换</span><br><span class="line"># 3.7是版本，也是可以换的</span><br></pre></td></tr></table></figure>
 <p>虚拟环境配好后用下面命令切换到新建的虚拟环境就可以使用pip或conda安装各种喜欢的库了</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">activate name</span><br><span class="line"># name是环境名字</span><br></pre></td></tr></table></figure>
 <p>如果是conda安装，下载速度大部分情况是没问题<br>如果是pip安装，速度会有些慢，建议后面加一个镜像源：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">例子：</span><br><span class="line">pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">PS：使用清华镜像源安装numpy库</span><br></pre></td></tr></table></figure>
 <p>③安装pycharm/jupyter notebook/其他<br>这些东西都属于集成开发环境，都有不同的偏向：<br>pycharm（官网下载即可）：<br>优点：适合写一个项目工程<br>缺点：虽然有内置的console可以有一个交互体检，但是不能单独运行一个代码块<br>jupyter notebook（这是一个python库，用pip就可以安装）：<br>优点：可以单独运行代码块，有点类似MATLAB，每次运行参数会保留在一个工作空间，可以单独查看<br>缺点：文件类型是ipynb，只能用jupyter notebook打开，其他打开需要转化成py文件<br>其他：<br>ptpython（pip可以安装）：有交互操作（我是把这个当小工具用的，比如突然想研究某个函数又懒得建个项目）<br>其他还有很多，用的多了会有自己单独的见解。</p>
+<p>这里推一手捷克公司的dataspell，目前还未开放使用 不过看上去还不错，等一手。</p>
 
       
 
@@ -340,7 +346,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          dos批处理pip安装库
+          Dos批处理pip安装库
         
       </div>
     </a>
@@ -542,11 +548,23 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">debug</a>
+                <a href="javascript:void(0)" class="js-tag color3">测试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
+                <a href="javascript:void(0)" class="js-tag color3">聚类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">降维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">debug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -562,23 +580,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">降维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">模型评估</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">聚类</a>
+                <a href="javascript:void(0)" class="js-tag color2">MATLAB</a>
               </li>
              
               <li class="article-tag-list-item">
