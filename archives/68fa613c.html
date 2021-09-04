@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>Category: 离散数学 | 绯色鱼的博客</title>
+  <title>「转载」Bert中文情感分类分析-tf1.14 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="绯色鱼的博客">
-<meta property="og:url" content="https://colsons.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/index.html">
+  <meta name="description" content="项目实现过程中对于一些处理做了更细致说明。如有不明白的可以去看原贴。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「转载」Bert中文情感分类分析-tf1.14">
+<meta property="og:url" content="https://colsons.github.io/archives/68fa613c.html">
 <meta property="og:site_name" content="绯色鱼的博客">
+<meta property="og:description" content="项目实现过程中对于一些处理做了更细致说明。如有不明白的可以去看原贴。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805232000374.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805223050799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805224111901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805233114643.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805233409122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805233810180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200805234157857.png">
+<meta property="article:published_time" content="2021-09-04T01:27:48.000Z">
+<meta property="article:modified_time" content="2021-09-04T01:33:27.398Z">
 <meta property="article:author" content="绯色鱼">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="tensorFlow">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200805232000374.png">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -58,11 +72,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../index.html">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="../../categories">分类</a></li>
+				<li><a href="../categories">分类</a></li>
 	        
-				<li><a href="../../archives/index.html">归档</a></li>
+				<li><a href="../archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -84,9 +98,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="../../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="../../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -125,9 +139,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="../../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="../../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -136,11 +150,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="../../index.html">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../categories">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -155,178 +169,264 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-「转载」bert中文情感分类分析-tf1-14" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      「转载」Bert中文情感分类分析-tf1.14
+    </h1>
+  
+
+        
+        
+
+<a href="" class="archive-article-date">
+  	<time datetime="2021-09-04T01:27:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-04</time>
+</a>
+
+        
+
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>项目实现过程中对于一些处理做了更细致说明。如有不明白的可以去看原贴。</p>
+<span id="more"></span>
+<p>这里对bert不做介绍，主要介绍代码运行环境和数据集变换。</p>
+<p>原贴：<a href="https://blog.csdn.net/qq_36812990/article/details/102313322?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~first_rank_v2~rank_v25-2-102313322.nonecase">点击，进入通道</a></p>
+<p>资源地址：</p>
+<p>bert模型文件：<a href="https://github.com/google-research/bert">https://github.com/google-research/bert</a></p>
+<p>预训练模型：<a href="https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip">https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip</a></p>
+<p>首先我的环境：<br><strong>win10 64位系统 python3.6 TensorFlow=1.14.0（GPU版本）CUDA=10.0</strong><br>其他可能版本影响不大的模板：pandas=1.0.5</p>
+<p>电脑配置不够，可以适当减少参数大小，下面会具体说明。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h2 id="1、数据预处理（pre-data-py）"><a href="#1、数据预处理（pre-data-py）" class="headerlink" title="1、数据预处理（pre_data.py）"></a>1、数据预处理（pre_data.py）</h2><p>文件数据结构：<br><img src="https://img-blog.csdnimg.cn/20200805232000374.png" alt="在这里插入图片描述"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">其他感觉运行用不到剔除了</span><br><span class="line"><span class="comment"># code   文件夹</span></span><br><span class="line"><span class="comment"># code/data    存放源数据与预处理数据</span></span><br><span class="line"><span class="comment"># code/data/nCoV_100k_train.labled.data  源数据</span></span><br><span class="line"><span class="comment"># code/chinese_L-12_H-768_A-12     存放预训练模型</span></span><br><span class="line"><span class="comment"># code/sim_model    存放各种结果</span></span><br><span class="line"><span class="comment"># code/init.py     空着就行</span></span><br><span class="line"><span class="comment"># code/pre_data.py  数据预处理文件，在code/data下会生成train.csv，dev.csv，test.csv</span></span><br><span class="line"><span class="comment"># code/modeling.py   模型文件</span></span><br><span class="line"><span class="comment"># code/optimization.py   训练优化器</span></span><br><span class="line"><span class="comment"># code/tokenization.py    训练端</span></span><br><span class="line"><span class="comment"># code/run_classifier.py  main文件（连接其他文件类的枝干部分）</span></span><br><span class="line"><span class="comment"># code/test.py   测试结果的转换</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>第一步：准备数据，数据预处理，做好和训练模型数据接口工作</strong><br>这一步非常重要，有处理错误会导致过程报错，然后反复调bug（用这个的个人经历，惨痛的教训）<br>我们写一个文件，要把数据处理成n*2的矩阵（n是样本数），两列：一列是中文数据内容，一列是label标签。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># code/pre_data.py</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> sklearn.utils <span class="keyword">import</span> shuffle</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PREDATA</span>():</span></span><br><span class="line">    file = pd.read_csv(<span class="string">&#x27;../data/nCoV_100k_train.labled.data&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    file = file[file[<span class="string">&#x27;情感倾向&#x27;</span>].isin([<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;-1&#x27;</span>, <span class="string">&#x27;0&#x27;</span>])]</span><br><span class="line">    data = pd.DataFrame(<span class="built_in">zip</span>(file[<span class="string">&#x27;情感倾向&#x27;</span>].astype(<span class="built_in">int</span>), file[<span class="string">&#x27;微博中文内容&#x27;</span>]))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 数据量大，可以提取部分数据</span></span><br><span class="line">    <span class="comment"># data = data.iloc[0:2500]</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(data.shape[<span class="number">0</span>]):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">if</span> data[<span class="string">&#x27;情感倾向&#x27;</span>][i] == -<span class="number">1</span>:</span><br><span class="line">                data[<span class="string">&#x27;情感倾向&#x27;</span>][i] = <span class="number">2</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(data[<span class="string">&#x27;微博中文内容&#x27;</span>][i]) &lt; <span class="number">10</span>:</span><br><span class="line">                data[<span class="string">&#x27;微博中文内容&#x27;</span>][i] = <span class="string">&#x27;0&#x27;</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                data[<span class="string">&#x27;微博中文内容&#x27;</span>][i] = re.sub(<span class="string">&quot;[\s+\.\!\/_,$%^*(+\&quot;\&#x27;]+|[+——！，。？、~@#￥%……&amp;*（）？?]&quot;</span>, <span class="string">&quot;&quot;</span>, data[<span class="string">&#x27;微博中文内容&#x27;</span>][i])</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line">    data = data[~data[<span class="string">&#x27;微博中文内容&#x27;</span>].isin([<span class="string">&#x27;0&#x27;</span>])]</span><br><span class="line">    data = shuffle(data)</span><br><span class="line">    num = data.shape[<span class="number">0</span>]</span><br><span class="line">    data1 = data.iloc[:<span class="built_in">int</span>(num * <span class="number">0.8</span>)]</span><br><span class="line">    data2 = data.iloc[<span class="built_in">int</span>(num * <span class="number">0.8</span>) + <span class="number">1</span>:<span class="built_in">int</span>(num * <span class="number">0.9</span>)]</span><br><span class="line">    data3 = data.iloc[<span class="built_in">int</span>(num * <span class="number">0.9</span>) + <span class="number">1</span>:]</span><br><span class="line">    data1.to_csv(<span class="string">&#x27;../data/train.csv&#x27;</span>, index=<span class="literal">None</span>, header=<span class="literal">None</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    data2.to_csv(<span class="string">&#x27;../data/test.csv&#x27;</span>, index=<span class="literal">None</span>, header=<span class="literal">None</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">    data3.to_csv(<span class="string">&#x27;../data/dev.csv&#x27;</span>, index=<span class="literal">None</span>, header=<span class="literal">None</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PREDATA()</span><br></pre></td></tr></table></figure>
+<p>源数据演示<br><img src="https://img-blog.csdnimg.cn/20200805223050799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>该过程首先数据清洗，去掉了label中不是[-1,0,1]的数据，并且去除了内容长度少于10的语料，而且对满足条件的进行了正则化处理。<br>最后处理完在data目录下生成train.csv，dev.csv，test.csv三个数据文件（数据量8:1:1）<br>三个文件为训练集，验证集，测试集，演示如下（三个csv文件格式相同，仅数据量不同）：<br><img src="https://img-blog.csdnimg.cn/20200805224111901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>PS1：正则化部分个人处理的，处理不好，大家可以自己发挥，数据处理好了，模型也会更准确。<br>PS2：为什么1，-1,0中-1变成了2，emm我忘记当时为什么这么做了，保持-1不变也没事，不影响。<br>PS3：切记train.csv等文件 没有index，没有header</p>
+<h2 id="2、训练验证测试（run-classifier-py）"><a href="#2、训练验证测试（run-classifier-py）" class="headerlink" title="2、训练验证测试（run_classifier.py）"></a>2、训练验证测试（run_classifier.py）</h2><p>modeling.py是模型文件，optimization.py是训练优化器，tokenization.py是训练端<br>这三个文件不用修改，主要是run_classifier.py<br>你需要根据情况，调整参数<br>参数说明如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用GPU情况</span></span><br><span class="line">os.environ[<span class="string">&quot;CUDA_VISIBLE_DEVICES&quot;</span>] = <span class="string">&quot;0&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用flags设置参数（名称，默认值，描述）</span></span><br><span class="line">flags = tf.flags</span><br><span class="line">FLAGS = flags.FLAGS</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集存放目录 : &quot;data_dir&quot;</span></span><br><span class="line">flags.DEFINE_string(</span><br><span class="line">    <span class="string">&quot;data_dir&quot;</span>, os.path.join(os.getcwd(), <span class="string">&#x27;data&#x27;</span>),</span><br><span class="line">    <span class="string">&quot;The input data dir. Should contain the .tsv files (or other data files) &quot;</span></span><br><span class="line">    <span class="string">&quot;for the task.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模型配置文件存放目录 : &quot;bert_config_file&quot;</span></span><br><span class="line">flags.DEFINE_string(</span><br><span class="line">    <span class="string">&quot;bert_config_file&quot;</span>, os.path.join(os.path.join(os.getcwd(), <span class="string">&#x27;chinese_L-12_H-768_A-12&#x27;</span>), <span class="string">&#x27;bert_config.json&#x27;</span>),</span><br><span class="line">    <span class="string">&quot;The config json file corresponding to the pre-trained BERT model. &quot;</span></span><br><span class="line">    <span class="string">&quot;This specifies the model architecture.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 训练任务名字 : &quot;task_name&quot;</span></span><br><span class="line">flags.DEFINE_string(<span class="string">&quot;task_name&quot;</span>, <span class="string">&#x27;sim&#x27;</span>, <span class="string">&quot;The name of the task to train.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模型字典存放目录 : &quot;vocab_file&quot;</span></span><br><span class="line">flags.DEFINE_string(<span class="string">&quot;vocab_file&quot;</span>, os.path.join(os.path.join(os.getcwd(), <span class="string">&#x27;chinese_L-12_H-768_A-12&#x27;</span>), <span class="string">&#x27;vocab.txt&#x27;</span>),</span><br><span class="line">                    <span class="string">&quot;The vocabulary file that the BERT model was trained on.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 结果存放目录 : &quot;output_dir&quot;</span></span><br><span class="line">flags.DEFINE_string(</span><br><span class="line">    <span class="string">&quot;output_dir&quot;</span>, os.path.join(os.getcwd(), <span class="string">&#x27;sim_model&#x27;</span>),</span><br><span class="line">    <span class="string">&quot;The output directory where the model checkpoints will be written.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其他参数</span></span><br><span class="line"></span><br><span class="line">flags.DEFINE_string(</span><br><span class="line">    <span class="string">&quot;init_checkpoint&quot;</span>, <span class="literal">None</span>,</span><br><span class="line">    <span class="string">&quot;Initial checkpoint (usually from a pre-trained BERT model).&quot;</span>)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">flags.DEFINE_bool(</span><br><span class="line">    <span class="string">&quot;do_lower_case&quot;</span>, <span class="literal">True</span>,</span><br><span class="line">    <span class="string">&quot;Whether to lower case the input text. Should be True for uncased &quot;</span></span><br><span class="line">    <span class="string">&quot;models and False for cased models.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 最大总输入序列长度 : 模型输入的最长字符长度（1个汉字算一个）</span></span><br><span class="line">flags.DEFINE_integer(</span><br><span class="line">    <span class="string">&quot;max_seq_length&quot;</span>, <span class="number">64</span>,</span><br><span class="line">    <span class="string">&quot;The maximum total input sequence length after WordPiece tokenization. &quot;</span></span><br><span class="line">    <span class="string">&quot;Sequences longer than this will be truncated, and sequences shorter &quot;</span></span><br><span class="line">    <span class="string">&quot;than this will be padded.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否训练</span></span><br><span class="line">flags.DEFINE_bool(<span class="string">&quot;do_train&quot;</span>, <span class="literal">False</span>, <span class="string">&quot;Whether to run training.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否验证（通常训练与验证一起进行）</span></span><br><span class="line">flags.DEFINE_bool(<span class="string">&quot;do_eval&quot;</span>, <span class="literal">False</span>, <span class="string">&quot;Whether to run eval on the dev set.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 是否测试</span></span><br><span class="line">flags.DEFINE_bool(<span class="string">&quot;do_predict&quot;</span>, <span class="literal">True</span>, <span class="string">&quot;Whether to run the model in inference mode on the test set.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看GPU内存，如果是为16GB，这里最大填写16（以下分别是三个过程的batch-size）</span></span><br><span class="line">flags.DEFINE_integer(<span class="string">&quot;train_batch_size&quot;</span>, <span class="number">16</span>, <span class="string">&quot;Total batch size for training.&quot;</span>)</span><br><span class="line"></span><br><span class="line">flags.DEFINE_integer(<span class="string">&quot;eval_batch_size&quot;</span>, <span class="number">8</span>, <span class="string">&quot;Total batch size for eval.&quot;</span>)</span><br><span class="line"></span><br><span class="line">flags.DEFINE_integer(<span class="string">&quot;predict_batch_size&quot;</span>, <span class="number">8</span>, <span class="string">&quot;Total batch size for predict.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 学习率（可以自己调整，我的数据跑[1e-6,2e-5]之间1e-5的accuracy在局部峰值）</span></span><br><span class="line">flags.DEFINE_float(<span class="string">&quot;learning_rate&quot;</span>, <span class="number">1e-5</span>, <span class="string">&quot;The initial learning rate for Adam.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># epoch训练次数</span></span><br><span class="line">flags.DEFINE_float(<span class="string">&quot;num_train_epochs&quot;</span>, <span class="number">100.0</span>,</span><br><span class="line">                   <span class="string">&quot;Total number of training epochs to perform.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 慢热学习比例 : 例 设置0.1 则0.1 * epoch = 10 每10个epoch调整一次lr（类似动态学习率法）</span></span><br><span class="line">flags.DEFINE_float(</span><br><span class="line">    <span class="string">&quot;warmup_proportion&quot;</span>, <span class="number">0.1</span>,</span><br><span class="line">    <span class="string">&quot;Proportion of training to perform linear learning rate warmup for. &quot;</span></span><br><span class="line">    <span class="string">&quot;E.g., 0.1 = 10% of training.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每多少步保存一下ckpt，防止中断前功尽弃</span></span><br><span class="line">flags.DEFINE_integer(<span class="string">&quot;save_checkpoints_steps&quot;</span>, <span class="number">1000</span>,</span><br><span class="line">                     <span class="string">&quot;How often to save the model checkpoint.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># # 每个评估单元调用中要执行多少步骤</span></span><br><span class="line">flags.DEFINE_integer(<span class="string">&quot;iterations_per_loop&quot;</span>, <span class="number">1000</span>,</span><br><span class="line">                     <span class="string">&quot;How many steps to make in each estimator call.&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># TPG使用情况</span></span><br><span class="line">flags.DEFINE_bool(<span class="string">&quot;use_tpu&quot;</span>, <span class="literal">False</span>, <span class="string">&quot;Whether to use TPU or GPU/CPU.&quot;</span>)</span><br><span class="line"></span><br><span class="line">tf.flags.DEFINE_string(<span class="string">&quot;master&quot;</span>, <span class="literal">None</span>, <span class="string">&quot;[Optional] TensorFlow master URL.&quot;</span>)</span><br><span class="line"></span><br><span class="line">flags.DEFINE_integer(</span><br><span class="line">    <span class="string">&quot;num_tpu_cores&quot;</span>, <span class="number">8</span>,</span><br><span class="line">    <span class="string">&quot;Only used if `use_tpu` is True. Total number of TPU cores to use.&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>另外数据接口做了修改，修改版的run_classifier.py<br>链接：<a href="https://pan.baidu.com/s/1MYYGyF48eTcp1XzM4K5srA">https://pan.baidu.com/s/1MYYGyF48eTcp1XzM4K5srA</a><br>提取码：mh32</p>
+<p><img src="https://img-blog.csdnimg.cn/20200805233114643.png" alt="在这里插入图片描述"><br>均调整为True，即可完成训练，验证，测试过程（测试可单独进行）</p>
+<p>训练结果的指标存放在code/sim_model/eval_results.txt中，<br>测试结果存放在code/sim_model/test_results.tsv中，存放每一个类别概率：<br><img src="https://img-blog.csdnimg.cn/20200805233409122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>PS1：如果运行报错内存不够train_batch_size，max_seq_length参数大小可以减小。<br>PS2：文件目录如果用os 那就不要出现data/tarin.py这种带‘/’的（会出问题）</p>
+<h2 id="3、测试结果转换（test-py）"><a href="#3、测试结果转换（test-py）" class="headerlink" title="*3、测试结果转换（test.py）"></a>*3、测试结果转换（test.py）</h2><p>该步骤可省略，如果你对结果不满意，可转换成这样的类别文件：<br><img src="https://img-blog.csdnimg.cn/20200805233810180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这样就简单明了了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># code/test.py</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    path = <span class="string">&quot;sim_model/&quot;</span></span><br><span class="line">    pd_all = pd.read_csv(os.path.join(path, <span class="string">&quot;test_results.tsv&quot;</span>), sep=<span class="string">&#x27;\t&#x27;</span>, header=<span class="literal">None</span>)</span><br><span class="line"></span><br><span class="line">    data = pd.DataFrame(columns=[<span class="string">&#x27;polarity&#x27;</span>])</span><br><span class="line">    <span class="built_in">print</span>(data)</span><br><span class="line">    <span class="built_in">print</span>(pd_all.shape)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> pd_all.index:</span><br><span class="line">        neutral_score = pd_all.loc[index].values[<span class="number">0</span>]</span><br><span class="line">        positive_score = pd_all.loc[index].values[<span class="number">1</span>]</span><br><span class="line">        negative_score = pd_all.loc[index].values[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">max</span>(neutral_score, positive_score, negative_score) == neutral_score:</span><br><span class="line">            data.loc[index + <span class="number">1</span>] = [<span class="string">&quot;0,neutral&quot;</span>]</span><br><span class="line">        <span class="keyword">elif</span> <span class="built_in">max</span>(neutral_score, positive_score, negative_score) == positive_score:</span><br><span class="line">            data.loc[index + <span class="number">1</span>] = [<span class="string">&quot;1,positive&quot;</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            data.loc[index + <span class="number">1</span>] = [<span class="string">&quot;2,negative&quot;</span>]</span><br><span class="line"></span><br><span class="line">    data.to_csv(os.path.join(path, <span class="string">&quot;pre_sample.tsv&quot;</span>), sep=<span class="string">&#x27;\t&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(data)</span><br></pre></td></tr></table></figure>
+<p>这个文件最后保存在code/sim_model/pre_sample.tsv</p>
+<p>完整文件发在交流群</p>
+<p><img src="https://img-blog.csdnimg.cn/20200805234157857.png" alt="在这里插入图片描述"></p>
+
+      
+
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="../../archives/2019" class="archive-year">2019</a>
+        <div class="declare" hidden="hidden"></div>
+      
+
+
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢打赏👍<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="../../archives/ff107ac.html" class="archive-article-date">
-  	<time datetime="2019-06-27T02:57:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../archives/ff107ac.html">Matlab-多元线性拟合-03</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MATLAB</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorFlow</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/离散数学//" class="article-tag-list-link color5">离散数学</a>
+        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/68fa613c.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+<nav id="article-nav">
+  
+  
+    <a href="8a5cf894.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">django2.2+Ubuntu+nginx+uwsgi</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-<a href="../../archives/9b594b83.html" class="archive-article-date">
-  	<time datetime="2019-06-07T02:57:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-07</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../archives/9b594b83.html">Matlab-感知器-02</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MATLAB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/离散数学//" class="article-tag-list-link color5">离散数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">开始</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%88pre-data-py%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">1、数据预处理（pre_data.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E8%AE%AD%E7%BB%83%E9%AA%8C%E8%AF%81%E6%B5%8B%E8%AF%95%EF%BC%88run-classifier-py%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">2、训练验证测试（run_classifier.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%EF%BC%88test-py%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">*3、测试结果转换（test.py）</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="../../archives/dcb78086.html" class="archive-article-date">
-  	<time datetime="2019-06-06T02:57:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-06-06</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../archives/dcb78086.html">Matlab-矩阵基本知识-01</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MATLAB</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/离散数学//" class="article-tag-list-link color5">离散数学</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://colsons.github.io",
+  owner: 'colsons',
+  repo: 'colsons.github.io',
+  oauth: {
+    client_id: '2d9d43607bc504e123d0',
+    client_secret: '55fbac98cb3fc229069f3747f04bb5e13e082817',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -364,10 +464,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
@@ -575,15 +675,15 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="../../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
+              <a href="../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
             </li>
           
             <li class="search-li">
-              <a href="../../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
+              <a href="../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="../../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
+              <a href="../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
             </li>
           
         </ul>
