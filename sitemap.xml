@@ -214,13 +214,6 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/%E8%81%9A%E7%B1%BB/</loc>
-    <lastmod>2021-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
@@ -229,6 +222,13 @@
   
   <url>
     <loc>https://colsons.github.io/tags/python/</loc>
+    <lastmod>2021-09-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/%E8%81%9A%E7%B1%BB/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -249,6 +249,13 @@
   </url>
   
   <url>
+    <loc>https://colsons.github.io/tags/debug/</loc>
+    <lastmod>2021-09-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colsons.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
@@ -257,13 +264,6 @@
   
   <url>
     <loc>https://colsons.github.io/tags/cv2/</loc>
-    <lastmod>2021-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/debug/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -305,13 +305,6 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-09-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
@@ -320,6 +313,13 @@
   
   <url>
     <loc>https://colsons.github.io/tags/C/</loc>
+    <lastmod>2021-09-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -335,14 +335,14 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://colsons.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://colsons.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+    <loc>https://colsons.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2021-09-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
