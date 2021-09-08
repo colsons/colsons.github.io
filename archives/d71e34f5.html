@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>Tag: django | 绯色鱼的博客</title>
+  <title>Django的路由关系与静态资源路径设置 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="绯色鱼的博客">
-<meta property="og:url" content="https://colsons.github.io/tags/django/index.html">
+  <meta name="description" content="你是否还在被django中url路由搞得一团糟，搞不懂静态资源为什么总是在变，越弄越乱？一文搞懂。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django的路由关系与静态资源路径设置">
+<meta property="og:url" content="https://colsons.github.io/archives/d71e34f5.html">
 <meta property="og:site_name" content="绯色鱼的博客">
+<meta property="og:description" content="你是否还在被django中url路由搞得一团糟，搞不懂静态资源为什么总是在变，越弄越乱？一文搞懂。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/09/08/tD9sFbMlERQCBnq.png">
+<meta property="og:image" content="https://i.loli.net/2021/09/08/FSXts28vuRLBKMd.png">
+<meta property="article:published_time" content="2021-09-08T12:23:33.000Z">
+<meta property="article:modified_time" content="2021-09-08T13:14:34.710Z">
 <meta property="article:author" content="绯色鱼">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="django">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/08/tD9sFbMlERQCBnq.png">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -58,11 +67,11 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="../../index.html">主页</a></li>
+				<li><a href="../index.html">主页</a></li>
 	        
-				<li><a href="../../categories">分类</a></li>
+				<li><a href="../categories">分类</a></li>
 	        
-				<li><a href="../../archives/index.html">归档</a></li>
+				<li><a href="../archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -84,9 +93,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="../../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="../../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -125,9 +134,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="../../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="../https:/github.com/colsons" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="../../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="../mailto:3356016369@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -136,11 +145,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="../../index.html">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="../index.html">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../categories">分类</a></li>
+					<li style="width: 33.333333333333336%"><a href="../categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="../../archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="../archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -155,39 +164,117 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Django的路由关系与静态资源路径设置" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="../../archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-
-<a href="../../archives/d71e34f5.html" class="archive-article-date">
-  	<time datetime="2021-09-08T12:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-08</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../archives/d71e34f5.html">Django的路由关系与静态资源路径设置</a>
+    <h1 class="article-title" itemprop="name">
+      Django的路由关系与静态资源路径设置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+
+<a href="" class="archive-article-date">
+  	<time datetime="2021-09-08T12:23:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-08</time>
+</a>
+
+        
+
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你是否还在被django中url路由搞得一团糟，搞不懂静态资源为什么总是在变，越弄越乱？一文搞懂。</p>
+<span id="more"></span>
+<p><strong>以下均在django版本2.2以下：</strong></p>
+<p>这里解决两个django问题，如标题所见，这里在详细说明一下，网上教程版本层次不齐。迷惑之处url</p>
+<p>究竟要怎么安排，怎么写，不同url文件之间关系；另一个问题，静态文件static和templates两个文件怎么弄。</p>
+<h3 id="1-路由问题"><a href="#1-路由问题" class="headerlink" title="1. 路由问题"></a>1. 路由问题</h3><p>先来理解路由，简单来说就是站点关系一层套一层，最好理解的例子就是，你把它理解成电脑的文件目录。这里举例，后面所有都以此为基础（一个项目中两个app的例子）：</p>
+<ol>
+<li>你创建了一个项目名字为project</li>
+<li>你创建了一个app1</li>
+<li>你又创建了一个app2</li>
+</ol>
+<p>接下来看一下现在的文件关系：</p>
+<p><img src="https://i.loli.net/2021/09/08/tD9sFbMlERQCBnq.png" alt="image-20210908204621864"></p>
+<p>我们第一步先将project/project/url分别复制到/project/app1和/project/app2下各一份，原来的不要删除，这样青色的urls理解为根urls，两外两个理解为两个子urls，现在开始修改内部</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根urls</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path, include</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;admin/&#x27;</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">&#x27;app1/&#x27;</span>,include(<span class="string">&#x27;app1.urls&#x27;</span>),name=<span class="string">&#x27;app1&#x27;</span>),</span><br><span class="line">    path(<span class="string">&#x27;app2/&#x27;</span>, include(<span class="string">&#x27;app2.urls&#x27;</span>), name=<span class="string">&#x27;app2&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>另外两个</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># app1相同app2，将下面app1修改即可</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> app1 <span class="keyword">import</span> views</span><br><span class="line"></span><br><span class="line">urlpatterns = [</span><br><span class="line">    path(<span class="string">&#x27;home/&#x27;</span>, views.home, name=<span class="string">&quot;home&quot;</span>),</span><br><span class="line">    path(<span class="string">&#x27;web1/&#x27;</span>, views.inputs, name=<span class="string">&quot;web1&quot;</span>),</span><br><span class="line">    path(<span class="string">&#x27;web2/&#x27;</span>, views.ana, name=<span class="string">&#x27;web2&#x27;</span>)</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>如果你想访问app1的web2网页，只需要在127.0.0.1后面加/app1/web2即可。</p>
+<h3 id="2-静态static与templates"><a href="#2-静态static与templates" class="headerlink" title="2. 静态static与templates"></a>2. 静态static与templates</h3><p>在根目录下（/project）创建static文件夹和templates文件夹，然后打开/project/project/settings.py来设置静态资源目录：</p>
+<p>（至于settings中添加app之类的这里不再赘述，这里只说怎么修改关于静态资源的地方）</p>
+<ol>
+<li>添加static-file默认路径（新起一行，加在哪里都行）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">&#x27;static&#x27;</span>),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>修改templates目录（注意不是新加，是修改）</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">&#x27;BACKEND&#x27;</span>: <span class="string">&#x27;django.template.backends.django.DjangoTemplates&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;DIRS&#x27;</span>: [os.path.join(BASE_DIR, <span class="string">&#x27;templates&#x27;</span>)],</span><br><span class="line">        <span class="string">&#x27;APP_DIRS&#x27;</span>: <span class="literal">True</span>,</span><br><span class="line">        <span class="string">&#x27;OPTIONS&#x27;</span>: &#123;</span><br><span class="line">            <span class="string">&#x27;context_processors&#x27;</span>: [</span><br><span class="line">                <span class="string">&#x27;django.template.context_processors.debug&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.template.context_processors.request&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.contrib.auth.context_processors.auth&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;django.contrib.messages.context_processors.messages&#x27;</span>,</span><br><span class="line">            ],</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>！末尾有一个static-url的配置，不要删掉它！</p>
+<p>下面是如何在html和views中使用路径：</p>
+<p><img src="https://i.loli.net/2021/09/08/FSXts28vuRLBKMd.png" alt="image-20210908210818641"></p>
+<p>如果你在app的views.py中调用，使用“static/images/back.png”路径注意“/”什么时候有，什么时候没有。html文件中调用图片，使用路径“/static/images/back.png”，依然注意“/”的有无。</p>
+<p>（★注意部署后才能加载图片，如果你直接本地打开html文件他是不会加载图片的，因为它会按照绝对路径或者相对路径来寻找，是找不到的！！）</p>
+
+      
+
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      
+
+
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢打赏👍<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/zhifubao.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -203,7 +290,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -216,81 +303,133 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/d71e34f5.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+<nav id="article-nav">
+  
+  
+    <a href="68fa613c.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">「转载」Bert中文情感分类分析-tf1.14</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-<a href="../../archives/8a5cf894.html" class="archive-article-date">
-  	<time datetime="2021-07-29T13:42:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-29</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="../../archives/8a5cf894.html">django2.2+Ubuntu+nginx+uwsgi</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">django</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/服务器部署//" class="article-tag-list-link color1">服务器部署</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%B7%AF%E7%94%B1%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">1. 路由问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9D%99%E6%80%81static%E4%B8%8Etemplates"><span class="toc-number">2.</span> <span class="toc-text">2. 静态static与templates</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://colsons.github.io",
+  owner: 'colsons',
+  repo: 'colsons.github.io',
+  oauth: {
+    client_id: '2d9d43607bc504e123d0',
+    client_secret: '55fbac98cb3fc229069f3747f04bb5e13e082817',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
 
 
           </div>
@@ -328,9 +467,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -539,15 +678,15 @@ MathJax.Hub.Queue(function() {
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="../../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
+              <a href="../https:/www.bilibili.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Bilibili</a>
             </li>
           
             <li class="search-li">
-              <a href="../../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
+              <a href="../https:/www.csdn.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>CSDN</a>
             </li>
           
             <li class="search-li">
-              <a href="../../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
+              <a href="../https:/www.cnblogs.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>博客园</a>
             </li>
           
         </ul>
