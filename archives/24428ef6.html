@@ -6,27 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>聚类阶段整理（4）-评价指标【下】 | 绯色鱼的博客</title>
+  <title>CNN之心电图二分类仿真+训练(Python实现) | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="简单介绍了剩余的评价指标，接上文 关键词：Jaccard系数 FM指数（FMI） Rand指数（RI）DBI DI">
+  <meta name="description" content="以excel的样本心电图数值数据为基础，进行心电图图像仿真，根据有病&#x2F;无病为target，使用CNN网络模型框架训练分类器，记录一次实验。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="聚类阶段整理（4）-评价指标【下】">
-<meta property="og:url" content="https://colsons.github.io/archives/5b4295ff.html">
+<meta property="og:title" content="CNN之心电图二分类仿真+训练(Python实现)">
+<meta property="og:url" content="https://colsons.github.io/archives/24428ef6.html">
 <meta property="og:site_name" content="绯色鱼的博客">
-<meta property="og:description" content="简单介绍了剩余的评价指标，接上文 关键词：Jaccard系数 FM指数（FMI） Rand指数（RI）DBI DI">
+<meta property="og:description" content="以excel的样本心电图数值数据为基础，进行心电图图像仿真，根据有病&#x2F;无病为target，使用CNN网络模型框架训练分类器，记录一次实验。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713185945906.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713190001443.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713190016780.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020071319002459.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713191729748.png">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200713191750924.png">
-<meta property="article:published_time" content="2019-04-04T13:07:15.000Z">
-<meta property="article:modified_time" content="2021-05-30T02:01:02.475Z">
+<meta property="article:published_time" content="2022-02-13T08:14:14.000Z">
+<meta property="article:modified_time" content="2022-02-13T08:25:02.573Z">
 <meta property="article:author" content="绯色鱼">
-<meta property="article:tag" content="聚类">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="cv2">
+<meta property="article:tag" content="keras">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200713185945906.png">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
   
@@ -169,14 +164,14 @@
           <div id="js-content" class="content-ll">
             
   
-<article id="post-聚类阶段整理（4）-评价指标【下】" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-CNN之心电图二分类仿真-训练-Python实现" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      聚类阶段整理（4）-评价指标【下】
+      CNN之心电图二分类仿真+训练(Python实现)
     </h1>
   
 
@@ -184,7 +179,7 @@
         
 
 <a href="" class="archive-article-date">
-  	<time datetime="2019-04-04T13:07:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-04</time>
+  	<time datetime="2022-02-13T08:14:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-13</time>
 </a>
 
         
@@ -200,196 +195,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>简单介绍了剩余的评价指标，接上文</p>
-<p>关键词：Jaccard系数 FM指数（FMI） Rand指数（RI）DBI DI</p>
+        <p>以excel的样本心电图数值数据为基础，进行心电图图像仿真，根据有病/无病为target，使用CNN网络模型框架训练分类器，记录一次实验。</p>
 <span id="more"></span>
-<h2 id="介绍篇——评价指标"><a href="#介绍篇——评价指标" class="headerlink" title="介绍篇——评价指标"></a>介绍篇——评价指标</h2><p>咕咕咕…<br>补充 : 上一篇为针对二分类,如果为三类以上的分类时,对每一类单独分析,即分析A类: A类为正类,其他均为负类,然后按<strong>某方法</strong>综合分析:<br><strong>某方法</strong>:<br>1.宏平均（macro）:每一个指标的平均为综合指标。<br>2.加权平均（weighted）:每一个指标的加权平均为综合指标。<br>3.微平均（micro）:计算所有类别中假正例、假反例和真正例的总数，然后利用这些计数来计算指标。</p>
-<p><strong>外部评价指标分成2部分，1是根据《机器学习》-周志华个人理解，2是资料查阅的（与sklearn库嵌合），两者存在一些差异，如果有知道这是咋回事的欢迎评论区交流。</strong></p>
-<h2 id="外部评价指标1"><a href="#外部评价指标1" class="headerlink" title="外部评价指标1"></a>外部评价指标1</h2><p>主要介绍三个指标，分别是JC，FMI，RI。</p>
-<p>首先，我们有这样一个定义：<br>对于数据集D = {$x_1,x_2,x_3…,x_m$},假定根据某聚类方法得到类簇划分C = {$c_1,c_2,…c_k$},参考模型的类簇划分C* = {c*1，c*2，…，c*k}，相应的用 λ 与 λ* 表示C和C*表示的类簇向量：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 集合SS: 包含了在C中属于相同簇, 同时在C*中也属于相同簇的样本对数</span><br><span class="line">b = 集合SD: 包含了在C中属于相同簇, 同时在C*中属于不同簇的样本对数        </span><br><span class="line">c = 集合DS: 包含了在C中属于不同簇, 同时在C*中属于相同簇的样本对数  </span><br><span class="line">d = 集合DD: 包含了在C中属于不同簇, 同时在C*中属于不同簇的样本对数</span><br></pre></td></tr></table></figure>
-<p>为了更好地理解，举一个例子</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">聚类类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">真实类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>根据类簇划分构造两个矩阵：   </p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>C（聚类）</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>1</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>2</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td>5</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>C星（真实）</th>
-<th>0</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>0</strong></td>
-<td><strong>1</strong></td>
-</tr>
-<tr>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>1</strong></td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>3</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td><strong>1</strong></td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>4</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-<td><strong>0</strong></td>
-</tr>
-<tr>
-<td>5</td>
-<td>1</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>PS：第i行j列个元素表示样本第i个和第j个是否为同一类簇。同则1，否则0.<br>由于公式要求i&lt;j，所以只用上三角矩阵（加粗の数据）。<br>a = $n_{SS}$ = 2<br>b = $n_{SD}$ = 4<br>c = $n_{DS}$ = 4<br>d = $n_{DD}$ = 9<br>a+b+c+d = m(m-1)/2 = 6×5/2 = 15 </p>
-<p>Jaccard系数（JC） = a/（a+b+c）<br>FM指数（FMI） = 根号下（a^2/（（a+b）×（a+c））<br>Rand指数（RI） = 2（a+d）/（m×（m-1））</p>
-<p>以上三个性能区间为 [0,1] ，越大越好.</p>
-<h2 id="外部评价指标2"><a href="#外部评价指标2" class="headerlink" title="外部评价指标2"></a>外部评价指标2</h2><p>网上查阅得到的做法类似上一篇，先求类似混淆矩阵的矩阵。还是拿上面的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">聚类类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">真实类簇划分：[<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
-<p>可以得到矩阵如下</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>C</th>
-<th>0</th>
-<th>1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>M00</td>
-<td>M01</td>
-</tr>
-<tr>
-<td>1</td>
-<td>M10</td>
-<td>M11</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>该例子结果：<br>$M_{00} = 2$<br>$M_{01} = 1$<br>$M_{10} = 1$<br>$M_{11} = 2$<br>jaccard系数（JC）= $M_{11}/(M_{01}+M_{10}+M_{11})$</p>
-<script type="math/tex; mode=display">
-Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标"><a href="#内部评价指标" class="headerlink" title="内部评价指标"></a>内部评价指标</h2><p>考虑到类簇划分结果为C=${c_1,c_2,c_3,…,c_k}$定义：</p>
-<p>①簇C内样本间的平均距离：<br><img src="https://img-blog.csdnimg.cn/20200713185945906.png" alt=""><br>②簇C内样本间的最远距离：<br><img src="https://img-blog.csdnimg.cn/20200713190001443.png" alt="在这里插入图片描述"><br>③簇Ci与簇Cj最近样本间的距离<br><img src="https://img-blog.csdnimg.cn/20200713190016780.png" alt="在这里插入图片描述"><br>④簇Ci与簇句中心点间的距离<br><img src="https://img-blog.csdnimg.cn/2020071319002459.png" alt="在这里插入图片描述"><br>其中dist(x，y)表示x和y的距离，μ表示中心，$|C_k|$表示Ck类的个数。</p>
-<p>那么评价指标公式为：</p>
-<p>DB指数（DBI）：<br><img src="https://img-blog.csdnimg.cn/20200713191729748.png" alt="在这里插入图片描述"><br>Dunn指数（DI）：<br><img src="https://img-blog.csdnimg.cn/20200713191750924.png" alt="在这里插入图片描述"><br>DBI的值越小越好，而DI则相反，值越大越好.</p>
-<p>以上是评价指标主要内容，欢迎指正。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">询问了下老师，周志华老师的评价系数是针对评价算法本身，而网上的是针对具体数据，应用领域不同。</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="一、环境"><a href="#一、环境" class="headerlink" title="一、环境"></a>一、环境</h2><p>python3.6+Windows10/11+keras=2.2.5</p>
+<p>其他模块版本无具体需求</p>
+<h2 id="二、数据仿真"><a href="#二、数据仿真" class="headerlink" title="二、数据仿真"></a>二、数据仿真</h2><h2 id="三、模型训练"><a href="#三、模型训练" class="headerlink" title="三、模型训练"></a>三、模型训练</h2><h2 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h2>
       
 
       
@@ -441,7 +251,15 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">聚类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">cv2</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">keras</a>
         		</li>
       		
 		</ul>
@@ -453,7 +271,7 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/机器学习//" class="article-tag-list-link color5">机器学习</a>
+        			<a href="/categories/深度学习//" class="article-tag-list-link color5">深度学习</a>
         		</li>
       		
 		</ul>
@@ -508,7 +326,7 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/5b4295ff.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/24428ef6.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -522,18 +340,9 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
   
 <nav id="article-nav">
   
-    <a href="bc5c2aae.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          聚类阶段整理（5）-系统聚类
-        
-      </div>
-    </a>
   
-  
-    <a href="6ada926f.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">什么是爬虫-个人理解向</div>
+    <a href="2cc36cb2.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">作品展示</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -560,7 +369,7 @@ Jaccard = \frac{M_{11}}{M_{01}+M_{10}+M_{11}}</script><h2 id="内部评价指标
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%E7%AF%87%E2%80%94%E2%80%94%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-number">1.</span> <span class="toc-text">介绍篇——评价指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%871"><span class="toc-number">2.</span> <span class="toc-text">外部评价指标1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%872"><span class="toc-number">3.</span> <span class="toc-text">外部评价指标2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E9%83%A8%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87"><span class="toc-number">4.</span> <span class="toc-text">内部评价指标</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">一、环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%95%B0%E6%8D%AE%E4%BB%BF%E7%9C%9F"><span class="toc-number">2.</span> <span class="toc-text">二、数据仿真</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">3.</span> <span class="toc-text">三、模型训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%85%B6%E4%BB%96"><span class="toc-number">4.</span> <span class="toc-text">四、其他</span></a></li></ol>
                     </div>
                 </span>
             </div>
