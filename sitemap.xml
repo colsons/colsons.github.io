@@ -256,6 +256,20 @@
   </url>
   
   <url>
+    <loc>https://colsons.github.io/tags/MATLAB/</loc>
+    <lastmod>2023-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/%E9%99%8D%E7%BB%B4/</loc>
+    <lastmod>2023-03-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colsons.github.io/tags/%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</loc>
     <lastmod>2023-03-09</lastmod>
     <changefreq>daily</changefreq>
@@ -270,21 +284,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/MATLAB/</loc>
-    <lastmod>2023-03-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/tags/debug/</loc>
-    <lastmod>2023-03-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/%E9%99%8D%E7%BB%B4/</loc>
     <lastmod>2023-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
