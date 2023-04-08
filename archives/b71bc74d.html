@@ -6,19 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://colsons.github.io">
-  <title>DOS命令中文乱码一行命令解决 | 绯色鱼的博客</title>
+  <title>DMOJ我的三周目换你一周目速通 | 绯色鱼的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用bat命令，创建TXT直接强制改后缀BAT，这导致一个中文编码问题。">
+  <meta name="description" content="试了三遍，终于挂载成功了DMOJ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DOS命令中文乱码一行命令解决">
-<meta property="og:url" content="https://colsons.github.io/archives/ae9d7f26.html">
+<meta property="og:title" content="DMOJ我的三周目换你一周目速通">
+<meta property="og:url" content="https://colsons.github.io/archives/b71bc74d.html">
 <meta property="og:site_name" content="绯色鱼的博客">
-<meta property="og:description" content="使用bat命令，创建TXT直接强制改后缀BAT，这导致一个中文编码问题。">
+<meta property="og:description" content="试了三遍，终于挂载成功了DMOJ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-16T02:57:36.000Z">
-<meta property="article:modified_time" content="2021-05-26T05:04:11.728Z">
+<meta property="article:published_time" content="2023-04-08T02:52:39.000Z">
+<meta property="article:modified_time" content="2023-04-08T03:15:42.659Z">
 <meta property="article:author" content="绯色鱼">
-<meta property="article:tag" content="debug">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="绯色鱼的博客" type="application/atom+xml">
@@ -162,14 +161,14 @@
           <div id="js-content" class="content-ll">
             
   
-<article id="post-DOS命令中文乱码一行命令解决" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-DMOJ我的三周目换你一周目速通" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      DOS命令中文乱码一行命令解决
+      DMOJ我的三周目换你一周目速通
     </h1>
   
 
@@ -177,7 +176,7 @@
         
 
 <a href="" class="archive-article-date">
-  	<time datetime="2020-07-16T02:57:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
+  	<time datetime="2023-04-08T02:52:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-04-08</time>
 </a>
 
         
@@ -193,14 +192,37 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>使用bat命令，创建TXT直接强制改后缀BAT，这导致一个中文编码问题。</p>
+        <p>试了三遍，终于挂载成功了DMOJ</p>
 <span id="more"></span>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>使用bat命令，我习惯于创建TXT直接强制改后缀BAT，这导致一个中文编码问题，TXT的默认一般UTF-8编码，而DOS是ASCII编码。</p>
-<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>在写BAT命令内容之前加一行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chcp 65001</span><br></pre></td></tr></table></figure>
-<p>我的感觉，这和python不是很像吗</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># coding:utf-8</span><br></pre></td></tr></table></figure>
-<h2 id="另一个引发的问题"><a href="#另一个引发的问题" class="headerlink" title="另一个引发的问题:"></a>另一个引发的问题:</h2><p>rem或::都是注释，他的编码仍属于TXT自身编码，加入chcp 65001只是改变了cmd显示的编码，rem注释编码仍会存在问题。<br><strong>这个只能另存的时候调整成ASCII编码了</strong></p>
+<p>Ubuntu20.04、Ubuntu20.04【WSL】适用</p>
+<p><a href="https://docs.dmoj.ca/#/site/installation">官方提供的开发文档</a></p>
+<p><a href="https://dmoj.ca/">DMOJ官网</a></p>
+<p><a href="https://github.com/DMOJ/online-judge">GitHub地址</a></p>
+<p><strong>1.环境配置</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line"><span class="meta">#</span><span class="bash"> 大前置</span></span><br><span class="line">apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server</span><br><span class="line"><span class="meta">#</span><span class="bash"> npm相关,这是官方方式，这里不推荐</span></span><br><span class="line">curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -</span><br><span class="line">apt install nodejs</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> npm相关 推荐 一定要采用nvm的安装npm，或者记得npm+node==14.19.1，不然ubuntu20下面./make_style.sh会报错[会爆一种语法格式判断错误，<span class="keyword">if</span>...，如果你也遇到了，那大概是这里的问题，具体原因暂时未知]，导致css静态资源无法转换迁移</span></span><br><span class="line">cd ~</span><br><span class="line">git clone https://github.com/creationix/nvm.git .nvm</span><br><span class="line">cd .nvm</span><br><span class="line">git checkout v0.33.11</span><br><span class="line">执行install.sh安装即可</span><br><span class="line">nvm --version</span><br><span class="line"><span class="meta">#</span><span class="bash"> 用nvm安装node和npm</span></span><br><span class="line">nvm install v14.19.1</span><br><span class="line">nvm use 14.19.1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证</span></span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果用npm下载其他包慢 更换国内源</span></span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line"><span class="meta">#</span><span class="bash"> 几个sass转换工具[scss-&gt;css，目前我是这么理解的]</span></span><br><span class="line">npm install -g sass postcss-cli postcss autoprefixer</span><br></pre></td></tr></table></figure>
+<p><strong>2.数据库</strong></p>
+<p><mariadb user password>注意修改成你自己密码</p>
+<p>官网用的这种，mysql其实也可以</p>
+<p>PS：如果开发环境为wsl，而且你win上本来就有mysql了，大概会各种冲突，会有锁之类的问题，这里建议拉一个小型服务器，阿里云/腾讯云的，数据库单独部署。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">apt update</span><br><span class="line"><span class="meta">#</span><span class="bash"> mariadbDB数据库下载</span></span><br><span class="line">apt install mariadb-server libmysqlclient-dev</span><br><span class="line">sudo mysql</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建dmoj数据库</span></span><br><span class="line"><span class="meta">mariadb&gt;</span><span class="bash"> CREATE DATABASE dmoj DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &lt;mariadb user password&gt; -》 dmoj123.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里注意一下，首先我们登陆了root用户，防止其他数据库暴露，创建了dmoj的子用户，%表示dmoj用户任何主机都能访问，你也可以锁自己IP，密码是dmoj123.</span></span><br><span class="line"><span class="meta">mariadb&gt;</span><span class="bash"> GRANT ALL PRIVILEGES ON dmoj.* TO <span class="string">&#x27;dmoj&#x27;</span>@<span class="string">&#x27;%&#x27;</span> IDENTIFIED BY <span class="string">&#x27;dmoj123.&#x27;</span>;</span></span><br><span class="line"><span class="meta">mariadb&gt;</span><span class="bash"> <span class="built_in">exit</span></span></span><br></pre></td></tr></table></figure>
+<p>自行下载anaonda3的sh文件，运行安装</p>
+<p>创建名为dmojsite的python3.8的虚拟环境，并切换到新环境，如果后面没有说明，所有操作均在此环境下。</p>
+<p><strong>3.项目拉取</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/DMOJ/online-judge.git</span><br><span class="line">cd online-judge</span><br><span class="line">git checkout v4.0.0  # 两种判断服务器方式，1.PyPi 2.docker，只有用1.才用此行命令，个人推荐测试先用PiPy，后面换docker</span><br><span class="line">git submodule init</span><br><span class="line">git submodule update</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装python依赖</span></span><br><span class="line">pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果下面命令下不了或提示没有，pip装一个pymysql也行</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 官方这个命令不太懂 大概是在下mysql服务？！</span></span><br><span class="line">pip install mysqlclient -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line">python manage.py check</span><br></pre></td></tr></table></figure>
+<p><strong>4.项目修改</strong></p>
+<p>在dmoj文件夹创建local_settings.py，官方案例：<a href="https://github.com/DMOJ/docs/blob/master/sample_files/local_settings.py">local_settings.py</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SECRET_KEY按照上面注释的命令生成并替换</span><br><span class="line">DEBUG正式运行记得关，我们测试可以先开着</span><br><span class="line">注释的ALLOWED_HOST改成[&#x27;*&#x27;],并取消注释</span><br><span class="line">DATABASES密码改成你创建数据库设置的</span><br><span class="line">CELERY的两个设置注释都取消</span><br><span class="line">【一个个人感觉不太重要的：80多行EMAIL6个设置都打开，改成自己邮箱 密码】</span><br></pre></td></tr></table></figure>
+<p><strong>5.项目资源迁移[最大事故区]</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下面这个命令如果均是ok，不报错，算是到一段落了</span></span><br><span class="line">./make_style.sh</span><br><span class="line">python manage.py collectstatic</span><br><span class="line">python manage.py compilemessages</span><br><span class="line">python manage.py compilejsi18n</span><br><span class="line">python manage.py makemigrations</span><br><span class="line">python manage.py migrate</span><br><span class="line">python manage.py loaddata navbar</span><br><span class="line">python manage.py loaddata language_small</span><br><span class="line">python manage.py loaddata demo</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建后台管理员</span></span><br><span class="line">python manage.py createsuperuser</span><br><span class="line"><span class="meta">#</span><span class="bash"> 起一下看看，没问题Ctrl+C关闭</span></span><br><span class="line">python manage.py runserver</span><br></pre></td></tr></table></figure>
+<p><strong>6.redis uwsgi supervisord nginx代理部署*</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">service redis-server start</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 测试后关闭</span></span><br><span class="line">python manage.py runserver 0.0.0.0:8000</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 起一下等10s，不报错Ctrl+C关闭</span></span><br><span class="line">python manage.py runbridged</span><br><span class="line"></span><br><span class="line">celery -A dmoj_celery worker</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装uwsgi</span></span><br><span class="line">pip install uwsgi</span><br><span class="line"><span class="meta">#</span><span class="bash"> uwsgi.ini文件官方案例 https://github.com/DMOJ/docs/blob/master/sample_files/uwsgi.ini</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 记得path改成你自己的，前两个是项目路径，第三个python路径，下面是我的，可以借鉴 不要直接copy</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">chdir</span> = /mnt/z/Aproject/online-judge</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> pythonpath = /mnt/z/Aproject/online-judge</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> virtualenv = /home/boy/anaconda3/envs/dmojsite</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 建议在新窗口拉起</span></span><br><span class="line">uwsgi --ini uwsgi.ini</span><br><span class="line"><span class="meta">#</span><span class="bash"> 可以查到四个相关进程</span></span><br><span class="line">ps -ef |grep uwsgi</span><br><span class="line"><span class="meta">#</span><span class="bash"> 杀死进程，但是上面我没杀掉，应该是杀死瞬间又拉起了新的</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 小问题，</span></span><br><span class="line">kill -9 id</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 设置主管</span></span><br><span class="line">apt install supervisor</span><br><span class="line">sudo service supervisor start</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看下版本，这里注意最好脱离虚拟环境到base下查看版本，supervisor是装在全局的，</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 有时候他会去python环境下检测有没有此包，如果报错注意一下</span></span><br><span class="line">supervisord -v</span><br><span class="line"><span class="meta">#</span><span class="bash"> 三个配置</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 新建三个文件</span></span><br><span class="line">sudo vim /etc/supervisor/conf.d/site.conf</span><br><span class="line">sudo vim /etc/supervisor/conf.d/bridged.conf</span><br><span class="line">sudo vim /etc/supervisor/conf.d/celery.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 官方案例，同样记得修改内容，改path即可</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> https://github.com/DMOJ/docs/blob/master/sample_files/site.conf</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> https://github.com/DMOJ/docs/blob/master/sample_files/bridged.conf</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> https://github.com/DMOJ/docs/blob/master/sample_files/celery.conf</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 同上如果运行不了 退回base环境</span></span><br><span class="line">supervisorctl update</span><br><span class="line">supervisorctl status</span><br></pre></td></tr></table></figure>
+<p>nginx代理目前个人没有需求，未实验，可以去看官网</p>
+<p><strong>7.判断服务器设置PyPi</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt install python3-dev python3-pip build-essential libseccomp-dev</span><br><span class="line">pip install dmoj</span><br><span class="line"><span class="meta">#</span><span class="bash"> 注意命令输出的runtime内容</span></span><br><span class="line">dmoj-autoconf</span><br></pre></td></tr></table></figure>
+<p>创建一个judge.yml文件，手动创建problems文件夹</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># id和key登陆你挂起的django服务，登陆进入管理后台，添加你的判断服务器，记得设置的id和key</span></span><br><span class="line"><span class="comment"># 碎碎念：id最好是judge，我之前用了judge01，一直连不上，换成judge瞬间连上了，痛苦面具，key记得复制全，因为随机生成的有时候会有两个/，</span></span><br><span class="line"><span class="comment"># 我鼠标点击复制了一部分，两个痛苦面具</span></span><br><span class="line"><span class="attr">id:</span> <span class="string">&lt;judge</span> <span class="string">name&gt;</span></span><br><span class="line"><span class="attr">key:</span> <span class="string">&lt;judge</span> <span class="string">authentication</span> <span class="string">key&gt;</span></span><br><span class="line"><span class="attr">problem_storage_root:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">/mnt/problems</span></span><br><span class="line"><span class="comment"># 看dmoj-autoconf的输出</span></span><br><span class="line"><span class="attr">runtime:</span></span><br><span class="line">   <span class="string">...</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 进入管理后端，更改站点8081-》8000 或者vscode搜索下8081，改成8000也行，只需要改一个地方。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 不然判断服务器连不上</span> </span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 本机测试</span></span><br><span class="line">dmoj -c judge.yml localhost</span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果是正式 指定端口 IP</span></span><br><span class="line">dmoj -c judge.yml -p &quot;$PORT&quot; &quot;$IP&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> PS:如果连接不到，回去检查nginx之前的配置，是否都正常。</span></span><br></pre></td></tr></table></figure>
+<p>后端挂起+判断服务器挂起，打开管理看到判断服务器绿色对勾，测试完毕。</p>
 
       
 
@@ -248,29 +270,7 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">debug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/随笔//" class="article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
 
@@ -320,7 +320,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/ae9d7f26.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://colsons.github.io/archives/b71bc74d.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +334,18 @@
   
 <nav id="article-nav">
   
-    <a href="1699753b.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="9348a75e.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          机器学习-模型评估与选择(下)-02
+          Docker学习[Dockerfile]
         
       </div>
     </a>
   
   
-    <a href="c1ca115b.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</div>
+    <a href="53b3d661.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">QDUOJ手动部署借鉴参考 [警告]</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +372,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%BC%95%E5%8F%91%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">另一个引发的问题:</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
