@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://colsons.github.io/archives/9c9efd15.html</loc>
+    <loc>https://colsons.github.io/archives/53b3d661.html</loc>
     
     <lastmod>2023-04-08</lastmod>
     
   </url>
   
   <url>
-    <loc>https://colsons.github.io/archives/53b3d661.html</loc>
+    <loc>https://colsons.github.io/archives/b71bc74d.html</loc>
     
     <lastmod>2023-04-08</lastmod>
     
@@ -30,7 +30,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/archives/b71bc74d.html</loc>
+    <loc>https://colsons.github.io/archives/9c9efd15.html</loc>
     
     <lastmod>2023-04-08</lastmod>
     
@@ -381,6 +381,34 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://colsons.github.io/tags/DMOJ/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/docker/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/Git/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/QDUOJ/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -441,6 +469,27 @@
   
   <url>
     <loc>https://colsons.github.io/categories/%E8%80%83%E7%A0%94/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/categories/%E5%89%8D%E7%AB%AF/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/categories/Git/</loc>
+    <lastmod>2023-04-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2023-04-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
