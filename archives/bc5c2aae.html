@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4fomxoj20zk0m8axp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclip4jbpj20zk0m87cv.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj9410cj20zk0m8h12.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,14 +153,31 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>简单介绍了系统聚类/层次聚类。</p>
-<span id="more"></span>
-<h2 id="算法篇——系统聚类（或层次聚类）"><a href="#算法篇——系统聚类（或层次聚类）" class="headerlink" title="算法篇——系统聚类（或层次聚类）"></a>算法篇——系统聚类（或层次聚类）</h2><p><strong>一、扯</strong><br>讲系统聚类，优先看一下它的应用前景，系统聚类用的多吗？用的方面广吗？答案都是否定的。那我们学它干什么？我相信学任何一个东西，学会了应该没有坏处，一方面呢，技多不压身，另一方面我们有时候学一个人东西，过了很长时间，在另一个方面研究东西，或者做东西的时候，一些想法，骚操作，可能就来自你之前学过的被称为“没用的”知识。</p>
-<p>问：系统聚类为啥用的不多？<br>答：系统聚类适合小样本数据集，对于大样本系统聚类的运算复杂度成倍叠加，这导致这个方法用的时候不多。现在大多数都是在分析中等量样本集和大数据样本集。</p>
-<p><strong>二、系统聚类</strong><br>系统聚类的原理，比如在一个平面，上面有5个点，首先把每一个点看做一类，我们就有5个类簇，每个类簇有1个点。如下图：<br><img data-src="https://img-blog.csdnimg.cn/20200609215317392.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>第一次：<br>找到两个距离最近的点，如图点3与点5，把这两个分到一类。那么现在呢 就有4个类簇。如下图：<br><img data-src="https://img-blog.csdnimg.cn/20200609215622722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>第二次：<br><strong>从这里开始，根据新合并的类簇整体到其他点的距离怎么求，诞生了各种各样的系统聚类方法</strong><br>定义：<br>①四个类name：1,2,4,3+5<br>②dist（name1，name2）：类name1与类name2的距离<br>最短距离法：例：3+5与4的距离=min{dist(4,3),dist(4,5)}<br>最长距离法：例：3+5与4的距离=max{dist(4,3),dist(4,5)}<br>类平均法：例：3+5与4的距离=[dist(4,3)+dist(4,5)]/n（n为分子相加的距离个数）<br>重心法：在每一个类簇找一个中心来代替整体，重心法大多情况是取均值，比如一个类簇两个点（（3,5），（7,1））他们的重心就是（(3+7)/2，(5+1)/2）<br>等等，还有很多方法可以拓展。</p>
+    <p>简单介绍了系统聚类 / 层次聚类。</p>
+<p><span id="more"></span></p>
+<h2 id="算法篇系统聚类或层次聚类"><a class="anchor" href="#算法篇系统聚类或层次聚类">#</a> 算法篇 —— 系统聚类（或层次聚类）</h2>
+<p><strong>一、扯</strong><br />
+讲系统聚类，优先看一下它的应用前景，系统聚类用的多吗？用的方面广吗？答案都是否定的。那我们学它干什么？我相信学任何一个东西，学会了应该没有坏处，一方面呢，技多不压身，另一方面我们有时候学一个人东西，过了很长时间，在另一个方面研究东西，或者做东西的时候，一些想法，骚操作，可能就来自你之前学过的被称为 “没用的” 知识。</p>
+<p>问：系统聚类为啥用的不多？<br />
+答：系统聚类适合小样本数据集，对于大样本系统聚类的运算复杂度成倍叠加，这导致这个方法用的时候不多。现在大多数都是在分析中等量样本集和大数据样本集。</p>
+<p><strong>二、系统聚类</strong><br />
+系统聚类的原理，比如在一个平面，上面有 5 个点，首先把每一个点看做一类，我们就有 5 个类簇，每个类簇有 1 个点。如下图：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200609215317392.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p>第一次：<br />
+找到两个距离最近的点，如图点 3 与点 5，把这两个分到一类。那么现在呢 就有 4 个类簇。如下图：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200609215622722.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+第二次：<br />
+<strong>从这里开始，根据新合并的类簇整体到其他点的距离怎么求，诞生了各种各样的系统聚类方法</strong><br />
+定义：<br />
+①四个类 name：1,2,4,3+5<br />
+②dist（name1，name2）：类 name1 与类 name2 的距离<br />
+最短距离法：例：3+5 与 4 的距离 = min {dist (4,3),dist (4,5)}<br />
+ 最长距离法：例：3+5 与 4 的距离 = max {dist (4,3),dist (4,5)}<br />
+ 类平均法：例：3+5 与 4 的距离 =[dist (4,3)+dist (4,5)]/n（n 为分子相加的距离个数）<br />
+重心法：在每一个类簇找一个中心来代替整体，重心法大多情况是取均值，比如一个类簇两个点（（3,5），（7,1））他们的重心就是（(3+7)/2，(5+1)/2）<br />
+等等，还有很多方法可以拓展。</p>
 <p><strong>三、研究现状</strong></p>
-<p>系统聚类适合小样本数据集，所以现在对它做的研究大多为小样本。比如药方组成成分，鉴别某植物的产地，那么这些小样本究竟有多小？大概在多则50左右，少则7,8,个。</p>
+<p>系统聚类适合小样本数据集，所以现在对它做的研究大多为小样本。比如药方组成成分，鉴别某植物的产地，那么这些小样本究竟有多小？大概在多则 50 左右，少则 7,8, 个。</p>
 
       <div class="tags">
           <a href="../tags/%E8%81%9A%E7%B1%BB/" rel="tag"><i class="ic i-tag"></i> 聚类</a>
@@ -194,12 +211,12 @@ Lab Chen = 绯色鱼的博客</title>
   <div id="qr">
       
       <div>
-        <img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay">
+        <img data-src="../imageswechatpay.png" alt="绯色鱼 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div>
-        <img data-src="../images/alipay.png" alt="绯色鱼 Alipay">
+        <img data-src="../imagesalipay.png" alt="绯色鱼 Alipay">
         <p>Alipay</p>
       </div>
   </div>
@@ -233,7 +250,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item left">
       
 
-  <a href="5b4295ff.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclimtf7dj20zk0m8qav.jpg" title="聚类阶段整理（4）-评价指标【下】">
+  <a href="5b4295ff.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicis3attqj20zk0m8k7l.jpg" title="聚类阶段整理（4）-评价指标【下】">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>聚类阶段整理（4）-评价指标【下】</h3>
@@ -243,7 +260,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item right">
       
 
-  <a href="dcb78086.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4wqtg4j20zk0m8x6p.jpg" title="Matlab-矩阵基本知识-01">
+  <a href="dcb78086.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciukx8a7j20zk0m8aio.jpg" title="Matlab-矩阵基本知识-01">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>Matlab-矩阵基本知识-01</h3>
@@ -265,7 +282,7 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%AF%87%E2%80%94%E2%80%94%E7%B3%BB%E7%BB%9F%E8%81%9A%E7%B1%BB%EF%BC%88%E6%88%96%E5%B1%82%E6%AC%A1%E8%81%9A%E7%B1%BB%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">算法篇——系统聚类（或层次聚类）</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%AF%87%E7%B3%BB%E7%BB%9F%E8%81%9A%E7%B1%BB%E6%88%96%E5%B1%82%E6%AC%A1%E8%81%9A%E7%B1%BB"><span class="toc-number">1.</span> <span class="toc-text"> 算法篇 —— 系统聚类（或层次聚类）</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -378,111 +395,6 @@ Lab Chen = 绯色鱼的博客</title>
       <div class="inner">
         <div class="widgets">
           
-<div class="rpost pjax">
-  <h2>Random Posts</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="45098d0e.html" title="遗传算法案例-货物派送Matlab&#x2F;Python">遗传算法案例-货物派送Matlab/Python</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
-</div>
-
-    <span><a href="14a38ce5.html" title="NLP-Transformers-多标签多分类模型搭建与训练">NLP-Transformers-多标签多分类模型搭建与训练</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="c1ca115b.html" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="3366bb43.html" title="聚类阶段整理（1）-随笔">聚类阶段整理（1）-随笔</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
-</div>
-
-    <span><a href="bc57630c.html" title="LSTM 昇腾平台全框架指南">LSTM 昇腾平台全框架指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E7%BC%96%E7%A8%8B/" title="In 编程">编程</a>
-</div>
-
-    <span><a href="1cad76d6.html" title="考研之数据结构编程笔记">考研之数据结构编程笔记</a></span>
-  </li>
-
-  </ul>
-</div>
 <div>
   <h2>Recent Comments</h2>
   <ul class="leancloud-recent-comment"></ul>

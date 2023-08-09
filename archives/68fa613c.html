@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxfdlttj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetv6p75j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciryrr3rj20zk0m8nhk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitht3xtj20zk0m8k5v.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeu7txpzj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeubcbajj20zk0m8h1h.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -154,16 +154,21 @@ Lab Chen = 绯色鱼的博客</title>
     
 
     <p>项目实现过程中对于一些处理做了更细致说明。如有不明白的可以去看原贴。</p>
-<span id="more"></span>
-<p>这里对bert不做介绍，主要介绍代码运行环境和数据集变换。</p>
+<p><span id="more"></span></p>
+<p>这里对 bert 不做介绍，主要介绍代码运行环境和数据集变换。</p>
 <p>原贴：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM2ODEyOTkwL2FydGljbGUvZGV0YWlscy8xMDIzMTMzMjI/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX2FnZ3BhZ2Vfc2VhcmNoX3Jlc3VsdC5ub25lLXRhc2stYmxvZy0yfmFsbH5maXJzdF9yYW5rX3YyfnJhbmtfdjI1LTItMTAyMzEzMzIyLm5vbmVjYXNl">点击，进入通道</span></p>
 <p>资源地址：</p>
-<p>bert模型文件：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dvb2dsZS1yZXNlYXJjaC9iZXJ0">https://github.com/google-research/bert</span></p>
+<p>bert 模型文件：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2dvb2dsZS1yZXNlYXJjaC9iZXJ0">https://github.com/google-research/bert</span></p>
 <p>预训练模型：<span class="exturl" data-url="aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2JlcnRfbW9kZWxzLzIwMThfMTFfMDMvY2hpbmVzZV9MLTEyX0gtNzY4X0EtMTIuemlw">https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip</span></p>
-<p>首先我的环境：<br><strong>win10 64位系统 python3.6 TensorFlow=1.14.0（GPU版本）CUDA=10.0</strong><br>其他可能版本影响不大的模板：pandas=1.0.5</p>
+<p>首先我的环境：<br />
+<strong>win10 64 位系统 python3.6 TensorFlow=1.14.0（GPU 版本）CUDA=10.0</strong><br />
+ 其他可能版本影响不大的模板：pandas=1.0.5</p>
 <p>电脑配置不够，可以适当减少参数大小，下面会具体说明。</p>
-<h1 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h1><h2 id="1、数据预处理（pre-data-py）"><a href="#1、数据预处理（pre-data-py）" class="headerlink" title="1、数据预处理（pre_data.py）"></a>1、数据预处理（pre_data.py）</h2><p>文件数据结构：<br><img data-src="https://img-blog.csdnimg.cn/20200805232000374.png" alt="在这里插入图片描述"></p>
-<pre class=" language-lang-python"><code class="language-lang-python">其他感觉运行用不到剔除了
+<h1 id="开始"><a class="anchor" href="#开始">#</a> 开始</h1>
+<h2 id="1-数据预处理pre_datapy"><a class="anchor" href="#1-数据预处理pre_datapy">#</a> 1、数据预处理（pre_data.py）</h2>
+<p>文件数据结构：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200805232000374.png" alt="在这里插入图片描述" /></p>
+<pre class=" language-language-python"><code class="language-language-python">其他感觉运行用不到剔除了
 # code   文件夹
 # code/data    存放源数据与预处理数据
 # code/data/nCoV_100k_train.labled.data  源数据
@@ -176,9 +181,12 @@ Lab Chen = 绯色鱼的博客</title>
 # code/tokenization.py    训练端
 # code/run_classifier.py  main文件（连接其他文件类的枝干部分）
 # code/test.py   测试结果的转换
+
 </code></pre>
-<p><strong>第一步：准备数据，数据预处理，做好和训练模型数据接口工作</strong><br>这一步非常重要，有处理错误会导致过程报错，然后反复调bug（用这个的个人经历，惨痛的教训）<br>我们写一个文件，要把数据处理成n*2的矩阵（n是样本数），两列：一列是中文数据内容，一列是label标签。</p>
-<pre class=" language-lang-python"><code class="language-lang-python"># code/pre_data.py
+<p><strong>第一步：准备数据，数据预处理，做好和训练模型数据接口工作</strong><br />
+这一步非常重要，有处理错误会导致过程报错，然后反复调 bug（用这个的个人经历，惨痛的教训）<br />
+我们写一个文件，要把数据处理成 n*2 的矩阵（n 是样本数），两列：一列是中文数据内容，一列是 label 标签。</p>
+<pre class=" language-language-python"><code class="language-language-python"># code/pre_data.py
 import pandas as pd
 from sklearn.utils import shuffle
 import re
@@ -214,10 +222,21 @@ def PREDATA():
 
 PREDATA()
 </code></pre>
-<p>源数据演示<br><img data-src="https://img-blog.csdnimg.cn/20200805223050799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>该过程首先数据清洗，去掉了label中不是[-1,0,1]的数据，并且去除了内容长度少于10的语料，而且对满足条件的进行了正则化处理。<br>最后处理完在data目录下生成train.csv，dev.csv，test.csv三个数据文件（数据量8:1:1）<br>三个文件为训练集，验证集，测试集，演示如下（三个csv文件格式相同，仅数据量不同）：<br><img data-src="https://img-blog.csdnimg.cn/20200805224111901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>PS1：正则化部分个人处理的，处理不好，大家可以自己发挥，数据处理好了，模型也会更准确。<br>PS2：为什么1，-1,0中-1变成了2，emm我忘记当时为什么这么做了，保持-1不变也没事，不影响。<br>PS3：切记train.csv等文件 没有index，没有header</p>
-<h2 id="2、训练验证测试（run-classifier-py）"><a href="#2、训练验证测试（run-classifier-py）" class="headerlink" title="2、训练验证测试（run_classifier.py）"></a>2、训练验证测试（run_classifier.py）</h2><p>modeling.py是模型文件，optimization.py是训练优化器，tokenization.py是训练端<br>这三个文件不用修改，主要是run_classifier.py<br>你需要根据情况，调整参数<br>参数说明如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python"># 使用GPU情况
+<p>源数据演示<br />
+<img data-src="https://img-blog.csdnimg.cn/20200805223050799.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+该过程首先数据清洗，去掉了 label 中不是 [-1,0,1] 的数据，并且去除了内容长度少于 10 的语料，而且对满足条件的进行了正则化处理。<br />
+最后处理完在 data 目录下生成 train.csv，dev.csv，test.csv 三个数据文件（数据量 8:1:1）<br />
+三个文件为训练集，验证集，测试集，演示如下（三个 csv 文件格式相同，仅数据量不同）：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200805224111901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p>PS1：正则化部分个人处理的，处理不好，大家可以自己发挥，数据处理好了，模型也会更准确。<br />
+PS2：为什么 1，-1,0 中 - 1 变成了 2，emm 我忘记当时为什么这么做了，保持 - 1 不变也没事，不影响。<br />
+PS3：切记 train.csv 等文件 没有 index，没有 header</p>
+<h2 id="2-训练验证测试run_classifierpy"><a class="anchor" href="#2-训练验证测试run_classifierpy">#</a> 2、训练验证测试（run_classifier.py）</h2>
+<p>modeling.py 是模型文件，optimization.py 是训练优化器，tokenization.py 是训练端<br />
+这三个文件不用修改，主要是 run_classifier.py<br />
+ 你需要根据情况，调整参数<br />
+参数说明如下：</p>
+<pre class=" language-language-python"><code class="language-language-python"># 使用GPU情况
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # 利用flags设置参数（名称，默认值，描述）
@@ -312,11 +331,20 @@ flags.DEFINE_integer(
     "num_tpu_cores", 8,
     "Only used if `use_tpu` is True. Total number of TPU cores to use.")
 </code></pre>
-<p>另外数据接口做了修改，修改版的run_classifier.py<br>链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU1ZWUd5RjQ4ZVRjcDFYek00SzVzckE=">https://pan.baidu.com/s/1MYYGyF48eTcp1XzM4K5srA</span><br>提取码：mh32</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200805233114643.png" alt="在这里插入图片描述"><br>均调整为True，即可完成训练，验证，测试过程（测试可单独进行）</p>
-<p>训练结果的指标存放在code/sim_model/eval_results.txt中，<br>测试结果存放在code/sim_model/test_results.tsv中，存放每一个类别概率：<br><img data-src="https://img-blog.csdnimg.cn/20200805233409122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>PS1：如果运行报错内存不够train_batch_size，max_seq_length参数大小可以减小。<br>PS2：文件目录如果用os 那就不要出现data/tarin.py这种带‘/’的（会出问题）</p>
-<h2 id="3、测试结果转换（test-py）"><a href="#3、测试结果转换（test-py）" class="headerlink" title="*3、测试结果转换（test.py）"></a>*3、测试结果转换（test.py）</h2><p>该步骤可省略，如果你对结果不满意，可转换成这样的类别文件：<br><img data-src="https://img-blog.csdnimg.cn/20200805233810180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">这样就简单明了了</p>
-<pre class=" language-lang-python"><code class="language-lang-python"># code/test.py
+<p>另外数据接口做了修改，修改版的 run_classifier.py<br />
+ 链接：<span class="exturl" data-url="aHR0cHM6Ly9wYW4uYmFpZHUuY29tL3MvMU1ZWUd5RjQ4ZVRjcDFYek00SzVzckE=">https://pan.baidu.com/s/1MYYGyF48eTcp1XzM4K5srA</span><br />
+ 提取码：mh32</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200805233114643.png" alt="在这里插入图片描述" /><br />
+均调整为 True，即可完成训练，验证，测试过程（测试可单独进行）</p>
+<p>训练结果的指标存放在 code/sim_model/eval_results.txt 中，<br />
+测试结果存放在 code/sim_model/test_results.tsv 中，存放每一个类别概率：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200805233409122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+ PS1：如果运行报错内存不够 train_batch_size，max_seq_length 参数大小可以减小。<br />
+PS2：文件目录如果用 os 那就不要出现 data/tarin.py 这种带‘/’的（会出问题）</p>
+<h2 id="3-测试结果转换testpy"><a class="anchor" href="#3-测试结果转换testpy">#</a> *3、测试结果转换（<span class="exturl" data-url="aHR0cDovL3Rlc3QucHk=">test.py</span>）</h2>
+<p>该步骤可省略，如果你对结果不满意，可转换成这样的类别文件：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200805233810180.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />这样就简单明了了</p>
+<pre class=" language-language-python"><code class="language-language-python"># code/test.py
 import os
 import pandas as pd
 
@@ -343,9 +371,9 @@ if __name__ == '__main__':
     data.to_csv(os.path.join(path, "pre_sample.tsv"), sep='\t')
     print(data)
 </code></pre>
-<p>这个文件最后保存在code/sim_model/pre_sample.tsv</p>
+<p>这个文件最后保存在 code/sim_model/pre_sample.tsv</p>
 <p>完整文件发在交流群</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20200805234157857.png" alt="在这里插入图片描述"></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200805234157857.png" alt="在这里插入图片描述" /></p>
 
       <div class="tags">
           <a href="../tags/python/" rel="tag"><i class="ic i-tag"></i> python</a>
@@ -380,12 +408,12 @@ if __name__ == '__main__':
   <div id="qr">
       
       <div>
-        <img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay">
+        <img data-src="../imageswechatpay.png" alt="绯色鱼 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div>
-        <img data-src="../images/alipay.png" alt="绯色鱼 Alipay">
+        <img data-src="../imagesalipay.png" alt="绯色鱼 Alipay">
         <p>Alipay</p>
       </div>
   </div>
@@ -419,7 +447,7 @@ if __name__ == '__main__':
     <div class="item left">
       
 
-  <a href="8a5cf894.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipew8gmvyj20zk0m87wh.jpg" title="django2.2+Ubuntu+nginx+uwsgi">
+  <a href="8a5cf894.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitf0kl1j20zk0m87fe.jpg" title="django2.2+Ubuntu+nginx+uwsgi">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 部署</span>
   <h3>django2.2+Ubuntu+nginx+uwsgi</h3>
@@ -429,7 +457,7 @@ if __name__ == '__main__':
     <div class="item right">
       
 
-  <a href="d71e34f5.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexbei4hj20zk0m8npd.jpg" title="Django的路由关系与静态资源路径设置">
+  <a href="d71e34f5.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey0a334j20zk0m8qpt.jpg" title="Django的路由关系与静态资源路径设置">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 后端</span>
   <h3>Django的路由关系与静态资源路径设置</h3>
@@ -451,7 +479,7 @@ if __name__ == '__main__':
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text">开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86%EF%BC%88pre-data-py%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">1、数据预处理（pre_data.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E8%AE%AD%E7%BB%83%E9%AA%8C%E8%AF%81%E6%B5%8B%E8%AF%95%EF%BC%88run-classifier-py%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2、训练验证测试（run_classifier.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2%EF%BC%88test-py%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">*3、测试结果转换（test.py）</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B"><span class="toc-number">1.</span> <span class="toc-text"> 开始</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86pre_datapy"><span class="toc-number">1.1.</span> <span class="toc-text"> 1、数据预处理（pre_data.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%AE%AD%E7%BB%83%E9%AA%8C%E8%AF%81%E6%B5%8B%E8%AF%95run_classifierpy"><span class="toc-number">1.2.</span> <span class="toc-text"> 2、训练验证测试（run_classifier.py）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C%E8%BD%AC%E6%8D%A2testpy"><span class="toc-number">1.3.</span> <span class="toc-text"> *3、测试结果转换（test.py）</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -564,111 +592,6 @@ if __name__ == '__main__':
       <div class="inner">
         <div class="widgets">
           
-<div class="rpost pjax">
-  <h2>Random Posts</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="2cc27fd2.html" title="机器学习-评估假设与比较检验-04">机器学习-评估假设与比较检验-04</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="92f60f59.html" title="Git远程无法clone仓库或者链接不到">Git远程无法clone仓库或者链接不到</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="9b594b83.html" title="Matlab-感知器-02">Matlab-感知器-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="6699522d.html" title="Git&#x2F;Gitee仓库代码拉取与上推">Git/Gitee仓库代码拉取与上推</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="ff107ac.html" title="Matlab-多元线性拟合-03">Matlab-多元线性拟合-03</a></span>
-  </li>
-
-  </ul>
-</div>
 <div>
   <h2>Recent Comments</h2>
   <ul class="leancloud-recent-comment"></ul>

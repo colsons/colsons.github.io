@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipex2cdtbj20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyvx1d4j20zk0m8hdt.jpg"></li>
           <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph47e9vtj20zk0m8x6l.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -154,25 +154,36 @@ Lab Chen = 绯色鱼的博客</title>
     
 
     <p>案例学习多元线性拟合。</p>
-<span id="more"></span>
-<p><strong>从案例中学习新知识是比较快的，所以我们直接上例子：</strong><br>（本文为基础学习，以理解为主）<br><strong>案例一：拟合一元一次</strong></p>
+<p><span id="more"></span></p>
+<p><strong>从案例中学习新知识是比较快的，所以我们直接上例子：</strong><br />
+（本文为基础学习，以理解为主）<br />
+<strong>案例一：拟合一元一次</strong></p>
 <pre><code>x = [143,145,146,148]
 y = [11,13,14,15]
 # 我们现在拟合这个y = bx+a
-</code></pre><p>这里要介绍一个写好的包，regress()使用参数如下：</p>
+</code></pre>
+<p>这里要介绍一个写好的包，regress () 使用参数如下：</p>
 <pre><code>[B,BINT,R,RINT,STATS] = regress(Y,X)
-</code></pre><p>B：回归系数。（可以当斜率来理解）<br>BINT：回归系数的95%置信区间，可以暂时理解为B的一个取值范围（想要详细理解的可以bd）<br>R：残差。（这不用解释吧）<br>RINT：同BINT理解。<br>STATS:检验模型的统计量，它包括四个值：①判定系数R^2，②统计量观测值F，③检验的p的值，④误差方差的估计。（这里简单说下判定系数，他可以评价模型好坏，取值范围[0,1]，越接近于1模型越好）</p>
-<pre><code>X = [143,145,146,148]&#39;;
-Y = [11,13,14,15]&#39;;
+</code></pre>
+<p>B：回归系数。（可以当斜率来理解）<br />
+BINT：回归系数的 95% 置信区间，可以暂时理解为 B 的一个取值范围（想要详细理解的可以 bd）<br />
+R：残差。（这不用解释吧）<br />
+RINT：同 BINT 理解。<br />
+STATS: 检验模型的统计量，它包括四个值：①判定系数 R^2，②统计量观测值 F，③检验的 p 的值，④误差方差的估计。（这里简单说下判定系数，他可以评价模型好坏，取值范围 [0,1]，越接近于 1 模型越好）</p>
+<pre><code>X = [143,145,146,148]';
+Y = [11,13,14,15]';
 X = [ones(size(Y)),X];
 [b,bint,r,rint,stats] = regress(Y,X);
-</code></pre><p>这里对x做了一点改动，加了一列1，（加与不加的区别是预测的结果有没有‘y=bx+a’的‘a’）<br><strong>案例二：拟合二元二次</strong></p>
-<pre><code>X1 = [143,145,146,148]&#39;;
-X2 = [56,58,59,61]&#39;;
-Y = [11,13,14,15]&#39;;
+</code></pre>
+<p>这里对 x 做了一点改动，加了一列 1，（加与不加的区别是预测的结果有没有‘y=bx+a’的‘a’）<br />
+<strong>案例二：拟合二元二次</strong></p>
+<pre><code>X1 = [143,145,146,148]';
+X2 = [56,58,59,61]';
+Y = [11,13,14,15]';
 X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
 [b,bint,r,rint,stats] = regress(Y,X);
-</code></pre><p>其他的可以举一反三。</p>
+</code></pre>
+<p>其他的可以举一反三。</p>
 
       <div class="tags">
           <a href="../tags/MATLAB/" rel="tag"><i class="ic i-tag"></i> MATLAB</a>
@@ -206,12 +217,12 @@ X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
   <div id="qr">
       
       <div>
-        <img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay">
+        <img data-src="../imageswechatpay.png" alt="绯色鱼 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div>
-        <img data-src="../images/alipay.png" alt="绯色鱼 Alipay">
+        <img data-src="../imagesalipay.png" alt="绯色鱼 Alipay">
         <p>Alipay</p>
       </div>
   </div>
@@ -245,7 +256,7 @@ X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
     <div class="item left">
       
 
-  <a href="9b594b83.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph47e9vtj20zk0m8x6l.jpg" title="Matlab-感知器-02">
+  <a href="9b594b83.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="Matlab-感知器-02">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>Matlab-感知器-02</h3>
@@ -255,7 +266,7 @@ X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
     <div class="item right">
       
 
-  <a href="6c46850c.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="多维标度数据降维之MDS(python× Matlab√)">
+  <a href="6c46850c.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey0a334j20zk0m8qpt.jpg" title="多维标度数据降维之MDS(python× Matlab√)">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>多维标度数据降维之MDS(python× Matlab√)</h3>
@@ -389,111 +400,6 @@ X = [ones(size(Y)),X1.^2,X2.^2,X1,X2,X1.*X2];
       <div class="inner">
         <div class="widgets">
           
-<div class="rpost pjax">
-  <h2>Random Posts</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
-</div>
-
-    <span><a href="68fa613c.html" title="「转载」Bert中文情感分类分析-tf1.14">「转载」Bert中文情感分类分析-tf1.14</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="9b594b83.html" title="Matlab-感知器-02">Matlab-感知器-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="a0e5a0c1.html" title="Dos批处理pip安装库">Dos批处理pip安装库</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="6699522d.html" title="Git&#x2F;Gitee仓库代码拉取与上推">Git/Gitee仓库代码拉取与上推</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
-  </li>
-
-  </ul>
-</div>
 <div>
   <h2>Recent Comments</h2>
   <ul class="leancloud-recent-comment"></ul>

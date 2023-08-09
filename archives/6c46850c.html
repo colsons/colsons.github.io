@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfdu6exj20zk0m87hw.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,25 +153,33 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>使用anonymous-microsoft web.data的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。</p>
-<span id="more"></span>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>最近做聚类的时候发现在做一个名为anonymous-microsoft web.data的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。因为python用的比较多一直以来对py看的很重，以为他那个方面都很厉害。这不问题就来了：<br><img data-src="https://img-blog.csdnimg.cn/20200327212905870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>调用方法如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">from sklearn.manifold import MDS
+    <p>使用 anonymous-microsoft web.data 的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。</p>
+<p><span id="more"></span></p>
+<h2 id="问题"><a class="anchor" href="#问题">#</a> 问题</h2>
+<p>最近做聚类的时候发现在做一个名为 anonymous-microsoft web.data 的多维数据集的时候，因为该数据集没有标签，在自己打标签的过程中遇到了一些问题。因为 python 用的比较多一直以来对 py 看的很重，以为他那个方面都很厉害。这不问题就来了：<br />
+<img data-src="https://img-blog.csdnimg.cn/20200327212905870.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+调用方法如下：</p>
+<pre class=" language-language-python"><code class="language-language-python">from sklearn.manifold import MDS
 
 mds = MDS()
 data = mds.fit_transform(这里面放距离矩阵哦)
 </code></pre>
-<p>可这蓝茫茫的一片也没啥效果啊….<br>然后在网上看了一些其他人自己写的这个MDS降维算法，发现和这个是差不多的。郁闷了好一阵子..</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>后来在一篇论文中发现MATLAB中也有这类算法，并且人家有成功的例子，我赶紧拿来试一试，哇咔咔<br><img data-src="https://img-blog.csdnimg.cn/20200327213528263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>而且MATLAB是专门处理矩阵的工具，python做这个用了我笔记本30min左右才跑出来，MATLAB只用了不到5min。哦对了附上引用代码：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">%这是MATLAB里面哦
+<p>可这蓝茫茫的一片也没啥效果啊....<br />
+ 然后在网上看了一些其他人自己写的这个 MDS 降维算法，发现和这个是差不多的。郁闷了好一阵子..</p>
+<h2 id="解决"><a class="anchor" href="#解决">#</a> 解决</h2>
+<p>后来在一篇论文中发现 MATLAB 中也有这类算法，并且人家有成功的例子，我赶紧拿来试一试，哇咔咔<br />
+<img data-src="https://img-blog.csdnimg.cn/20200327213528263.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+而且 MATLAB 是专门处理矩阵的工具，python 做这个用了我笔记本 30min 左右才跑出来，MATLAB 只用了不到 5min。哦对了附上引用代码：</p>
+<pre class=" language-language-python"><code class="language-language-python">%这是MATLAB里面哦
 data = csvread('distance.csv');
 data_xy = mdscale(data,2,'criterion','metricsstress');
 '''
 mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
 '''
 </code></pre>
-<p>我果然现在还是个渣渣。<br>另外，我感觉sklearn中的MDS应该是另有用处，只是它的价值我没用好吧，如果有带劳能给我解除疑惑，为什么这两种方法的不同，欢迎评论留言…</p>
-<p>【时隔几年，简单补充，其实这两个函数都是一种方法 matlab直接处理数据，python的需要先转成距离矩阵】</p>
+<p>我果然现在还是个渣渣。<br />
+另外，我感觉 sklearn 中的 MDS 应该是另有用处，只是它的价值我没用好吧，如果有带劳能给我解除疑惑，为什么这两种方法的不同，欢迎评论留言...</p>
+<p>【时隔几年，简单补充，其实这两个函数都是一种方法 matlab 直接处理数据，python 的需要先转成距离矩阵】</p>
 
       <div class="tags">
           <a href="../tags/%E9%99%8D%E7%BB%B4/" rel="tag"><i class="ic i-tag"></i> 降维</a>
@@ -205,12 +213,12 @@ mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
   <div id="qr">
       
       <div>
-        <img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay">
+        <img data-src="../imageswechatpay.png" alt="绯色鱼 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div>
-        <img data-src="../images/alipay.png" alt="绯色鱼 Alipay">
+        <img data-src="../imagesalipay.png" alt="绯色鱼 Alipay">
         <p>Alipay</p>
       </div>
   </div>
@@ -244,7 +252,7 @@ mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
     <div class="item left">
       
 
-  <a href="ff107ac.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicli9lfebj20zk0m84qp.jpg" title="Matlab-多元线性拟合-03">
+  <a href="ff107ac.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="Matlab-多元线性拟合-03">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>Matlab-多元线性拟合-03</h3>
@@ -254,7 +262,7 @@ mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
     <div class="item right">
       
 
-  <a href="c1ca115b.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclg5ms2rj20zk0m8u0x.jpg" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">
+  <a href="c1ca115b.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuv80yoj20zk0m8kjl.jpg" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 技巧</span>
   <h3>py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</h3>
@@ -276,7 +284,7 @@ mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-number">2.</span> <span class="toc-text">解决</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text"> 问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-number">2.</span> <span class="toc-text"> 解决</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -389,111 +397,6 @@ mdscale()里面的后2个参数保证了同一个地方有两个点不会报错
       <div class="inner">
         <div class="widgets">
           
-<div class="rpost pjax">
-  <h2>Random Posts</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
-</div>
-
-    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="bc5c2aae.html" title="聚类阶段整理（5）-系统聚类">聚类阶段整理（5）-系统聚类</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="3366bb43.html" title="聚类阶段整理（1）-随笔">聚类阶段整理（1）-随笔</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="6a10ae94.html" title="机器学习-ROC与AUC详解-03">机器学习-ROC与AUC详解-03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
-</div>
-
-    <span><a href="75f60fdc.html" title="VUE2的Hello World">VUE2的Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
-</div>
-
-    <span><a href="28195b23.html" title="Selenium爬虫使用中阶攻略">Selenium爬虫使用中阶攻略</a></span>
-  </li>
-
-  </ul>
-</div>
 <div>
   <h2>Recent Comments</h2>
   <ul class="leancloud-recent-comment"></ul>

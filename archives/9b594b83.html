@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclg5ms2rj20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclfw2t96j20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeu1usa7j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicis081o9j20zk0m8dmr.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,86 +153,112 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>MATLAB的基本操作不做介绍，直接开始感知器的学习，学会制作单层感知器和多层感知器</p>
-<span id="more"></span>
-<h2 id="一、单层感知器"><a href="#一、单层感知器" class="headerlink" title="一、单层感知器"></a>一、单层感知器</h2><p><strong>1、结构图如下：（懂得直接跳到2、）</strong></p>
-<p>单层感知器，即只有一层神经元节点，上图为一个神经元的示意图。<br>多个输入经过加权求和之后得到一个值，这个值再加上一个b（有点类似y=ax+b）经过激活函数后就可以得到输出。</p>
-<p><img data-src="http://img.colsons.top/blog/1691566773hlmq2lzwewQx8EiO" alt="image-20210526125324521"></p>
-<p>激活函数的作用是什么呢？简单来说神经元类似开关，只有激活和未激活两种状态。把这两种状态看成0,1，那数据经过加权求和且+b后得到的数值在（-∞，+∞）之间，那我们需要一种函数把这个值缩回到0-1之间，这样就和神经元很贴切了，因此而产生的了很多种激活函数，这里不做一一介绍。</p>
-<p><strong>2、实例+详解</strong><br>直接来一个样本训练+数据测试，如下</p>
-<div class="table-container">
+    <p>MATLAB 的基本操作不做介绍，直接开始感知器的学习，学会制作单层感知器和多层感知器</p>
+<p><span id="more"></span></p>
+<h2 id="一-单层感知器"><a class="anchor" href="#一-单层感知器">#</a> 一、单层感知器</h2>
+<p><strong>1、结构图如下：（懂得直接跳到 2、）</strong></p>
+<p>单层感知器，即只有一层神经元节点，上图为一个神经元的示意图。<br />
+多个输入经过加权求和之后得到一个值，这个值再加上一个 b（有点类似 y=ax+b）经过激活函数后就可以得到输出。</p>
+<p><img data-src="http://img.colsons.top/blog/1691566773hlmq2lzwewQx8EiO" alt="image-20210526125324521" /></p>
+<p>激活函数的作用是什么呢？简单来说神经元类似开关，只有激活和未激活两种状态。把这两种状态看成 0,1，那数据经过加权求和且 + b 后得到的数值在（-∞，+∞）之间，那我们需要一种函数把这个值缩回到 0-1 之间，这样就和神经元很贴切了，因此而产生的了很多种激活函数，这里不做一一介绍。</p>
+<p><strong>2、实例 + 详解</strong><br />
+直接来一个样本训练 + 数据测试，如下</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:center"></th>
-<th style="text-align:center">属性1</th>
-<th style="text-align:center">属性2</th>
-<th style="text-align:center">属性3</th>
+<th style="text-align:center">属性 1</th>
+<th style="text-align:center">属性 2</th>
+<th style="text-align:center">属性 3</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">样本1</td>
+<td style="text-align:center">样本 1</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">0</td>
 </tr>
 <tr>
-<td style="text-align:center">样本2</td>
+<td style="text-align:center">样本 2</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">1</td>
 </tr>
 <tr>
-<td style="text-align:center">样本3</td>
+<td style="text-align:center">样本 3</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">0</td>
 <td style="text-align:center">1</td>
 </tr>
 <tr>
-<td style="text-align:center">样本4</td>
+<td style="text-align:center">样本 4</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">1</td>
 <td style="text-align:center">1</td>
 </tr>
 </tbody>
 </table>
-</div>
 <p>我们接下来用这些数据训练一个单层感知器：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">%数据载入，x为输入，y为期望输出
+<pre class=" language-language-python"><code class="language-language-python">%数据载入，x为输入，y为期望输出
 x = [0 0 1 1;0 1 0 1];
 y = [0 1 1 1];
 </code></pre>
-<pre class=" language-lang-python"><code class="language-lang-python">%以单个神经元为例
+<pre class=" language-language-python"><code class="language-language-python">%以单个神经元为例
 pr = minmax(x)
 net = newp(pr,1);
 </code></pre>
-<p>net=newp[PR,S,TF,LF] ，这是一个网络构建函数：<br>PR：存放maxmin的矩阵。以我们的例子看这是一个2*2的矩阵，由每一个属性的max，min组成。<br>S：神经元个数。<br>TF：激活函数，默认值为    hardlim函数。<br>LF：学习修正函数，默认为learnp函数。主要用来更新权值的调整。</p>
+<p>net=newp [PR,S,TF,LF] ，这是一个网络构建函数：<br />
+PR：存放 maxmin 的矩阵。以我们的例子看这是一个 2*2 的矩阵，由每一个属性的 max，min 组成。<br />
+S：神经元个数。<br />
+TF：激活函数，默认值为	hardlim 函数。<br />
+LF：学习修正函数，默认为 learnp 函数。主要用来更新权值的调整。</p>
 <p>模型建好了，接下来训练数据：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">net.trainParam.Epochs = 100;
+<pre class=" language-language-python"><code class="language-language-python">net.trainParam.Epochs = 100;
 net=train(net,x,y);
 Y2 = sim(net,x);
 </code></pre>
-<p>net.trainParam.Epochs控制训练次数，每次按照该有的规则从样本拿出一个数据训练。<br>sim()函数是仿真函数，其要点是该过程一旦开始不可停止。sim函数不是必须有的。<br>net.iw：可以查看权值；net.b：可以查看偏置。<br>nntool可以导入模型查看模型结构。</p>
-<p>模型训练好了，可以测试了。以0.01,1.01为例，看他的标签，代码如下：</p>
-<pre class=" language-lang-python"><code class="language-lang-python">out = sim(net,[0.01;1.01])
+<p>net.trainParam.Epochs 控制训练次数，每次按照该有的规则从样本拿出一个数据训练。<br />
+sim () 函数是仿真函数，其要点是该过程一旦开始不可停止。sim 函数不是必须有的。<br />
+net.iw：可以查看权值；net.b：可以查看偏置。<br />
+nntool 可以导入模型查看模型结构。</p>
+<p>模型训练好了，可以测试了。以 0.01,1.01 为例，看他的标签，代码如下：</p>
+<pre class=" language-language-python"><code class="language-language-python">out = sim(net,[0.01;1.01])
 </code></pre>
-<p>可以得到out = 1。<br>使用w和b也可以做一个简单的可视化（如果数据维度较多，不建议这样做）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">%画样本点（带标签）
+<p>可以得到 out = 1。<br />
+使用 w 和 b 也可以做一个简单的可视化（如果数据维度较多，不建议这样做）</p>
+<pre class=" language-language-python"><code class="language-language-python">%画样本点（带标签）
 plotpv(x,y);
 %画分类线
 plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
 </code></pre>
-<p><img data-src="https://img-blog.csdnimg.cn/20200405222252297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="二、多层感知器"><a href="#二、多层感知器" class="headerlink" title="二、多层感知器"></a>二、多层感知器</h2><p>与单层的区别是输入输出之间多了一个隐含层，隐含层具体怎样是看不到的，可以想象成一个黑盒子。<br><strong>1、神经元之间的传递：</strong><br><img data-src="https://img-blog.csdnimg.cn/20200405224303730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="懒得画图网上找了一个："><br>画的丑，凑活看。在f1那个神经元那里输出给下一层的时候是经过激活函数处理了的（刚学的时候以为加权求和就完事了），这样一层一层往后传就可以得到输出y了。<br><strong>2、不上例子</strong></p>
+<p><img data-src="https://img-blog.csdnimg.cn/20200405222252297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<h2 id="二-多层感知器"><a class="anchor" href="#二-多层感知器">#</a> 二、多层感知器</h2>
+<p>与单层的区别是输入输出之间多了一个隐含层，隐含层具体怎样是看不到的，可以想象成一个黑盒子。<br />
+<strong>1、神经元之间的传递：</strong><br />
+<img data-src="https://img-blog.csdnimg.cn/20200405224303730.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="懒得画图网上找了一个：" /><br />
+画的丑，凑活看。在 f1 那个神经元那里输出给下一层的时候是经过激活函数处理了的（刚学的时候以为加权求和就完事了），这样一层一层往后传就可以得到输出 y 了。<br />
+<strong>2、不上例子</strong></p>
 <p>主要是跟上面区分一下就好，这两个代码区别不是很大。</p>
-<pre class=" language-lang-python"><code class="language-lang-python">net=netff(P,T,S,TF,BTF,BLF,PF,IPF,OPF,DDF)
+<pre class=" language-language-python"><code class="language-language-python">net=netff(P,T,S,TF,BTF,BLF,PF,IPF,OPF,DDF)
 </code></pre>
-<p>只有这个函数要换，其他的区别不是很大。具体解释下这个参数：<br>P：要喂的数据矩阵<br>T：矩阵的标签矩阵（一维的）<br>S：隐含层节点数，多个隐含层的话用[5,3]，这就代表是隐含层有两层，第一层5个神经元，第二层3个神经元。<br>TF：激活函数：阈值函数hardlim，hardlims，线性函数purelin，双曲正切S型函数tansig，对数S型传递函数。<br>BTF：训练函数：梯度下降训练函数traingd，动量反传梯度下降函数traingdm，动态自适应学习率下降函数traingda，动量反传和动态自适应梯度下降训练函数traindx，L_M训练函数trainlm。<br>BLF：网络学习函数：BP学习规则learngd，带动量的BP学习规则learngdm。<br>PF：性能分析函数：均值绝对误差性能分析函数mae，均方差性能分析函数mse。<br>IPF：输入处理函数<br>OPF：输出处理函数<br>DDF：验证数据划分函数<br>emm这个参数还是挺多的。<br>除了训练次数，还要加一个收敛误差（控制调整训练次数）</p>
-<pre class=" language-lang-python"><code class="language-lang-python">net.trainParam.goal=0.00001;
+<p>只有这个函数要换，其他的区别不是很大。具体解释下这个参数：<br />
+P：要喂的数据矩阵<br />
+ T：矩阵的标签矩阵（一维的）<br />
+S：隐含层节点数，多个隐含层的话用 [5,3]，这就代表是隐含层有两层，第一层 5 个神经元，第二层 3 个神经元。<br />
+TF：激活函数：阈值函数 hardlim，hardlims，线性函数 purelin，双曲正切 S 型函数 tansig，对数 S 型传递函数。<br />
+BTF：训练函数：梯度下降训练函数 traingd，动量反传梯度下降函数 traingdm，动态自适应学习率下降函数 traingda，动量反传和动态自适应梯度下降训练函数 traindx，L_M 训练函数 trainlm。<br />
+BLF：网络学习函数：BP 学习规则 learngd，带动量的 BP 学习规则 learngdm。<br />
+PF：性能分析函数：均值绝对误差性能分析函数 mae，均方差性能分析函数 mse。<br />
+IPF：输入处理函数<br />
+ OPF：输出处理函数<br />
+ DDF：验证数据划分函数<br />
+ emm 这个参数还是挺多的。<br />
+除了训练次数，还要加一个收敛误差（控制调整训练次数）</p>
+<pre class=" language-language-python"><code class="language-language-python">net.trainParam.goal=0.00001;
 </code></pre>
-<p>参数一般小于0.01。</p>
-<p>无论是哪种感知器net函数不唯一，我这里用的newff，newp都是常用的网络。</p>
+<p>参数一般小于 0.01。</p>
+<p>无论是哪种感知器 net 函数不唯一，我这里用的 newff，newp 都是常用的网络。</p>
 <p><strong>如有问题，欢迎大家指出来。</strong></p>
 
       <div class="tags">
@@ -267,12 +293,12 @@ plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
   <div id="qr">
       
       <div>
-        <img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay">
+        <img data-src="../imageswechatpay.png" alt="绯色鱼 WeChat Pay">
         <p>WeChat Pay</p>
       </div>
       
       <div>
-        <img data-src="../images/alipay.png" alt="绯色鱼 Alipay">
+        <img data-src="../imagesalipay.png" alt="绯色鱼 Alipay">
         <p>Alipay</p>
       </div>
   </div>
@@ -306,7 +332,7 @@ plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
     <div class="item left">
       
 
-  <a href="dcb78086.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclip4jbpj20zk0m87cv.jpg" title="Matlab-矩阵基本知识-01">
+  <a href="dcb78086.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhtuo6nj20zk0m8ttm.jpg" title="Matlab-矩阵基本知识-01">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>Matlab-矩阵基本知识-01</h3>
@@ -316,7 +342,7 @@ plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
     <div class="item right">
       
 
-  <a href="ff107ac.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicis3attqj20zk0m8k7l.jpg" title="Matlab-多元线性拟合-03">
+  <a href="ff107ac.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclip4jbpj20zk0m87cv.jpg" title="Matlab-多元线性拟合-03">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>Matlab-多元线性拟合-03</h3>
@@ -338,7 +364,7 @@ plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%8D%95%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">一、单层感知器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">二、多层感知器</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%8D%95%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text"> 一、单层感知器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%A4%9A%E5%B1%82%E6%84%9F%E7%9F%A5%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text"> 二、多层感知器</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -451,113 +477,6 @@ plotpc(net.iw&#123;1&#125;,net.b&#123;1&#125;);
       <div class="inner">
         <div class="widgets">
           
-<div class="rpost pjax">
-  <h2>Random Posts</h2>
-  <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="bc5c2aae.html" title="聚类阶段整理（5）-系统聚类">聚类阶段整理（5）-系统聚类</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
-</div>
-
-    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="8a5cf894.html" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
-<i class="ic i-angle-right"></i>
-<a href="../categories/%E5%89%8D%E7%AB%AF/%E5%90%8E%E7%AB%AF/" title="In 后端">后端</a>
-</div>
-
-    <span><a href="d71e34f5.html" title="Django的路由关系与静态资源路径设置">Django的路由关系与静态资源路径设置</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
-  </li>
-
-  </ul>
-</div>
 <div>
   <h2>Recent Comments</h2>
   <ul class="leancloud-recent-comment"></ul>
