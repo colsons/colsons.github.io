@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey0a334j20zk0m8qpt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipey84bjtj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexbei4hj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeyhsblkj20zk0m81kx.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,14 +153,22 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>详细案例解释 ROC 与 AUC 过程。</p>
-<p><span id="more"></span></p>
-<h3 id="1roc与auc评价"><a class="anchor" href="#1roc与auc评价">#</a> 1.ROC 与 AUC 评价</h3>
-<p>前面对 ROC 和 AUC 简单有了了解，只知道了他是用来评价学习器优劣的指标，这里来更详细记录下具体意义和求法。</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20201010190953997.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" /></p>
-<p>图中曲线为 ROC 曲线，曲线下的面积的具体数值为 AUC 指标。</p>
-<p>α 越接近 α0，分类器性能越好，当 ROC 曲线降到红线以下时，说明用这个分类器分，我还不如瞎分（瞎分二分类按正确率 0.5 算的话）</p>
-<pre>Error: Could not find browser revision 818858. Run "PUPPETEER_PRODUCT=firefox npm install" or "PUPPETEER_PRODUCT=firefox yarn install" to download a supported Firefox browser binary.</pre><h3 id="2auc值求取案例理解原理"><a class="anchor" href="#2auc值求取案例理解原理">#</a> 2.AUC 值求取案例（理解原理）</h3>
+    <p>详细案例解释ROC与AUC过程。</p>
+<span id="more"></span>
+<h3 id="1-ROC与AUC评价"><a href="#1-ROC与AUC评价" class="headerlink" title="1.ROC与AUC评价"></a>1.ROC与AUC评价</h3><p>前面对ROC和AUC简单有了了解，只知道了他是用来评价学习器优劣的指标，这里来更详细记录下具体意义和求法。</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20201010190953997.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>图中曲线为ROC曲线，曲线下的面积的具体数值为AUC指标。</p>
+<p>α越接近α0，分类器性能越好，当ROC曲线降到红线以下时，说明用这个分类器分，我还不如瞎分（瞎分二分类按正确率0.5算的话）</p>
+<pre class=" language-lang-mermaid"><code class="language-lang-mermaid">graph LR
+学习器A-->评价
+学习器B-->评价
+评价-->ROC指标
+ROC指标-->如果A与B的ROC曲线无交点
+ROC指标-->如果A与B的ROC曲线有交点
+如果A与B的ROC曲线有交点-->AUC值大的性能好
+如果A与B的ROC曲线无交点-->能完全覆盖另一个的性能好
+</code></pre>
+<h3 id="2-AUC值求取案例（理解原理）"><a href="#2-AUC值求取案例（理解原理）" class="headerlink" title="2.AUC值求取案例（理解原理）"></a>2.AUC值求取案例（理解原理）</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -203,10 +211,12 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
-<p>P (+)：预测为 + 的概率</p>
+</div>
+<p>P(+)：预测为+的概率</p>
 <p>PS：使用这个表时，需要按照概率首先将样例重新排列。</p>
 <p>求解：</p>
 <p>第一次：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -224,7 +234,7 @@ Lab Chen = 绯色鱼的博客</title>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">1 测</td>
+<td style="text-align:center">1测</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
@@ -237,8 +247,10 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
+</div>
 <p>TPR=0/4=0       FPR=0/5=0   （公式自行查询）</p>
 <p>第二次：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -256,7 +268,7 @@ Lab Chen = 绯色鱼的博客</title>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">2 测</td>
+<td style="text-align:center">2测</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">-</td>
 <td style="text-align:center">-</td>
@@ -269,9 +281,11 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
+</div>
 <p>TPR=0/4=0       FPR=1/5=0.2</p>
-<p>循环... 直到测试全为 + 的时候停</p>
-<p>第 n 次：</p>
+<p>循环…直到测试全为+的时候停</p>
+<p>第n次：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -289,7 +303,7 @@ Lab Chen = 绯色鱼的博客</title>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">n 测</td>
+<td style="text-align:center">n测</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">+</td>
 <td style="text-align:center">+</td>
@@ -302,18 +316,16 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
+</div>
 <p>TPR=4/4=1       FPR=5/5=1</p>
-<p>根据以上 TPR 和 FPR 分别作为 xy 轴 画图得到：</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20201010191011953.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述" /></p>
-<p>具体面积的值就是 AUC 啦。</p>
-<h3 id="3四种求auc方法"><a class="anchor" href="#3四种求auc方法">#</a> 3. 四种求 AUC 方法</h3>
-<h5 id="31-定义法"><a class="anchor" href="#31-定义法">#</a> 3.1 定义法</h5>
-<p>类似求定积分，将阴影面积拆成一个一个的长方形，求每一块的面积，然后求和。</p>
-<h5 id="32-排序损失法"><a class="anchor" href="#32-排序损失法">#</a> 3.2 排序损失法</h5>
-<p>AUC 是样本预测的排序质量的一种判断标准，因此与排序误差紧密联系。比如给了 m + 个正例和 m - 个负例，D+D - 分别表示正反例集合，那么排造成的 Loss 为：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>l</mi><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi></mrow></msup><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>m</mi><mo>+</mo></msup><msup><mi>m</mi><mo>−</mo></msup></mrow></mfrac><munder><mo>∑</mo><mrow><msup><mi>x</mi><mo>+</mo></msup><mo>∈</mo><msup><mi>D</mi><mo>+</mo></msup></mrow></munder><munder><mo>∑</mo><mrow><msup><mi>x</mi><mo>−</mo></msup><mo>∈</mo><msup><mi>D</mi><mo>−</mo></msup></mrow></munder><mo stretchy="false">(</mo><mi>I</mi><mi>I</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false">)</mo><mo>&lt;</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>−</mo></msup><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>I</mi><mi>I</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>−</mo></msup><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">l^{rank}=\frac{1}{m^+m^-}\sum_{x^+\in D^+}\sum_{x^-\in D^-}(II(f(x^+)&lt;f(x^-))+\frac{1}{2}II(f(x^+)=f(x^-)))
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.65668em;vertical-align:-1.3352400000000002em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8421299999999996em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3352400000000002em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8421299999999996em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3352400000000002em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.071331em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.071331em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
-<p>乍一看，看不懂，说人话就是，看这个表：</p>
+<p>根据以上TPR和FPR分别作为xy轴 画图得到：</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20201010191011953.bmp?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<p>具体面积的值就是AUC啦。</p>
+<h3 id="3-四种求AUC方法"><a href="#3-四种求AUC方法" class="headerlink" title="3.四种求AUC方法"></a>3.四种求AUC方法</h3><h5 id="3-1-定义法"><a href="#3-1-定义法" class="headerlink" title="3.1 定义法"></a>3.1 定义法</h5><p>类似求定积分，将阴影面积拆成一个一个的长方形，求每一块的面积，然后求和。</p>
+<h5 id="3-2-排序损失法"><a href="#3-2-排序损失法" class="headerlink" title="3.2 排序损失法"></a>3.2 排序损失法</h5><p>AUC是样本预测的排序质量的一种判断标准，因此与排序误差紧密联系。比如给了m+个正例和m-个负例，D+D-分别表示正反例集合，那么排造成的Loss为：</p>
+<script type="math/tex; mode=display">
+l^{rank}=\frac{1}{m^+m^-}\sum_{x^+\in D^+}\sum_{x^-\in D^-}(II(f(x^+)<f(x^-))+\frac{1}{2}II(f(x^+)=f(x^-)))</script><p>乍一看，看不懂，说人话就是，看这个表：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -356,35 +368,32 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
+</div>
 <p>+：x2,x1,x3,x8   四个</p>
 <p>-：x5,x7,x4,x6,x9  五个</p>
-<p>第一次取 x2 和 x5  =&gt;   0.9&gt;0.8    =&gt;  记罚分 1.0</p>
-<p>第二次取 x2 和 x7  =&gt;   0.8&lt;0.7    =&gt;  记罚分 0.0</p>
-<p>第三次取 x2 和 x4...</p>
-<p>记录 4*5=20 次罚分求和 / 20 得到 Loss 值。</p>
+<p>第一次取x2和x5  =&gt;   0.9&gt;0.8    =&gt;  记罚分 1.0 </p>
+<p>第二次取x2和x7  =&gt;   0.8<0.7    =>  记罚分 0.0</p>
+<p>第三次取x2和x4…</p>
+<p>记录4*5=20次罚分求和/20得到Loss值。</p>
 <p>最后：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>U</mi><mi>C</mi><mo>=</mo><mn>1</mn><mo>−</mo><msup><mi>l</mi><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">AUC = 1-l^{rank}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<h5 id="33-排序收益法"><a class="anchor" href="#33-排序收益法">#</a> 3.3 排序收益法</h5>
-<p>和排序损失法对应，不过不是记录罚分，而是计算收益，最后的公式为</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>l</mi><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi></mrow></msup><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>m</mi><mo>+</mo></msup><msup><mi>m</mi><mo>−</mo></msup></mrow></mfrac><munder><mo>∑</mo><mrow><msup><mi>x</mi><mo>+</mo></msup><mo>∈</mo><msup><mi>D</mi><mo>+</mo></msup></mrow></munder><munder><mo>∑</mo><mrow><msup><mi>x</mi><mo>−</mo></msup><mo>∈</mo><msup><mi>D</mi><mo>−</mo></msup></mrow></munder><mo stretchy="false">(</mo><mi>I</mi><mi>I</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false">)</mo><mo>&gt;</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>−</mo></msup><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>I</mi><mi>I</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>+</mo></msup><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><msup><mi>x</mi><mo>−</mo></msup><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">l^{rank}=\frac{1}{m^+m^-}\sum_{x^+\in D^+}\sum_{x^-\in D^-}(II(f(x^+)&gt;f(x^-))+\frac{1}{2}II(f(x^+)=f(x^-)))
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.65668em;vertical-align:-1.3352400000000002em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.697331em;"><span style="top:-2.989em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8421299999999996em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3352400000000002em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8421299999999996em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mrel mtight">∈</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7026642857142857em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.3352400000000002em;"><span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.071331em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">+</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.071331em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.821331em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">−</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>U</mi><mi>C</mi><mo>=</mo><msup><mi>l</mi><mrow><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi></mrow></msup></mrow><annotation encoding="application/x-tex">AUC = l^{rank}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8991079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8991079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span></span></span></p>
-<h5 id="34-排序法"><a class="anchor" href="#34-排序法">#</a> 3.4 排序法</h5>
-<p>理解了上面几个方法，这个就直接看公式理解吧：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>U</mi><mi>C</mi><mo>=</mo><mfrac><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mn>0</mn></msub></munderover><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>−</mo><msub><mi>n</mi><mn>0</mn></msub><mo stretchy="false">(</mo><msub><mi>n</mi><mn>0</mn></msub><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow></mrow><mrow><msub><mi>n</mi><mn>0</mn></msub><msub><mi>n</mi><mn>1</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">AUC=\frac{\sum_{i=1}^{n_0}{r_i-n_0(n_0+1)/2}}{n_0n_1}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3300020000000004em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.494002em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.6897100000000003em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31731428571428577em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">n_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">n_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 分别为负例正例样本个数。</p>
-<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>r</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">r_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 表示按照概率大到小排序后第 r 个位置。</p>
+<script type="math/tex; mode=display">
+AUC = 1-l^{rank}</script><h5 id="3-3-排序收益法"><a href="#3-3-排序收益法" class="headerlink" title="3.3 排序收益法"></a>3.3 排序收益法</h5><p>和排序损失法对应，不过不是记录罚分，而是计算收益，最后的公式为</p>
+<script type="math/tex; mode=display">
+l^{rank}=\frac{1}{m^+m^-}\sum_{x^+\in D^+}\sum_{x^-\in D^-}(II(f(x^+)>f(x^-))+\frac{1}{2}II(f(x^+)=f(x^-)))</script><script type="math/tex; mode=display">
+AUC = l^{rank}</script><h5 id="3-4-排序法"><a href="#3-4-排序法" class="headerlink" title="3.4 排序法"></a>3.4 排序法</h5><p>理解了上面几个方法，这个就直接看公式理解吧：</p>
+<script type="math/tex; mode=display">
+AUC=\frac{\sum_{i=1}^{n_0}{r_i-n_0(n_0+1)/2}}{n_0n_1}</script><p>$n_0$，$n_1$分别为负例正例样本个数。</p>
+<p>$r_i$表示按照概率大到小排序后第r个位置。</p>
 <p>还不懂的话，直接看个例子吧：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
 <th style="text-align:center">ID</th>
 <th style="text-align:center">Label</th>
-<th style="text-align:center">P(+|x)</th>
-<th style="text-align:center">rank</th>
+<th style="text-align:center">P(+\</th>
+<th style="text-align:center">x)</th>
+<th>rank</th>
 </tr>
 </thead>
 <tbody>
@@ -414,9 +423,9 @@ Lab Chen = 绯色鱼的博客</title>
 </tr>
 </tbody>
 </table>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>A</mi><mi>U</mi><mi>C</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mo>+</mo><mn>4</mn><mo>−</mo><mn>2</mn><mo>∗</mo><mo stretchy="false">(</mo><mn>2</mn><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mn>2</mn><mo>∗</mo><mn>2</mn></mrow></mfrac><mo>=</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mo>=</mo><mn>0.75</mn></mrow><annotation encoding="application/x-tex">AUC=\frac{2+4-2*(2+1)/2}{2*2}=\frac{3}{4}=0.75
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.10903em;">U</span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">4</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">4</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">7</span><span class="mord">5</span></span></span></span></span></p>
-
+</div>
+<script type="math/tex; mode=display">
+AUC=\frac{2+4-2*(2+1)/2}{2*2}=\frac{3}{4}=0.75</script>
       <div class="tags">
           <a href="../tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/" rel="tag"><i class="ic i-tag"></i> 模型评估</a>
       </div>
@@ -488,7 +497,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item left">
       
 
-  <a href="b2f00d31.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclh5u05ej20zk0m87df.jpg" title="机器学习-模型评估与选择(上)-01">
+  <a href="b2f00d31.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclffsa1cj20zk0m811l.jpg" title="机器学习-模型评估与选择(上)-01">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>机器学习-模型评估与选择(上)-01</h3>
@@ -498,7 +507,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item right">
       
 
-  <a href="8bafc714.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclga70tsj20zk0m84mr.jpg" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">
+  <a href="8bafc714.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewkhf1zj20zk0m81kx.jpg" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 技巧</span>
   <h3>“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</h3>
@@ -520,7 +529,7 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1roc%E4%B8%8Eauc%E8%AF%84%E4%BB%B7"><span class="toc-number">1.</span> <span class="toc-text"> 1.ROC 与 AUC 评价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2auc%E5%80%BC%E6%B1%82%E5%8F%96%E6%A1%88%E4%BE%8B%E7%90%86%E8%A7%A3%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text"> 2.AUC 值求取案例（理解原理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E5%9B%9B%E7%A7%8D%E6%B1%82auc%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text"> 3. 四种求 AUC 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#31-%E5%AE%9A%E4%B9%89%E6%B3%95"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 3.1 定义法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#32-%E6%8E%92%E5%BA%8F%E6%8D%9F%E5%A4%B1%E6%B3%95"><span class="toc-number">3.0.2.</span> <span class="toc-text"> 3.2 排序损失法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#33-%E6%8E%92%E5%BA%8F%E6%94%B6%E7%9B%8A%E6%B3%95"><span class="toc-number">3.0.3.</span> <span class="toc-text"> 3.3 排序收益法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#34-%E6%8E%92%E5%BA%8F%E6%B3%95"><span class="toc-number">3.0.4.</span> <span class="toc-text"> 3.4 排序法</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-ROC%E4%B8%8EAUC%E8%AF%84%E4%BB%B7"><span class="toc-number">1.</span> <span class="toc-text">1.ROC与AUC评价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-AUC%E5%80%BC%E6%B1%82%E5%8F%96%E6%A1%88%E4%BE%8B%EF%BC%88%E7%90%86%E8%A7%A3%E5%8E%9F%E7%90%86%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2.AUC值求取案例（理解原理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%9B%E7%A7%8D%E6%B1%82AUC%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">3.四种求AUC方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#3-1-%E5%AE%9A%E4%B9%89%E6%B3%95"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1 定义法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-2-%E6%8E%92%E5%BA%8F%E6%8D%9F%E5%A4%B1%E6%B3%95"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2 排序损失法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-3-%E6%8E%92%E5%BA%8F%E6%94%B6%E7%9B%8A%E6%B3%95"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.3 排序收益法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-4-%E6%8E%92%E5%BA%8F%E6%B3%95"><span class="toc-number">3.0.4.</span> <span class="toc-text">3.4 排序法</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -544,7 +553,7 @@ Lab Chen = 绯色鱼的博客</title>
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -643,77 +652,47 @@ Lab Chen = 绯色鱼的博客</title>
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
+    <span><a href="3366bb43.html" title="聚类阶段整理（1）-随笔">聚类阶段整理（1）-随笔</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
 </div>
 
-    <span><a href="ff107ac.html" title="Matlab-多元线性拟合-03">Matlab-多元线性拟合-03</a></span>
+    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
+    <span><a href="6699522d.html" title="Git&#x2F;Gitee仓库代码拉取与上推">Git/Gitee仓库代码拉取与上推</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E7%BC%96%E7%A8%8B/" title="In 编程">编程</a>
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="1cad76d6.html" title="考研之数据结构编程笔记">考研之数据结构编程笔记</a></span>
+    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
-</div>
-
-    <span><a href="6ada926f.html" title="什么是爬虫-个人理解向">什么是爬虫-个人理解向</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B5%8B%E8%AF%95/" title="In 测试">测试</a>
-</div>
-
-    <span><a href="4a17b156.html" title="测试文件">测试文件</a></span>
+    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
   </li>
 
       
@@ -730,10 +709,40 @@ Lab Chen = 绯色鱼的博客</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
+    <span><a href="ff107ac.html" title="Matlab-多元线性拟合-03">Matlab-多元线性拟合-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
+</div>
+
+    <span><a href="14a38ce5.html" title="NLP-Transformers-多标签多分类模型搭建与训练">NLP-Transformers-多标签多分类模型搭建与训练</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
   </li>
 
   </ul>

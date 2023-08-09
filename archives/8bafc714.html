@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicmnywqgpj20zk0m8dwx.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh0m9pdj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciusoyjnj219g0u0x56.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,25 +153,13 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>“DLL load failed: 找不到指定的模块。” 的一种解法，可以尝试</p>
-<p><span id="more"></span></p>
-<p>问题来源：<br />
-本身在 Al studio 的环境训练是没问题的，由于某些问题在平台不好弄，于是 copy 了项目，anconda 建立了 paddle-gpu 的虚拟环境也搭建了，但是在跑项目的时候出现了如下错误：<br />
-<img data-src="https://img-blog.csdnimg.cn/20210319190601458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-网上了查看了许多方法，参考着试了不少</p>
-<p>测试方法一：<br />
-<img data-src="https://img-blog.csdnimg.cn/20210319190843879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-缺少的 dll 文件补上了，失败告终</p>
-<p>测试方法二：虚拟环境的 bin 等未在 path 配置，失败告终<br />
-...<br />
- 试了很多方法，没有成功，于是直接查源文件</p>
-<p><img data-src="https://img-blog.csdnimg.cn/20210319191106438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-仔细看反馈，什么意思呢？.nnls 这个没模板没找到，于是直接按照目录找到这个一行<br />
-<img data-src="https://img-blog.csdnimg.cn/20210319192142789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-直接去掉这一行，问题解决了</p>
-<p>这样做会不会影响啥，到是不知道，如果有这个问题，可以用这个方法尝试<br />
-虽然这个问题解决了，但是实际还是没跑起来，显存炸了，呜呜呜<br />
-把批次 batch=1，调了仍然爆炸（8g 显存没抗住 yolo 的 50 层网络，哎），最后还是回到 studio 平台，慢慢来吧。</p>
+    <p>“DLL load failed: 找不到指定的模块。”的一种解法，可以尝试</p>
+<span id="more"></span>
+<p>问题来源：<br>本身在Al studio的环境训练是没问题的，由于某些问题在平台不好弄，于是copy了项目，anconda建立了paddle-gpu的虚拟环境也搭建了，但是在跑项目的时候出现了如下错误：<br><img data-src="https://img-blog.csdnimg.cn/20210319190601458.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>网上了查看了许多方法，参考着试了不少</p>
+<p>测试方法一：<br><img data-src="https://img-blog.csdnimg.cn/20210319190843879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>缺少的dll文件补上了，失败告终</p>
+<p>测试方法二：虚拟环境的bin等未在path配置，失败告终<br>…<br>试了很多方法，没有成功，于是直接查源文件</p>
+<p><img data-src="https://img-blog.csdnimg.cn/20210319191106438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>仔细看反馈，什么意思呢？.nnls这个没模板没找到，于是直接按照目录找到这个一行<br><img data-src="https://img-blog.csdnimg.cn/20210319192142789.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>直接去掉这一行，问题解决了</p>
+<p>这样做会不会影响啥，到是不知道，如果有这个问题，可以用这个方法尝试<br>虽然这个问题解决了，但是实际还是没跑起来，显存炸了，呜呜呜<br>把批次batch=1，调了仍然爆炸（8g显存没抗住yolo的50层网络，哎），最后还是回到studio平台，慢慢来吧。</p>
 
       <div class="tags">
           <a href="../tags/debug/" rel="tag"><i class="ic i-tag"></i> debug</a>
@@ -244,7 +232,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item left">
       
 
-  <a href="6a10ae94.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclx29mstj20zk0m8hdt.jpg" title="机器学习-ROC与AUC详解-03">
+  <a href="6a10ae94.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipevuctzzj20zk0m84qp.jpg" title="机器学习-ROC与AUC详解-03">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>机器学习-ROC与AUC详解-03</h3>
@@ -254,7 +242,7 @@ Lab Chen = 绯色鱼的博客</title>
     <div class="item right">
       
 
-  <a href="efc46ea5.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="一篇文章了解PCA,MDS的推导过程">
+  <a href="efc46ea5.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj61ylzj20zk0m8b29.jpg" title="一篇文章了解PCA,MDS的推导过程">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>一篇文章了解PCA,MDS的推导过程</h3>
@@ -299,7 +287,7 @@ Lab Chen = 绯色鱼的博客</title>
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -395,10 +383,10 @@ Lab Chen = 绯色鱼的博客</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
+    <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
   </li>
 
       
@@ -415,10 +403,10 @@ Lab Chen = 绯色鱼的博客</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" title="In 服务器部署">服务器部署</a>
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
+    <span><a href="bc5c2aae.html" title="聚类阶段整理（5）-系统聚类">聚类阶段整理（5）-系统聚类</a></span>
   </li>
 
       
@@ -428,7 +416,7 @@ Lab Chen = 绯色鱼的博客</title>
 <a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
+    <span><a href="" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
   </li>
 
       
@@ -438,7 +426,7 @@ Lab Chen = 绯色鱼的博客</title>
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
+    <span><a href="2cc27fd2.html" title="机器学习-评估假设与比较检验-04">机器学习-评估假设与比较检验-04</a></span>
   </li>
 
       
@@ -455,10 +443,20 @@ Lab Chen = 绯色鱼的博客</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+<a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
 </div>
 
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
+    <span><a href="75f60fdc.html" title="VUE2的Hello World">VUE2的Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E7%BC%96%E7%A8%8B/" title="In 编程">编程</a>
+</div>
+
+    <span><a href="1cad76d6.html" title="考研之数据结构编程笔记">考研之数据结构编程笔记</a></span>
   </li>
 
       
@@ -468,27 +466,17 @@ Lab Chen = 绯色鱼的博客</title>
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="45098d0e.html" title="遗传算法案例-货物派送Matlab&#x2F;Python">遗传算法案例-货物派送Matlab/Python</a></span>
+    <span><a href="d5527f55.html" title="聚类阶段整理（2）-聚类介绍">聚类阶段整理（2）-聚类介绍</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
 </div>
 
-    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="c1ca115b.html" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</a></span>
+    <span><a href="6ada926f.html" title="什么是爬虫-个人理解向">什么是爬虫-个人理解向</a></span>
   </li>
 
   </ul>

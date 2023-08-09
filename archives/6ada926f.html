@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeuv80yoj20zk0m8kjl.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicm0n457cj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewkhf1zj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuv0socj20zk0m8qes.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitzannuj20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -154,19 +154,16 @@ Lab Chen = 绯色鱼的博客</title>
     
 
     <p>随手记录，第一次用爬虫</p>
-<p><span id="more"></span></p>
-<h2 id="首先说一下环境部分"><a class="anchor" href="#首先说一下环境部分">#</a> 首先说一下环境部分</h2>
-<p><strong>我的环境：</strong></p>
-<pre class=" language-language-python"><code class="language-language-python">python3.7
+<span id="more"></span>
+<h2 id="首先说一下环境部分"><a href="#首先说一下环境部分" class="headerlink" title="首先说一下环境部分"></a>首先说一下环境部分</h2><p><strong>我的环境：</strong></p>
+<pre class=" language-lang-python"><code class="language-lang-python">python3.7
 Anconda虚拟环境
 所应用库：pandas，json，requests，time（time库因为要爬取数据类型而用的，非必须库）
 </code></pre>
 <p>环境不同不会影响太大（似乎基本没啥影响）</p>
-<h2 id="爬虫开始"><a class="anchor" href="#爬虫开始">#</a> 爬虫开始</h2>
-<p>这里只说一些基础中的基础，适合 python 没怎么用过的小白食用。<br />
-费话不多少，开始...</p>
+<h2 id="爬虫开始"><a href="#爬虫开始" class="headerlink" title="爬虫开始"></a>爬虫开始</h2><p>这里只说一些基础中的基础，适合python没怎么用过的小白食用。<br>费话不多少，开始…</p>
 <p>首先，爬虫就是伪装成浏览器去看数据，并把看到的数据记录下来，然后把记录的数据下载下来。这就叫爬数据，下面直接讲操作：</p>
-<pre class=" language-language-python"><code class="language-language-python">import pandas as pd
+<pre class=" language-lang-python"><code class="language-lang-python">import pandas as pd
 import requests
 import json
 import time
@@ -177,36 +174,18 @@ headers = &#123;
 url = 'https://c.m.163.com/ug/api/wuhan/app/data/list-total'
 key = requests.get(url, headers=headers)
 </code></pre>
-<p><strong>1、headers</strong><br />
- 这个 headers 就是我们伪装成的浏览器，那你们应该问了，这后面一大长串字符咋来的，举个例子如果你要爬这个网页中的数据：</p>
+<p><strong>1、headers</strong><br>这个headers就是我们伪装成的浏览器，那你们应该问了，这后面一大长串字符咋来的，举个例子如果你要爬这个网页中的数据：</p>
 <blockquote>
-<p><span class="exturl" data-url="aHR0cHM6Ly93cC5tLjE2My5jb20vMTYzL3BhZ2UvbmV3cy92aXJ1c19yZXBvcnQvaW5kZXguaHRtbA==">https://wp.m.163.com/163/page/news/virus_report/index.html</span>?<em>nw</em>=1&amp;<em>anw</em>=1</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93cC5tLjE2My5jb20vMTYzL3BhZ2UvbmV3cy92aXJ1c19yZXBvcnQvaW5kZXguaHRtbD9fbndfPTEmYW1wO19hbndfPTE=">https://wp.m.163.com/163/page/news/virus_report/index.html?_nw_=1&amp;_anw_=1</span></p>
 </blockquote>
-<p>这是网易新闻网页<br />
-如果你要伪装成谷歌浏览器，那么复制网址到谷歌浏览器，摁 F12，会有以下界面：<br />
-<img data-src="https://img-blog.csdnimg.cn/20200417094746308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-①选中 Network<br />
-②再选中 XHR<br />
-③摁 F5 刷新<br />
-④会出来 name 之下有一系列 list，那个是数据存储地址，通过查看发现在第二个里面有我们想要的数据<br />
-<img data-src="https://img-blog.csdnimg.cn/20200417100124219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-拉到 headers 最下面<br />
-<img data-src="https://img-blog.csdnimg.cn/20200417100340700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-这个东西复制改动一下（记得加引号 * 2）<br />
-那么那个伪装头就做好了（我们伪装的浏览器就弄好了）<br />
-<strong>2、url</strong><br />
- 在同一页<br />
-<img data-src="https://img-blog.csdnimg.cn/20200417100559137.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
-可以看到 url 把‘？t=317...’删了复制到 url 代码就可以了（‘记得引号’）</p>
-<pre class=" language-language-python"><code class="language-language-python">key = requests.get(url, headers=headers)
+<p>这是网易新闻网页<br>如果你要伪装成谷歌浏览器，那么复制网址到谷歌浏览器，摁F12，会有以下界面：<br><img data-src="https://img-blog.csdnimg.cn/20200417094746308.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>①选中Network<br>②再选中XHR<br>③摁F5刷新<br>④会出来name之下有一系列list，那个是数据存储地址，通过查看发现在第二个里面有我们想要的数据<br><img data-src="https://img-blog.csdnimg.cn/20200417100124219.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>拉到headers最下面<br><img data-src="https://img-blog.csdnimg.cn/20200417100340700.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>这个东西复制改动一下（记得加引号<em>2）<br>那么那个伪装头就做好了（我们伪装的浏览器就弄好了）<br><em>*2、url</em></em><br>在同一页<br><img data-src="https://img-blog.csdnimg.cn/20200417100559137.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQ0ODUxMzU3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>可以看到url 把‘？t=317…’删了复制到url代码就可以了（‘记得引号’）</p>
+<pre class=" language-lang-python"><code class="language-lang-python">key = requests.get(url, headers=headers)
 </code></pre>
-<p>如果把 key 输出等于 200（上面图中绿色小点后面的数字）那么就说明爬虫武器做好了，可以进网站去爬数据了。<br />
-<strong>3、爬取数据</strong><br />
-通过网页可以发现数据是字典类型，那么我们用</p>
-<pre class=" language-language-python"><code class="language-language-python">data_json = json.loads(r.text)
+<p>如果把key输出等于200（上面图中绿色小点后面的数字）那么就说明爬虫武器做好了，可以进网站去爬数据了。<br><strong>3、爬取数据</strong><br>通过网页可以发现数据是字典类型，那么我们用</p>
+<pre class=" language-lang-python"><code class="language-lang-python">data_json = json.loads(r.text)
 data = data_json['data']
 </code></pre>
-<p>后面字典数据具体怎么筛选就是 python 基本操作了，其他大神肯定写了很多，我就不多说了。</p>
+<p>后面字典数据具体怎么筛选就是python基本操作了，其他大神肯定写了很多，我就不多说了。</p>
 
       <div class="tags">
           <a href="../tags/%E7%88%AC%E8%99%AB/" rel="tag"><i class="ic i-tag"></i> 爬虫</a>
@@ -280,7 +259,7 @@ data = data_json['data']
     <div class="item left">
       
 
-  <a href="98975d7d.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeun65urj20zk0m81ii.jpg" title="聚类阶段整理（3）-评价指标【上】">
+  <a href="98975d7d.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph4baakhj20zk0m8h5q.jpg" title="聚类阶段整理（3）-评价指标【上】">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>聚类阶段整理（3）-评价指标【上】</h3>
@@ -290,7 +269,7 @@ data = data_json['data']
     <div class="item right">
       
 
-  <a href="5b4295ff.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhtuo6nj20zk0m8ttm.jpg" title="聚类阶段整理（4）-评价指标【下】">
+  <a href="5b4295ff.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="聚类阶段整理（4）-评价指标【下】">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 机器学习</span>
   <h3>聚类阶段整理（4）-评价指标【下】</h3>
@@ -312,7 +291,7 @@ data = data_json['data']
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E8%AF%B4%E4%B8%80%E4%B8%8B%E7%8E%AF%E5%A2%83%E9%83%A8%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text"> 首先说一下环境部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text"> 爬虫开始</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E8%AF%B4%E4%B8%80%E4%B8%8B%E7%8E%AF%E5%A2%83%E9%83%A8%E5%88%86"><span class="toc-number">1.</span> <span class="toc-text">首先说一下环境部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%88%AC%E8%99%AB%E5%BC%80%E5%A7%8B"><span class="toc-number">2.</span> <span class="toc-text">爬虫开始</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -336,7 +315,7 @@ data = data_json['data']
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -432,10 +411,40 @@ data = data_json['data']
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+</div>
+
+    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="9b594b83.html" title="Matlab-感知器-02">Matlab-感知器-02</a></span>
+    <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+</div>
+
+    <span><a href="92f60f59.html" title="Git远程无法clone仓库或者链接不到">Git远程无法clone仓库或者链接不到</a></span>
   </li>
 
       
@@ -452,36 +461,6 @@ data = data_json['data']
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="6a10ae94.html" title="机器学习-ROC与AUC详解-03">机器学习-ROC与AUC详解-03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B5%8B%E8%AF%95/" title="In 测试">测试</a>
-</div>
-
-    <span><a href="4a17b156.html" title="测试文件">测试文件</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
 </div>
 
@@ -492,30 +471,20 @@ data = data_json['data']
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="3366bb43.html" title="聚类阶段整理（1）-随笔">聚类阶段整理（1）-随笔</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
 </div>
 
-    <span><a href="8a5cf894.html" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
-</div>
-
-    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="6699522d.html" title="Git&#x2F;Gitee仓库代码拉取与上推">Git/Gitee仓库代码拉取与上推</a></span>
+    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
   </li>
 
       
@@ -525,7 +494,17 @@ data = data_json['data']
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="3366bb43.html" title="聚类阶段整理（1）-随笔">聚类阶段整理（1）-随笔</a></span>
+    <span><a href="9b594b83.html" title="Matlab-感知器-02">Matlab-感知器-02</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%B5%8B%E8%AF%95/" title="In 测试">测试</a>
+</div>
+
+    <span><a href="4a17b156.html" title="测试文件">测试文件</a></span>
   </li>
 
   </ul>

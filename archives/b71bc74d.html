@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicljgocqbj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew28b65j20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesrnqv3j20zk0m8ava.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitf0kl1j20zk0m87fe.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,14 +153,14 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>试了三遍，终于挂载成功了 DMOJ</p>
-<p><span id="more"></span></p>
+    <p>试了三遍，终于挂载成功了DMOJ</p>
+<span id="more"></span>
 <p>Ubuntu20.04、Ubuntu20.04【WSL】适用</p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRtb2ouY2EvIy9zaXRlL2luc3RhbGxhdGlvbg==">官方提供的开发文档</span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9kbW9qLmNhLw==">DMOJ 官网</span></p>
-<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovb25saW5lLWp1ZGdl">GitHub 地址</span></p>
-<p><strong>1. 环境配置</strong></p>
-<pre class=" language-language-shell"><code class="language-language-shell">apt update
+<p><span class="exturl" data-url="aHR0cHM6Ly9kbW9qLmNhLw==">DMOJ官网</span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovb25saW5lLWp1ZGdl">GitHub地址</span></p>
+<p><strong>1.环境配置</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell">apt update
 # 大前置
 apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server
 # npm相关,这是官方方式，这里不推荐
@@ -185,11 +185,11 @@ npm config set registry https://registry.npm.taobao.org
 # 几个sass转换工具[scss->css，目前我是这么理解的]
 npm install -g sass postcss-cli postcss autoprefixer
 </code></pre>
-<p><strong>2. 数据库</strong></p>
-<p>&lt;mariadb user password&gt; 注意修改成你自己密码</p>
-<p>官网用的这种，mysql 其实也可以</p>
-<p>PS：如果开发环境为 wsl，而且你 win 上本来就有 mysql 了，大概会各种冲突，会有锁之类的问题，这里建议拉一个小型服务器，阿里云 / 腾讯云的，数据库单独部署。</p>
-<pre class=" language-language-shell"><code class="language-language-shell">apt update
+<p><strong>2.数据库</strong></p>
+<p><mariadb user password>注意修改成你自己密码</p>
+<p>官网用的这种，mysql其实也可以</p>
+<p>PS：如果开发环境为wsl，而且你win上本来就有mysql了，大概会各种冲突，会有锁之类的问题，这里建议拉一个小型服务器，阿里云/腾讯云的，数据库单独部署。</p>
+<pre class=" language-lang-shell"><code class="language-lang-shell">apt update
 # mariadbDB数据库下载
 apt install mariadb-server libmysqlclient-dev
 sudo mysql
@@ -200,10 +200,10 @@ mariadb> CREATE DATABASE dmoj DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8
 mariadb> GRANT ALL PRIVILEGES ON dmoj.* TO 'dmoj'@'%' IDENTIFIED BY 'dmoj123.';
 mariadb> exit
 </code></pre>
-<p>自行下载 anaonda3 的 sh 文件，运行安装</p>
-<p>创建名为 dmojsite 的 python3.8 的虚拟环境，并切换到新环境，如果后面没有说明，所有操作均在此环境下。</p>
-<p><strong>3. 项目拉取</strong></p>
-<pre class=" language-language-shell"><code class="language-language-shell">git clone https://github.com/DMOJ/online-judge.git
+<p>自行下载anaonda3的sh文件，运行安装</p>
+<p>创建名为dmojsite的python3.8的虚拟环境，并切换到新环境，如果后面没有说明，所有操作均在此环境下。</p>
+<p><strong>3.项目拉取</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell">git clone https://github.com/DMOJ/online-judge.git
 cd online-judge
 git checkout v4.0.0  # 两种判断服务器方式，1.PyPi 2.docker，只有用1.才用此行命令，个人推荐测试先用PiPy，后面换docker
 git submodule init
@@ -216,17 +216,16 @@ pip install mysqlclient -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 python manage.py check
 </code></pre>
-<p><strong>4. 项目修改</strong></p>
-<p>在 dmoj 文件夹创建 local_settings.py，官方案例：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovZG9jcy9ibG9iL21hc3Rlci9zYW1wbGVfZmlsZXMvbG9jYWxfc2V0dGluZ3MucHk=">local_settings.py</span></p>
+<p><strong>4.项目修改</strong></p>
+<p>在dmoj文件夹创建local_settings.py，官方案例：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovZG9jcy9ibG9iL21hc3Rlci9zYW1wbGVfZmlsZXMvbG9jYWxfc2V0dGluZ3MucHk=">local_settings.py</span></p>
 <pre><code>SECRET_KEY按照上面注释的命令生成并替换
 DEBUG正式运行记得关，我们测试可以先开着
-注释的ALLOWED_HOST改成['*'],并取消注释
+注释的ALLOWED_HOST改成[&#39;*&#39;],并取消注释
 DATABASES密码改成你创建数据库设置的
 CELERY的两个设置注释都取消
 【一个个人感觉不太重要的：80多行EMAIL6个设置都打开，改成自己邮箱 密码】
-</code></pre>
-<p><strong>5. 项目资源迁移 [最大事故区]</strong></p>
-<pre class=" language-language-shell"><code class="language-language-shell"># 下面这个命令如果均是ok，不报错，算是到一段落了
+</code></pre><p><strong>5.项目资源迁移[最大事故区]</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell"># 下面这个命令如果均是ok，不报错，算是到一段落了
 ./make_style.sh
 python manage.py collectstatic
 python manage.py compilemessages
@@ -241,8 +240,8 @@ python manage.py createsuperuser
 # 起一下看看，没问题Ctrl+C关闭
 python manage.py runserver
 </code></pre>
-<p><strong>6.redis uwsgi supervisord nginx 代理部署</strong> *</p>
-<pre class=" language-language-shell"><code class="language-language-shell">service redis-server start
+<p><strong>6.redis uwsgi supervisord nginx代理部署*</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell">service redis-server start
 
 # 测试后关闭
 python manage.py runserver 0.0.0.0:8000
@@ -287,15 +286,15 @@ sudo vim /etc/supervisor/conf.d/celery.conf
 supervisorctl update
 supervisorctl status
 </code></pre>
-<p>nginx 代理目前个人没有需求，未实验，可以去看官网</p>
-<p><strong>7. 判断服务器设置 PyPi</strong></p>
-<pre class=" language-language-shell"><code class="language-language-shell">apt install python3-dev python3-pip build-essential libseccomp-dev
+<p>nginx代理目前个人没有需求，未实验，可以去看官网</p>
+<p><strong>7.判断服务器设置PyPi</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell">apt install python3-dev python3-pip build-essential libseccomp-dev
 pip install dmoj
 # 注意命令输出的runtime内容
 dmoj-autoconf
 </code></pre>
-<p>创建一个 judge.yml 文件，手动创建 problems 文件夹</p>
-<pre class=" language-language-yaml"><code class="language-language-yaml"># id和key登陆你挂起的django服务，登陆进入管理后台，添加你的判断服务器，记得设置的id和key
+<p>创建一个judge.yml文件，手动创建problems文件夹</p>
+<pre class=" language-lang-yaml"><code class="language-lang-yaml"># id和key登陆你挂起的django服务，登陆进入管理后台，添加你的判断服务器，记得设置的id和key
 # 碎碎念：id最好是judge，我之前用了judge01，一直连不上，换成judge瞬间连上了，痛苦面具，key记得复制全，因为随机生成的有时候会有两个/，
 # 我鼠标点击复制了一部分，两个痛苦面具
 id: <judge name>
@@ -306,7 +305,7 @@ problem_storage_root:
 runtime:
    ...
 </code></pre>
-<pre class=" language-language-shell"><code class="language-language-shell"># 进入管理后端，更改站点8081-》8000 或者vscode搜索下8081，改成8000也行，只需要改一个地方。
+<pre class=" language-lang-shell"><code class="language-lang-shell"># 进入管理后端，更改站点8081-》8000 或者vscode搜索下8081，改成8000也行，只需要改一个地方。
 # 不然判断服务器连不上 
 
 # 本机测试
@@ -315,7 +314,7 @@ dmoj -c judge.yml localhost
 dmoj -c judge.yml -p "$PORT" "$IP"
 # PS:如果连接不到，回去检查nginx之前的配置，是否都正常。
 </code></pre>
-<p>后端挂起 + 判断服务器挂起，打开管理看到判断服务器绿色对勾，测试完毕。</p>
+<p>后端挂起+判断服务器挂起，打开管理看到判断服务器绿色对勾，测试完毕。</p>
 
       <div class="tags">
           <a href="../tags/python/" rel="tag"><i class="ic i-tag"></i> python</a>
@@ -390,9 +389,9 @@ dmoj -c judge.yml -p "$PORT" "$IP"
     <div class="item left">
       
 
-  <a href="53b3d661.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipey84bjtj20zk0m8hdt.jpg" title="QDUOJ手动部署借鉴参考 [警告]">
+  <a href="53b3d661.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipet4bz0yj20zk0m8e81.jpg" title="QDUOJ手动部署借鉴参考 [警告]">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 服务器部署</span>
+  <span class="category"><i class="ic i-flag"></i> 部署</span>
   <h3>QDUOJ手动部署借鉴参考 [警告]</h3>
   </a>
 
@@ -400,7 +399,7 @@ dmoj -c judge.yml -p "$PORT" "$IP"
     <div class="item right">
       
 
-  <a href="9348a75e.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhpw3lwj20zk0m8gvw.jpg" title="Docker学习[Dockerfile]">
+  <a href="9348a75e.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclfw2t96j20zk0m8x6p.jpg" title="Docker学习[Dockerfile]">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 部署</span>
   <h3>Docker学习[Dockerfile]</h3>
@@ -425,7 +424,7 @@ dmoj -c judge.yml -p "$PORT" "$IP"
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li class="active"><a href="" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li><a href="9348a75e.html" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li>
+          <li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li><a href="53b3d661.html" rel="bookmark" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></li><li class="active"><a href="" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li><a href="9348a75e.html" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -445,7 +444,7 @@ dmoj -c judge.yml -p "$PORT" "$IP"
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -541,10 +540,20 @@ dmoj -c judge.yml -p "$PORT" "$IP"
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="9348a75e.html" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></span>
+    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
   </li>
 
       
@@ -554,17 +563,7 @@ dmoj -c judge.yml -p "$PORT" "$IP"
 <a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
 </div>
 
-    <span><a href="bc57630c.html" title="LSTM 昇腾平台全框架指南">LSTM 昇腾平台全框架指南</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B5%8B%E8%AF%95/" title="In 测试">测试</a>
-</div>
-
-    <span><a href="4a17b156.html" title="测试文件">测试文件</a></span>
+    <span><a href="68fa613c.html" title="「转载」Bert中文情感分类分析-tf1.14">「转载」Bert中文情感分类分析-tf1.14</a></span>
   </li>
 
       
@@ -584,17 +583,27 @@ dmoj -c judge.yml -p "$PORT" "$IP"
 <a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="ae9d7f26.html" title="DOS命令中文乱码一行命令解决">DOS命令中文乱码一行命令解决</a></span>
+    <span><a href="92f60f59.html" title="Git远程无法clone仓库或者链接不到">Git远程无法clone仓库或者链接不到</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
 </div>
 
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
+    <span><a href="cd00f604.html" title="「明日方舟」代理脚本-Hash匹配">「明日方舟」代理脚本-Hash匹配</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+</div>
+
+    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
   </li>
 
       
@@ -604,7 +613,17 @@ dmoj -c judge.yml -p "$PORT" "$IP"
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
+    <span><a href="6a10ae94.html" title="机器学习-ROC与AUC详解-03">机器学习-ROC与AUC详解-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
   </li>
 
       
@@ -615,26 +634,6 @@ dmoj -c judge.yml -p "$PORT" "$IP"
 </div>
 
     <span><a href="d5527f55.html" title="聚类阶段整理（2）-聚类介绍">聚类阶段整理（2）-聚类介绍</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
   </li>
 
   </ul>

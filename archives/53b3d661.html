@@ -32,7 +32,7 @@
 
 
   <title>
-QDUOJ手动部署借鉴参考 [警告] - 服务器部署 |
+QDUOJ手动部署借鉴参考 [警告] - 部署 |
 Lab Chen = 绯色鱼的博客</title>
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipewr8iypj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli3sbvtj20zk0m8x6p.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicit31ffoj20zk0m8naf.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhfehz7j20zk0m8u0x.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclhpw3lwj20zk0m8gvw.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -133,7 +133,7 @@ Lab Chen = 绯色鱼的博客</title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="../index.html">Home</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/" itemprop="item" rel="index" title="In 服务器部署"><span itemprop="name">服务器部署</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../categories/%E9%83%A8%E7%BD%B2/" itemprop="item" rel="index" title="In 部署"><span itemprop="name">部署</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
@@ -154,20 +154,17 @@ Lab Chen = 绯色鱼的博客</title>
     
 
     <p>更推荐官网一键部署，手动有失败率，但是能更深入理解部署过程</p>
-<p><span id="more"></span></p>
-<h3 id="手动qduoj部署"><a class="anchor" href="#手动qduoj部署">#</a> 手动 QDUOJ 部署</h3>
-<p>[更推荐官网一键部署，手动有失败率，但是能更深入理解部署过程]</p>
-<h4 id="目录"><a class="anchor" href="#目录">#</a> 目录</h4>
-<p>★标记的部分很重要</p>
+<span id="more"></span>
+<h3 id="手动QDUOJ部署"><a href="#手动QDUOJ部署" class="headerlink" title="手动QDUOJ部署"></a>手动QDUOJ部署</h3><p>[更推荐官网一键部署，手动有失败率，但是能更深入理解部署过程]</p>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p>★标记的部分很重要</p>
 <p>[TOC]</p>
-<h3 id="一-需求环境"><a class="anchor" href="#一-需求环境">#</a> 一、需求环境</h3>
-<p>Docker，Docker-compose，python=3.8 [推荐]</p>
-<pre class=" language-language-shell"><code class="language-language-shell"># 查看版本
+<h3 id="一、需求环境"><a href="#一、需求环境" class="headerlink" title="一、需求环境"></a>一、需求环境</h3><p>Docker，Docker-compose，python=3.8[推荐]</p>
+<pre class=" language-lang-shell"><code class="language-lang-shell"># 查看版本
 docker -v
 docker-compose -v
 </code></pre>
-<p><strong>环境配置 [Ubuntu20.04，不推荐 22 原因：前端很多前置包 22 不支持]：</strong></p>
-<pre class=" language-language-shell"><code class="language-language-shell"># 1.docker安装
+<p><strong>环境配置[Ubuntu20.04，不推荐22原因：前端很多前置包22不支持]：</strong></p>
+<pre class=" language-lang-shell"><code class="language-lang-shell"># 1.docker安装
 # 卸载原有Docker并清除相关文件
 sudo apt-get remove docker docker-engine
 rm -fr /var/lib/docker/
@@ -204,14 +201,12 @@ conda create -n onlinejudge python=3.8
 # 切换环境,如果使用python/pip命令，注意是否在此环境下
 conda activate onlinejudge
 </code></pre>
-<h3 id="二-clone相关仓库"><a class="anchor" href="#二-clone相关仓库">#</a> 二、clone 相关仓库</h3>
-<pre class=" language-language-shell"><code class="language-language-shell"># 后端仓库
+<h3 id="二、clone相关仓库"><a href="#二、clone相关仓库" class="headerlink" title="二、clone相关仓库"></a>二、clone相关仓库</h3><pre class=" language-lang-shell"><code class="language-lang-shell"># 后端仓库
 git clone https://github.com/QingdaoU/OnlineJudge.git
 # 前端仓库
 git clone https://github.com/QingdaoU/OnlineJudgeFE.git
 </code></pre>
-<h3 id="三-后端部署"><a class="anchor" href="#三-后端部署">#</a> 三、后端部署</h3>
-<pre class=" language-language-shell"><code class="language-language-shell">cd OnlineJudge
+<h3 id="三、后端部署"><a href="#三、后端部署" class="headerlink" title="三、后端部署"></a>三、后端部署</h3><pre class=" language-lang-shell"><code class="language-lang-shell">cd OnlineJudge
 
 # 1.pip安装前置包
 pip install --no-cache-dir -r deploy/requirements.txt
@@ -239,7 +234,7 @@ python manage.py inituser --username root --password rootroot --action create_su
 python manage.py runserver
 </code></pre>
 <p>redis-postgres.yml：</p>
-<pre class=" language-language-yaml"><code class="language-language-yaml"># redis-postgres.yml
+<pre class=" language-lang-yaml"><code class="language-lang-yaml"># redis-postgres.yml
 version: "3"
 services:
 
@@ -267,14 +262,14 @@ services:
     ports:
       - "0.0.0.0:5435:5432"
 </code></pre>
-<pre class=" language-language-shell"><code class="language-language-shell"># 添加判断服务器
+<pre class=" language-lang-shell"><code class="language-lang-shell"># 添加判断服务器
 vim judge-server.yml
 # 添加以下代码块内容
 
 docker-compose -f judge-server.yml -p judge-server up -d
 </code></pre>
 <p>judge-server.yml：</p>
-<pre class=" language-language-yaml"><code class="language-language-yaml">version: "3"
+<pre class=" language-lang-yaml"><code class="language-lang-yaml">version: "3"
 services:
 
   judge-server:
@@ -305,8 +300,7 @@ services:
       # - judger_debug=1
     network_mode: "host"
 </code></pre>
-<h3 id="四-前端部署"><a class="anchor" href="#四-前端部署">#</a> 四、前端部署</h3>
-<pre class=" language-language-shell"><code class="language-language-shell"># 安装nodejs+npm
+<h3 id="四、前端部署"><a href="#四、前端部署" class="headerlink" title="四、前端部署"></a>四、前端部署</h3><pre class=" language-lang-shell"><code class="language-lang-shell"># 安装nodejs+npm
 nvm install v8.12.0
 nvm use 8.12.0
 # 验证
@@ -331,8 +325,7 @@ export PORT=8088
 # 前端运行在8088端口下
 npm run dev
 </code></pre>
-<h3 id="五-其他注意事项"><a class="anchor" href="#五-其他注意事项">#</a> 五、其他注意事项</h3>
-<pre><code>1.Anaconda安装最后conda init提示初始化失败，具体为路径配置失败
+<h3 id="五、其他注意事项"><a href="#五、其他注意事项" class="headerlink" title="五、其他注意事项"></a>五、其他注意事项</h3><pre><code>1.Anaconda安装最后conda init提示初始化失败，具体为路径配置失败
 sudo vim ~/.bashrc
 export PATH=/home/boy/anaconda3/bin:$PATH【★注意改成你自己目录】
 source ~/.bashrc
@@ -340,7 +333,6 @@ source ~/.bashrc
 django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.so.0: undefined symbol: ffi_type_pointer, version LIBFFI_BASE_7.0
 安装pip包：pip install psycopg2-binary
 </code></pre>
-
       <div class="tags">
           <a href="../tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
           <a href="../tags/QDUOJ/" rel="tag"><i class="ic i-tag"></i> QDUOJ</a>
@@ -355,7 +347,7 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2023-08-09 16:03:57" itemprop="dateModified" datetime="2023-08-09T16:03:57+08:00">2023-08-09</time>
+    <time title="Modified: 2023-08-09 16:39:02" itemprop="dateModified" datetime="2023-08-09T16:39:02+08:00">2023-08-09</time>
   </span>
   <span id="archives/53b3d661.html" class="item leancloud_visitors" data-flag-title="QDUOJ手动部署借鉴参考 [警告]" title="Views">
       <span class="icon">
@@ -413,7 +405,7 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
     <div class="item left">
       
 
-  <a href="92f60f59.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicit31ffoj20zk0m8naf.jpg" title="Git远程无法clone仓库或者链接不到">
+  <a href="92f60f59.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyonbf9j20zk0m8e81.jpg" title="Git远程无法clone仓库或者链接不到">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 技巧</span>
   <h3>Git远程无法clone仓库或者链接不到</h3>
@@ -423,7 +415,7 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
     <div class="item right">
       
 
-  <a href="b71bc74d.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexbei4hj20zk0m8npd.jpg" title="DMOJ我的三周目换你一周目速通">
+  <a href="b71bc74d.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciukx8a7j20zk0m8aio.jpg" title="DMOJ我的三周目换你一周目速通">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 部署</span>
   <h3>DMOJ我的三周目换你一周目速通</h3>
@@ -445,11 +437,11 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8qduoj%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text"> 手动 QDUOJ 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E9%9C%80%E6%B1%82%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text"> 一、需求环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-clone%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text"> 二、clone 相关仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">4.</span> <span class="toc-text"> 三、后端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B-%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">5.</span> <span class="toc-text"> 四、前端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94-%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">6.</span> <span class="toc-text"> 五、其他注意事项</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8QDUOJ%E9%83%A8%E7%BD%B2"><span class="toc-number">1.</span> <span class="toc-text">手动QDUOJ部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E9%9C%80%E6%B1%82%E7%8E%AF%E5%A2%83"><span class="toc-number">2.</span> <span class="toc-text">一、需求环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81clone%E7%9B%B8%E5%85%B3%E4%BB%93%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">二、clone相关仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%90%8E%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">4.</span> <span class="toc-text">三、后端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%89%8D%E7%AB%AF%E9%83%A8%E7%BD%B2"><span class="toc-number">5.</span> <span class="toc-text">四、前端部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%85%B6%E4%BB%96%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">6.</span> <span class="toc-text">五、其他注意事项</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li class="active"><a href="" rel="bookmark" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></li>
+          <li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li class="active"><a href="" rel="bookmark" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></li><li><a href="b71bc74d.html" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li><a href="9348a75e.html" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -469,7 +461,7 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -565,70 +557,60 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="c1ca115b.html" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="a0e5a0c1.html" title="Dos批处理pip安装库">Dos批处理pip安装库</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
-</div>
-
-    <span><a href="68fa613c.html" title="「转载」Bert中文情感分类分析-tf1.14">「转载」Bert中文情感分类分析-tf1.14</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="2cc27fd2.html" title="机器学习-评估假设与比较检验-04">机器学习-评估假设与比较检验-04</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
 </div>
 
     <span><a href="bc57630c.html" title="LSTM 昇腾平台全框架指南">LSTM 昇腾平台全框架指南</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="bc5c2aae.html" title="聚类阶段整理（5）-系统聚类">聚类阶段整理（5）-系统聚类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="5b4295ff.html" title="聚类阶段整理（4）-评价指标【下】">聚类阶段整理（4）-评价指标【下】</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
+</div>
+
+    <span><a href="28195b23.html" title="Selenium爬虫使用中阶攻略">Selenium爬虫使用中阶攻略</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+</div>
+
+    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
   </li>
 
       
@@ -650,17 +632,27 @@ django migrate Error loading psycopg2 module: /lib/x86_64-linux-gnu/libp11-kit.s
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="6a10ae94.html" title="机器学习-ROC与AUC详解-03">机器学习-ROC与AUC详解-03</a></span>
+    <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E7%BC%96%E7%A8%8B/" title="In 编程">编程</a>
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="1cad76d6.html" title="考研之数据结构编程笔记">考研之数据结构编程笔记</a></span>
+    <span><a href="a0e5a0c1.html" title="Dos批处理pip安装库">Dos批处理pip安装库</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
+</div>
+
+    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
   </li>
 
   </ul>

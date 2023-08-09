@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclil3m4ej20zk0m8tn8.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipew8gmvyj20zk0m87wh.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh3brzpj20zk0m8ann.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclga70tsj20zk0m84mr.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipetlbztpj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx29mstj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciszlczyj20zk0m816d.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,28 +153,26 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>涵盖了 keras，tensorflow，torch，ms 多框架的 LSTM 模型。</p>
-<p><span id="more"></span></p>
-<p>原始开发环境：华为云昇腾 Ascend 下 mindspore1.8 下</p>
+    <p>涵盖了keras，tensorflow，torch，ms多框架的LSTM模型。</p>
+<span id="more"></span>
+<p>原始开发环境：华为云昇腾Ascend下mindspore1.8下</p>
 <p>可使用资源：CPU，NPU-Ai core，NPU-HBM</p>
-<p>个人使用流程：【NPU-HBM 和 NPU-Ai core 的关系类似 CPU 和 GPU】</p>
-<p>①keras 模型训练</p>
-<p>②切换 tensorflow 模型训练</p>
-<p>③切换 torch 模型训练</p>
-<p>④切换 torch+NPU-Ai core 模型训练</p>
-<p>⑤切换 mindspore+NPU-HBM+NPU-Ai core 模型训练</p>
-<p>总结，一个算法任务，算是把所有框架换了个遍，就差 torch+GPU 了，以后说不定会补充一下</p>
+<p>个人使用流程：【NPU-HBM和NPU-Ai core的关系类似CPU和GPU】</p>
+<p>①keras模型训练</p>
+<p>②切换tensorflow模型训练</p>
+<p>③切换torch模型训练</p>
+<p>④切换torch+NPU-Ai core模型训练</p>
+<p>⑤切换mindspore+NPU-HBM+NPU-Ai core模型训练</p>
+<p>总结，一个算法任务，算是把所有框架换了个遍，就差torch+GPU了，以后说不定会补充一下</p>
 <p>★重点在于④⑤，前面三个比较常规</p>
-<h3 id="1-keras模型训练"><a class="anchor" href="#1-keras模型训练">#</a> 1 keras 模型训练</h3>
-<p>首先区分两种训练模型，不管哪个框架，都有两种写法：①开箱训练【自己起的，并非官方命名，只是为了区分】：模型的训练函数自己定义，需要手写整个训练流程的逻辑；②闭箱训练：直接调用 model.train，只需要自己设置超参即可，不用管训练逻辑。这里 5 种训练方式也是由闭箱训练慢慢切换成了开箱训练。</p>
-<p>本次教程使用 LSTM 做时序预测，一开始是简单 lstm 后面改成双向，增加注意力机制，算是我自己整个项目流程，由简单到复杂。</p>
-<h4 id="11-数据集"><a class="anchor" href="#11-数据集">#</a> 1.1 数据集</h4>
-<p>数据源为两个 npy 文件：X：4000×400×32；Y：4000×400×1</p>
-<p>数据 X 介绍：4000 个样本，每个样本为 400×32</p>
-<p>数据 Y 介绍：其实是 4000×1，中间 400 是扩展的，例如样本 x1 对应要预测的数值 y1，这里扩展成 [y1，y1，....，y1].shape=400×1</p>
+<h3 id="1-keras模型训练"><a href="#1-keras模型训练" class="headerlink" title="1 keras模型训练"></a>1 keras模型训练</h3><p>首先区分两种训练模型，不管哪个框架，都有两种写法：①开箱训练【自己起的，并非官方命名，只是为了区分】：模型的训练函数自己定义，需要手写整个训练流程的逻辑；②闭箱训练：直接调用model.train，只需要自己设置超参即可，不用管训练逻辑。这里5种训练方式也是由闭箱训练慢慢切换成了开箱训练。</p>
+<p>本次教程使用LSTM做时序预测，一开始是简单lstm后面改成双向，增加注意力机制，算是我自己整个项目流程，由简单到复杂。</p>
+<h4 id="1-1-数据集"><a href="#1-1-数据集" class="headerlink" title="1.1 数据集"></a>1.1 数据集</h4><p>数据源为两个npy文件：X：4000×400×32；Y：4000×400×1</p>
+<p>数据X介绍：4000个样本，每个样本为400×32</p>
+<p>数据Y介绍：其实是4000×1，中间400是扩展的，例如样本x1对应要预测的数值y1，这里扩展成[y1，y1，….，y1].shape=400×1</p>
 <p>数据预处理：至少有归一化，别的处理看你自己的数据特点自行处理。</p>
-<p>划分数据集 3:1:1 = 训练集：验证集：测试集 = 2400:800:800</p>
-<pre class=" language-language-python"><code class="language-language-python">from keras.layers import Input, Dense, LSTM
+<p>划分数据集3:1:1=训练集：验证集：测试集=2400:800:800</p>
+<pre class=" language-lang-python"><code class="language-lang-python">from keras.layers import Input, Dense, LSTM
 from keras.models import Model
 from keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard
 import sys, os, time
@@ -220,10 +218,9 @@ plt.show()
 # 数据预测
 y_pred = model.predict(test_X)
 </code></pre>
-<h3 id="2-tensorflow模型训练"><a class="anchor" href="#2-tensorflow模型训练">#</a> 2 tensorflow 模型训练</h3>
-<p>与 keras 几乎相同，只不过不需要 keras 包了，要知道 keras 的前置是 tensorflow。如果你的环境欧 keras 不兼容，可以尝试直接用 tensorflow，而且 keras 与昇腾平台关联不大，tensorflow 和昇腾有一定联系。</p>
+<h3 id="2-tensorflow模型训练"><a href="#2-tensorflow模型训练" class="headerlink" title="2 tensorflow模型训练"></a>2 tensorflow模型训练</h3><p>与keras几乎相同，只不过不需要keras包了，要知道keras的前置是tensorflow。如果你的环境欧keras不兼容，可以尝试直接用tensorflow，而且keras与昇腾平台关联不大，tensorflow和昇腾有一定联系。</p>
 <p>替换模型构建部分即可</p>
-<pre class=" language-language-python"><code class="language-language-python">from tensorflow.keras.layers import Input, Dense, LSTM, Embedding, Bidirectional,Dropout
+<pre class=" language-lang-python"><code class="language-lang-python">from tensorflow.keras.layers import Input, Dense, LSTM, Embedding, Bidirectional,Dropout
 from tensorflow.keras.models import Model, Sequential
 from tensorflow.keras.callbacks import ModelCheckpoint, EarlyStopping, TensorBoard
 import tensorflow as tf
@@ -243,11 +240,10 @@ model.summary()
 # lstm = LSTM(units=64,dropout=0.4,return_sequences=True)(lstm)
 # lstm = LSTM(units=16,dropout=0.4,return_sequences=True)(lstm)
 # output = Dense(1)(lstm)
-# model = Model(input1, output) 
+# model = Model(input1, output)
 </code></pre>
-<h3 id="3-torch模型训练"><a class="anchor" href="#3-torch模型训练">#</a> 3 torch 模型训练</h3>
-<p>三集划分</p>
-<pre class=" language-language-python"><code class="language-language-python">(2400, 400, 32) (2400, 400, 1)
+<h3 id="3-torch模型训练"><a href="#3-torch模型训练" class="headerlink" title="3 torch模型训练"></a>3 torch模型训练</h3><p>三集划分</p>
+<pre class=" language-lang-python"><code class="language-lang-python">(2400, 400, 32) (2400, 400, 1)
 (800, 400, 32) (800, 400, 1)
 (800, 400, 32) (800, 400, 1)
 
@@ -257,7 +253,7 @@ model.summary()
 (800, 400, 32) (800, 16, 1)
 </code></pre>
 <p>预处理部分</p>
-<pre class=" language-language-python"><code class="language-language-python"># 这里还是numpy格式
+<pre class=" language-lang-python"><code class="language-lang-python"># 这里还是numpy格式
 train_x, train_y = ...
 val_x, val_y = ...
 test_x, test_y = ...
@@ -277,8 +273,8 @@ train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=batch_size,
 val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=batch_size, shuffle=True)
 test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size)
 </code></pre>
-<p>模型构建【相比于之前增加了注意力机制 + 单向 LSTM 变双向 LSMT】</p>
-<pre class=" language-language-python"><code class="language-language-python">class AttentionLSTM(nn.Module):
+<p>模型构建【相比于之前增加了注意力机制+单向LSTM变双向LSMT】</p>
+<pre class=" language-lang-python"><code class="language-lang-python">class AttentionLSTM(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, batch_size):
         super(AttentionLSTM, self).__init__()
         self.input_size = input_size
@@ -291,7 +287,7 @@ test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size)
         # 如果单向， 下面两条不需要有*2
         self.attention = nn.Linear(hidden_size*2, hidden_size)
         self.out = nn.Linear(hidden_size*2, output_size)
-        
+
     def forward(self, input):
         h_0 = torch.randn(2, self.batch_size, self.hidden_size)
         c_0 = torch.randn(2, self.batch_size, self.hidden_size)
@@ -308,7 +304,7 @@ test_loader = torch.utils.data.DataLoader(test_dataset, batch_size=batch_size)
         return output
 </code></pre>
 <p>超参训练</p>
-<pre class=" language-language-python"><code class="language-language-python">input_size = 32
+<pre class=" language-lang-python"><code class="language-lang-python">input_size = 32
 hidden_size = 16
 output_size = 1
 
@@ -342,7 +338,7 @@ for epoch in range(epochs):
         loss.backward()
         train_loss_list_step.append(loss.item())
         optimizer.step()
-    
+
     model.eval()
     valid_loss_list_step = []
     for _valid_X, _valid_Y in val_loader:
@@ -368,12 +364,12 @@ for epoch in range(epochs):
             break
 </code></pre>
 <p>可视化损失函数</p>
-<pre class=" language-language-python"><code class="language-language-python">plt.plot(train_loss_list_epoch, c='blue')
+<pre class=" language-lang-python"><code class="language-lang-python">plt.plot(train_loss_list_epoch, c='blue')
 plt.plot(valid_loss_list_epoch, c='green')
 plt.show()
 </code></pre>
 <p>模型预测</p>
-<pre class=" language-language-python"><code class="language-language-python"># 在测试集上进行评估
+<pre class=" language-lang-python"><code class="language-lang-python"># 在测试集上进行评估
 y_ture = []
 y_pred = []
 with torch.no_grad():
@@ -382,18 +378,16 @@ with torch.no_grad():
         y_pred += [np.mean(qa) for qa in outputs.tolist()]
         y_ture += [np.mean(qb) for qb in labels.tolist()]
 </code></pre>
-<h3 id="4-torchnpu-ai-core模型训练"><a class="anchor" href="#4-torchnpu-ai-core模型训练">#</a> 4 torch+NPU-Ai core 模型训练</h3>
-<p>从这开始真正调用昇腾平台 NPU-Ai core 资源，加速训练</p>
-<p>在 3 的基础上面修改</p>
-<pre class=" language-language-python"><code class="language-language-python"># 1. 创建模型，最后加了.npu()
+<h3 id="4-torch-NPU-Ai-core模型训练"><a href="#4-torch-NPU-Ai-core模型训练" class="headerlink" title="4 torch+NPU-Ai core模型训练"></a>4 torch+NPU-Ai core模型训练</h3><p>从这开始真正调用昇腾平台NPU-Ai core资源，加速训练</p>
+<p>在3的基础上面修改</p>
+<pre class=" language-lang-python"><code class="language-lang-python"># 1. 创建模型，最后加了.npu()
 model = AttentionLSTM(input_size=input_size, hidden_size=hidden_size, output_size=output_size, batch_size=batch_size).npu()
 
 # 2. 每次加载这个数据加载器的时候 数据放到NPU
 for i, (inputs, labels) in enumerate(train_loader):
-	inputs,labels = inputs.npu(),labels.npu()
+    inputs,labels = inputs.npu(),labels.npu()
 </code></pre>
-<h3 id="5-mindsporenpu-hbmnpu-ai-core模型训练"><a class="anchor" href="#5-mindsporenpu-hbmnpu-ai-core模型训练">#</a> 5 mindspore+NPU-HBM+NPU-Ai core 模型训练</h3>
-<pre class=" language-language-python"><code class="language-language-python">import sys, os, time
+<h3 id="5-mindspore-NPU-HBM-NPU-Ai-core模型训练"><a href="#5-mindspore-NPU-HBM-NPU-Ai-core模型训练" class="headerlink" title="5 mindspore+NPU-HBM+NPU-Ai core模型训练"></a>5 mindspore+NPU-HBM+NPU-Ai core模型训练</h3><pre class=" language-lang-python"><code class="language-lang-python">import sys, os, time
 import pandas as pd
 import numpy as np
 import random
@@ -417,8 +411,7 @@ from mindspore.train import Model, CheckpointConfig, ModelCheckpoint, LossMonito
 from mindspore.communication import init
 from mindspore.train.callback import EarlyStopping
 </code></pre>
-<h4 id="51-配置mindspore使用的处理器"><a class="anchor" href="#51-配置mindspore使用的处理器">#</a> 5.1 配置 mindspore 使用的处理器</h4>
-<pre class=" language-language-python"><code class="language-language-python"># .py 增加全局代码，使用Ascend，device_id=0如果不行，查看自己的处理器逻辑序号，注意不是物理序号
+<h4 id="5-1-配置mindspore使用的处理器"><a href="#5-1-配置mindspore使用的处理器" class="headerlink" title="5.1 配置mindspore使用的处理器"></a>5.1 配置mindspore使用的处理器</h4><pre class=" language-lang-python"><code class="language-lang-python"># .py 增加全局代码，使用Ascend，device_id=0如果不行，查看自己的处理器逻辑序号，注意不是物理序号
 # 在老版本Aicore处理器应该选择‘DaVinci’，但是现在淘汰了这个参数，Ascend自动选择HBM和Aicore
 mindspore.set_context(mode=ms.GRAPH_MODE, device_target="Ascend", device_id=0)
 init()
@@ -431,6 +424,7 @@ ls /dev/davinci*
 npu-smi info -t phyid-remap -p *
 # 即可查看详情
 </code></pre>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -441,37 +435,37 @@ npu-smi info -t phyid-remap -p *
 <tbody>
 <tr>
 <td style="text-align:center">Chip Physical ID</td>
-<td style="text-align:center">芯片物理 ID</td>
+<td style="text-align:center">芯片物理ID</td>
 </tr>
 <tr>
 <td style="text-align:center">Chip Logic ID</td>
-<td style="text-align:center">芯片逻辑 ID</td>
+<td style="text-align:center">芯片逻辑ID</td>
 </tr>
 <tr>
 <td style="text-align:center">NPU ID</td>
-<td style="text-align:center">设备 ID</td>
+<td style="text-align:center">设备ID</td>
 </tr>
 <tr>
 <td style="text-align:center">Chip ID</td>
-<td style="text-align:center">芯片 ID</td>
+<td style="text-align:center">芯片ID</td>
 </tr>
 </tbody>
 </table>
-<h4 id="52-网络构建调整"><a class="anchor" href="#52-网络构建调整">#</a> 5.2 网络构建调整</h4>
-<pre class=" language-language-python"><code class="language-language-python">class AttentionLSTM(nn.Cell):
+</div>
+<h4 id="5-2-网络构建调整"><a href="#5-2-网络构建调整" class="headerlink" title="5.2 网络构建调整"></a>5.2 网络构建调整</h4><pre class=" language-lang-python"><code class="language-lang-python">class AttentionLSTM(nn.Cell):
     def __init__(self, input_size, hidden_size, output_size, batch_size):
         super(AttentionLSTM, self).__init__()
         self.input_size = input_size
         self.hidden_size = hidden_size
         self.output_size = output_size
         self.batch_size = batch_size
-        
+
         self.lstm = nn.LSTM(input_size, hidden_size, batch_first=True,bidirectional=True)
-        
+
         self.attention = nn.Dense(hidden_size*2, hidden_size)
         self.out = nn.Dense(hidden_size*2, output_size)
-        
-        
+
+
     def construct(self, input):
         # LSTM编码 
         output, (hidden, cell) = self.lstm(input)
@@ -488,8 +482,7 @@ npu-smi info -t phyid-remap -p *
         output = self.out(output)
         return output
 </code></pre>
-<h4 id="53-数据加载器调整"><a class="anchor" href="#53-数据加载器调整">#</a> 5.3 数据加载器调整</h4>
-<pre class=" language-language-python"><code class="language-language-python"># 模型输入的数据格式有一定要求，按照mindspore样例做了测试
+<h4 id="5-3-数据加载器调整"><a href="#5-3-数据加载器调整" class="headerlink" title="5.3 数据加载器调整"></a>5.3 数据加载器调整</h4><pre class=" language-lang-python"><code class="language-lang-python"># 模型输入的数据格式有一定要求，按照mindspore样例做了测试
 # 总结出以下结论
 # train_x, train_y
 # val_x, val_y
@@ -529,8 +522,7 @@ val_loader = val_loader.repeat(1)
 test_loader = test_loader.repeat(1)
 # 最后一行虽然重复了一次，看上去什么也没干，实际上调整了数据类型，此种类型可以投入网络直接训练，batch处理后的不行
 </code></pre>
-<h4 id="54-网络训练"><a class="anchor" href="#54-网络训练">#</a> 5.4 网络训练</h4>
-<pre class=" language-language-python"><code class="language-language-python">input_size = ...
+<h4 id="5-4-网络训练"><a href="#5-4-网络训练" class="headerlink" title="5.4 网络训练"></a>5.4 网络训练</h4><pre class=" language-lang-python"><code class="language-lang-python">input_size = ...
 hidden_size = ...
 output_size = ...
 batch_size = ...
@@ -550,14 +542,12 @@ history = model.fit(
     callbacks=[ms.LossMonitor(train_x.shape[0]//batch_size)]
 )
 </code></pre>
-<h4 id="55-模型预测"><a class="anchor" href="#55-模型预测">#</a> 5.5 模型预测</h4>
-<pre class=" language-language-python"><code class="language-language-python">y_pred = model.predict(test_x)
+<h4 id="5-5-模型预测"><a href="#5-5-模型预测" class="headerlink" title="5.5 模型预测"></a>5.5 模型预测</h4><pre class=" language-lang-python"><code class="language-lang-python">y_pred = model.predict(test_x)
 y_pred = y_pred.mean(axis=1)
 y_true = test_y.mean(axis=1)
 </code></pre>
-<h4 id="6-总结"><a class="anchor" href="#6-总结">#</a> 6. 总结</h4>
-<p>早停法建议一开始训练不要使用，先尝试几百个批次之类固定训练，多次训练感觉容易过拟合再考虑，如上实验中，有时下降的慢或者早停的耐心参数过低会导致对于整个训练过程的不明确，不知道过拟合还是欠拟合，所以，慎用啊。</p>
-<p>batch-size 的设置有时和网络模型大小也是有关系的，如设置 16，模型每 steps16×400×32，如果网络构建没有固定输出，输入之类，batch-size 的大小也是有一定设计理念的。</p>
+<h4 id="6-总结"><a href="#6-总结" class="headerlink" title="6. 总结"></a>6. 总结</h4><p>早停法建议一开始训练不要使用，先尝试几百个批次之类固定训练，多次训练感觉容易过拟合再考虑，如上实验中，有时下降的慢或者早停的耐心参数过低会导致对于整个训练过程的不明确，不知道过拟合还是欠拟合，所以，慎用啊。</p>
+<p>batch-size的设置有时和网络模型大小也是有关系的，如设置16，模型每steps16×400×32，如果网络构建没有固定输出，输入之类，batch-size的大小也是有一定设计理念的。</p>
 
       <div class="tags">
           <a href="../tags/python/" rel="tag"><i class="ic i-tag"></i> python</a>
@@ -636,7 +626,7 @@ y_true = test_y.mean(axis=1)
     <div class="item left">
       
 
-  <a href="28195b23.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitzannuj20zk0m8b29.jpg" title="Selenium爬虫使用中阶攻略">
+  <a href="28195b23.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexw3o58j20zk0m8e81.jpg" title="Selenium爬虫使用中阶攻略">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 爬虫</span>
   <h3>Selenium爬虫使用中阶攻略</h3>
@@ -646,7 +636,7 @@ y_true = test_y.mean(axis=1)
     <div class="item right">
       
 
-  <a href="75f60fdc.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipexe4oykj20zk0m87ji.jpg" title="VUE2的Hello World">
+  <a href="75f60fdc.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giph47e9vtj20zk0m8x6l.jpg" title="VUE2的Hello World">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 前端</span>
   <h3>VUE2的Hello World</h3>
@@ -668,7 +658,7 @@ y_true = test_y.mean(axis=1)
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-keras%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">1.</span> <span class="toc-text"> 1 keras 模型训练</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 1.1 数据集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-tensorflow%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">2.</span> <span class="toc-text"> 2 tensorflow 模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-torch%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">3.</span> <span class="toc-text"> 3 torch 模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-torchnpu-ai-core%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">4.</span> <span class="toc-text"> 4 torch+NPU-Ai core 模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-mindsporenpu-hbmnpu-ai-core%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">5.</span> <span class="toc-text"> 5 mindspore+NPU-HBM+NPU-Ai core 模型训练</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#51-%E9%85%8D%E7%BD%AEmindspore%E4%BD%BF%E7%94%A8%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text"> 5.1 配置 mindspore 使用的处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#52-%E7%BD%91%E7%BB%9C%E6%9E%84%E5%BB%BA%E8%B0%83%E6%95%B4"><span class="toc-number">5.2.</span> <span class="toc-text"> 5.2 网络构建调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#53-%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%E5%99%A8%E8%B0%83%E6%95%B4"><span class="toc-number">5.3.</span> <span class="toc-text"> 5.3 数据加载器调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#54-%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83"><span class="toc-number">5.4.</span> <span class="toc-text"> 5.4 网络训练</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#55-%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B"><span class="toc-number">5.5.</span> <span class="toc-text"> 5.5 模型预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-number">5.6.</span> <span class="toc-text"> 6. 总结</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-keras%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">1.</span> <span class="toc-text">1 keras模型训练</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-number">1.1.</span> <span class="toc-text">1.1 数据集</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-tensorflow%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">2.</span> <span class="toc-text">2 tensorflow模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-torch%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">3.</span> <span class="toc-text">3 torch模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-torch-NPU-Ai-core%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">4.</span> <span class="toc-text">4 torch+NPU-Ai core模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-mindspore-NPU-HBM-NPU-Ai-core%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-number">5.</span> <span class="toc-text">5 mindspore+NPU-HBM+NPU-Ai core模型训练</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E9%85%8D%E7%BD%AEmindspore%E4%BD%BF%E7%94%A8%E7%9A%84%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 配置mindspore使用的处理器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E7%BD%91%E7%BB%9C%E6%9E%84%E5%BB%BA%E8%B0%83%E6%95%B4"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 网络构建调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%E5%99%A8%E8%B0%83%E6%95%B4"><span class="toc-number">5.3.</span> <span class="toc-text">5.3 数据加载器调整</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E7%BD%91%E7%BB%9C%E8%AE%AD%E7%BB%83"><span class="toc-number">5.4.</span> <span class="toc-text">5.4 网络训练</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E6%A8%A1%E5%9E%8B%E9%A2%84%E6%B5%8B"><span class="toc-number">5.5.</span> <span class="toc-text">5.5 模型预测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E6%80%BB%E7%BB%93"><span class="toc-number">5.6.</span> <span class="toc-text">6. 总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -692,7 +682,7 @@ y_true = test_y.mean(axis=1)
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -791,67 +781,7 @@ y_true = test_y.mean(axis=1)
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
-</div>
-
-    <span><a href="28195b23.html" title="Selenium爬虫使用中阶攻略">Selenium爬虫使用中阶攻略</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
-</div>
-
-    <span><a href="c1ca115b.html" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
     <span><a href="efc46ea5.html" title="一篇文章了解PCA,MDS的推导过程">一篇文章了解PCA,MDS的推导过程</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
-</div>
-
-    <span><a href="75f60fdc.html" title="VUE2的Hello World">VUE2的Hello World</a></span>
   </li>
 
       
@@ -868,6 +798,56 @@ y_true = test_y.mean(axis=1)
   <li class="item">
     
 <div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="ff107ac.html" title="Matlab-多元线性拟合-03">Matlab-多元线性拟合-03</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+</div>
+
+    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="5b4295ff.html" title="聚类阶段整理（4）-评价指标【下】">聚类阶段整理（4）-评价指标【下】</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
 </div>
 
@@ -878,10 +858,20 @@ y_true = test_y.mean(axis=1)
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="8a5cf894.html" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></span>
+    <span><a href="2cc27fd2.html" title="机器学习-评估假设与比较检验-04">机器学习-评估假设与比较检验-04</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="9b594b83.html" title="Matlab-感知器-02">Matlab-感知器-02</a></span>
   </li>
 
   </ul>

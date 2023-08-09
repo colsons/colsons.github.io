@@ -102,12 +102,12 @@ Lab Chen = 绯色鱼的博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicit4jrvuj20zk0m8785.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwuom7cj20zk0m8dvn.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicli9lfebj20zk0m84qp.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gipeun65urj20zk0m81ii.jpg"></li>
-          <li class="item" data-background-image="https://tva4.sinaimg.cn/large/6833939bly1gicliierfjj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclffsa1cj20zk0m811l.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclgi503lj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclimtf7dj20zk0m8qav.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipexj2jgzj20zk0m8b09.jpg"></li>
         </ul>
       </div>
     </header>
@@ -153,18 +153,18 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>docker file 参数指令学习</p>
-<p><span id="more"></span></p>
-<p><strong>docker 是啥：</strong></p>
-<p>类似虚拟机一样，有单独的接口管理，可以将要运行的服务放到一个单独的环境中，主机只需要对 docker 的端口和资源进行管理即可。以一个我实际操作的项目为例：</p>
-<p><img data-src="http://img.colsons.top/blog/1691567353YbKk5HGKoA7xzHY5" alt="image-20230714091329621" /></p>
-<p>红色为主机，docker 运行在主机上，docker 里面可以单独配置容器存放我们需要运行的程序，如果容器内服务运行在 8000 端口，可以对 docker 的这个容器配置将此容器的 8000 转接到主机的 7001，只需要将主机的 7001 端口开放，外界便可以访问了。我们以右上和右下两个绿色块对比，右下块运行在主机需要对主机环境进行配置，而右上只需要挂起一个 ubuntu 容器，在里面单独配一套环境即可，这样不会环境冲突【服务 a 需要软件 b 的 2.0 版本，服务 c 需要软件 b 的 3.0 版本，此时主机配环境会发生冲突。】</p>
+    <p>docker file参数指令学习</p>
+<span id="more"></span>
+<p><strong>docker是啥：</strong></p>
+<p>类似虚拟机一样，有单独的接口管理，可以将要运行的服务放到一个单独的环境中，主机只需要对docker的端口和资源进行管理即可。以一个我实际操作的项目为例：</p>
+<p><img data-src="http://img.colsons.top/blog/1691567353YbKk5HGKoA7xzHY5" alt="image-20230714091329621"></p>
+<p>红色为主机，docker运行在主机上，docker里面可以单独配置容器存放我们需要运行的程序，如果容器内服务运行在8000端口，可以对docker的这个容器配置将此容器的8000转接到主机的7001，只需要将主机的7001端口开放，外界便可以访问了。我们以右上和右下两个绿色块对比，右下块运行在主机需要对主机环境进行配置，而右上只需要挂起一个ubuntu容器，在里面单独配一套环境即可，这样不会环境冲突【服务a需要软件b的2.0版本，服务c需要软件b的3.0版本，此时主机配环境会发生冲突。】</p>
 <p>下载安装自行度娘</p>
 <p><strong>怎么用：</strong></p>
-<p>①在你需要挂载的项目中写一个 dockerfile，无后缀，具体怎么写看后面基础用法以及你自己的需求。</p>
-<p>②挂载镜像：docker build -t 镜像名字：版本 .</p>
-<p>注意后面有个空格和点，举例：docker build -t project_img:1.0 .          【我要启一个镜像，它叫 project_img，版本我自定义为 1.0】</p>
-<p>③镜像转容器：docker run -it -d -p 8008:8000 --name project project_img:1.0           【将 1.0 版本的镜像 project_img 运行起来，启动后，容器内 8000 关联主机 8008 端口，容器名字叫 project】</p>
+<p>①在你需要挂载的项目中写一个dockerfile，无后缀，具体怎么写看后面基础用法以及你自己的需求。</p>
+<p>②挂载镜像：docker build -t 镜像名字:版本 .</p>
+<p>注意后面有个空格和点，举例：docker build -t project_img:1.0 .          【我要启一个镜像，它叫project_img，版本我自定义为1.0】</p>
+<p>③镜像转容器：docker run -it -d -p 8008:8000 —name project project_img:1.0           【将1.0版本的镜像project_img运行起来，启动后，容器内8000关联主机8008端口，容器名字叫project】</p>
 <p><strong>基础用法</strong></p>
 <pre><code>FROM &lt;image&gt;
 FROM &lt;image&gt;:&lt;tag&gt;
@@ -174,14 +174,11 @@ FROM scratch
 否则例如
 FROM java:8
 不加冒号默认latest
-</code></pre>
-<pre><code>MAINTAINER &lt;name&gt;
+</code></pre><pre><code>MAINTAINER &lt;name&gt;
 # 声明作者
-</code></pre>
-<pre><code>LABEL 
+</code></pre><pre><code>LABEL 
 # 前期无用
-</code></pre>
-<pre><code>ADD &lt;src&gt;... &lt;dest&gt;
+</code></pre><pre><code>ADD &lt;src&gt;... &lt;dest&gt;
 文件-》文件
 ADD [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]
 多个文件-》目录
@@ -189,16 +186,13 @@ ADD [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]
 ADD test relativeDir/ 
 ADD test /relativeDir
 ADD http://example.com/foobar /
-</code></pre>
-<pre><code>COPY &lt;src&gt;... &lt;dest&gt;
+</code></pre><pre><code>COPY &lt;src&gt;... &lt;dest&gt;
 COPY [&quot;&lt;src&gt;&quot;,... &quot;&lt;dest&gt;&quot;]
 只能弄本地文件，其他和ADD无差
-</code></pre>
-<pre><code>EXPOSE &lt;post&gt;/&lt;tcp/udp&gt;
+</code></pre><pre><code>EXPOSE &lt;post&gt;/&lt;tcp/udp&gt;
 功能为暴漏容器运行时的监听端口给外部
 但是EXPOSE并不会使容器访问主机的端口
-</code></pre>
-<pre><code>ENV &lt;key&gt; &lt;value&gt;
+</code></pre><pre><code>ENV &lt;key&gt; &lt;value&gt;
 设置一个环境变量
 ENV &lt;key&gt;=&lt;value&gt; ...
 设置多个环境变量
@@ -209,8 +203,7 @@ $(varname:+default value&#125;
 第一种和第二种相同
 第三种表示当变量不存在使用-号后面的值
 第四种表示当变量存在时使用+号后面的值（当然不存在也是使用后面的值）
-</code></pre>
-<pre><code>RUN &lt;command&gt;
+</code></pre><pre><code>RUN &lt;command&gt;
 RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
 
 第一种后边直接跟shell命令
@@ -219,8 +212,7 @@ RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]
 
 第二种是类似于函数调用
 可将executable理解成为可执行文件，后面就是两个参数。
-</code></pre>
-<pre><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
+</code></pre><pre><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]
 CMD [&quot;param1&quot;,&quot;param2&quot;]
 CMD command param1 param2
 功能为容器启动时默认命令或参数
@@ -228,20 +220,17 @@ CMD command param1 param2
 举例
 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; 
 CMD [ &quot;echo&quot;, &quot;$HOME&quot; ]
-</code></pre>
-<pre><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]  
+</code></pre><pre><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]  
 ENTRYPOINT command param1 param2
 
 放在最后，能只会执行最后一个，类似一直挂起的东西
-</code></pre>
-<pre><code>VOLUME [&quot;/data&quot;]
+</code></pre><pre><code>VOLUME [&quot;/data&quot;]
 挂载主机的某个目录到docker下
 举例：
 VOLUME [&quot;/var/log/&quot;]
 VOLUME /var/log
 VOLUME /var/log /var/db
-</code></pre>
-<pre><code>WORKDIR /path/to/workdir
+</code></pre><pre><code>WORKDIR /path/to/workdir
 设置工作目录，类似cd
 
 举例
@@ -256,26 +245,22 @@ ENV DIRPATH /path
 WORKDIR $DIRPATH/$DIRNAME
 RUN pwd
 结果：/path/$DIRNAME
-</code></pre>
-<p>进阶用法以后学</p>
-<p><strong>一些使用的小 tip</strong></p>
+</code></pre><p>进阶用法以后学</p>
+<p><strong>一些使用的小tip</strong></p>
 <p>1 如果日志没有添加限制，一些程序实时跑日志会导致程序越来越大，此时如何清理</p>
 <pre><code>进入容器所处存储位置，运行以下命令即可
 cat /dev/null &gt; *-json.log
-</code></pre>
-<p>2 正常进入容器命令是 docker exec -it xxx bash</p>
-<p>进入容器后只能使用终端命令，如果安装 npm 之类，npm 命令无法使用，需要手动添加 npm 路径</p>
+</code></pre><p>2 正常进入容器命令是docker exec -it xxx bash</p>
+<p>进入容器后只能使用终端命令，如果安装npm之类，npm命令无法使用，需要手动添加npm路径</p>
 <pre><code># docker内使用nvm
 echo &quot;source ~/.nvm/nvm.sh&quot; &gt;&gt; ~/.bashrc &amp;&amp; source ~/.bashrc
-</code></pre>
-<p>3 一些命令要求只能在子用户，root 用户无法执行</p>
+</code></pre><p>3 一些命令要求只能在子用户，root用户无法执行</p>
 <pre><code>sudo useradd tt
 sudo passwd tt
 sudo mkdir /home/tt
 sudo usermod -s /bin/bash tt
 sudo usermod -d /home/tt tt
 </code></pre>
-
       <div class="tags">
           <a href="../tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a>
       </div>
@@ -347,7 +332,7 @@ sudo usermod -d /home/tt tt
     <div class="item left">
       
 
-  <a href="b71bc74d.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giciszlczyj20zk0m816d.jpg" title="DMOJ我的三周目换你一周目速通">
+  <a href="b71bc74d.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclhnx9glj20zk0m8npd.jpg" title="DMOJ我的三周目换你一周目速通">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 部署</span>
   <h3>DMOJ我的三周目换你一周目速通</h3>
@@ -357,7 +342,7 @@ sudo usermod -d /home/tt tt
     <div class="item right">
       
 
-  <a href="6699522d.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyonbf9j20zk0m8e81.jpg" title="Git&#x2F;Gitee仓库代码拉取与上推">
+  <a href="6699522d.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeuv80yoj20zk0m8kjl.jpg" title="Git&#x2F;Gitee仓库代码拉取与上推">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 技巧</span>
   <h3>Git/Gitee仓库代码拉取与上推</h3>
@@ -382,7 +367,7 @@ sudo usermod -d /home/tt tt
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li><a href="b71bc74d.html" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li class="active"><a href="" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li>
+          <li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li><a href="53b3d661.html" rel="bookmark" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></li><li><a href="b71bc74d.html" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li class="active"><a href="" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -402,7 +387,7 @@ sudo usermod -d /home/tt tt
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -498,40 +483,10 @@ sudo usermod -d /home/tt tt
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
-</div>
-
-    <span><a href="b71bc74d.html" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="45098d0e.html" title="遗传算法案例-货物派送Matlab&#x2F;Python">遗传算法案例-货物派送Matlab/Python</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
-</div>
-
-    <span><a href="75f60fdc.html" title="VUE2的Hello World">VUE2的Hello World</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="2cc27fd2.html" title="机器学习-评估假设与比较检验-04">机器学习-评估假设与比较检验-04</a></span>
+    <span><a href="d5527f55.html" title="聚类阶段整理（2）-聚类介绍">聚类阶段整理（2）-聚类介绍</a></span>
   </li>
 
       
@@ -541,7 +496,7 @@ sudo usermod -d /home/tt tt
 <a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
 </div>
 
-    <span><a href="28195b23.html" title="Selenium爬虫使用中阶攻略">Selenium爬虫使用中阶攻略</a></span>
+    <span><a href="6ada926f.html" title="什么是爬虫-个人理解向">什么是爬虫-个人理解向</a></span>
   </li>
 
       
@@ -561,17 +516,17 @@ sudo usermod -d /home/tt tt
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
+    <span><a href="98975d7d.html" title="聚类阶段整理（3）-评价指标【上】">聚类阶段整理（3）-评价指标【上】</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="dcb78086.html" title="Matlab-矩阵基本知识-01">Matlab-矩阵基本知识-01</a></span>
+    <span><a href="a0e5a0c1.html" title="Dos批处理pip安装库">Dos批处理pip安装库</a></span>
   </li>
 
       
@@ -588,10 +543,40 @@ sudo usermod -d /home/tt tt
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
 </div>
 
-    <span><a href="6699522d.html" title="Git&#x2F;Gitee仓库代码拉取与上推">Git/Gitee仓库代码拉取与上推</a></span>
+    <span><a href="14a38ce5.html" title="NLP-Transformers-多标签多分类模型搭建与训练">NLP-Transformers-多标签多分类模型搭建与训练</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
+</div>
+
+    <span><a href="cd00f604.html" title="「明日方舟」代理脚本-Hash匹配">「明日方舟」代理脚本-Hash匹配</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
+</div>
+
+    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
   </li>
 
   </ul>

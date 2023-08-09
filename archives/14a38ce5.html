@@ -146,25 +146,19 @@ Lab Chen = 绯色鱼的博客</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <p>NLP 多标签多分类使用样例</p>
-<p><span id="more"></span></p>
+    <p>NLP多标签多分类使用样例</p>
+<span id="more"></span>
 <p>因为是医学数据，涉及最大的问题，类别不均衡问题，提供三种解决方案：</p>
 <ul>
-<li>
-<p>重采样：原数据集设置为 X，划分好训练集，测试集；以训练集为例如果需要 1000 个，训练集一共 5 类，每类中随机取一次，取 200 次。这样训练时的数据是均衡的，但是不适合多标签。</p>
+<li><p>重采样：原数据集设置为X，划分好训练集，测试集；以训练集为例如果需要1000个，训练集一共5类，每类中随机取一次，取200次。这样训练时的数据是均衡的，但是不适合多标签。</p>
 </li>
-<li>
-<p>调整训练过程的权重分配，数量少的类别 权重大一些，同样不适合多标签。</p>
+<li><p>调整训练过程的权重分配，数量少的类别 权重大一些，同样不适合多标签。</p>
 </li>
-<li>
-<p>Facol Loss：通过降低容易分类的样本的权重，提高难分类样本的权重，来解决类别不均衡问题。这有助于模型更好地关注少数类别样本。</p>
-</li>
-<li>
-<p>Kappa Loss：这是基于 Cohen's Kappa 系数的一种损失函数。它可以用于处理类别不均衡问题，并鼓励模型在少数类别上的准确分类</p>
-</li>
+<li>Facol Loss：通过降低容易分类的样本的权重，提高难分类样本的权重，来解决类别不均衡问题。这有助于模型更好地关注少数类别样本。</li>
+<li>Kappa Loss：这是基于 Cohen’s Kappa 系数的一种损失函数。它可以用于处理类别不均衡问题，并鼓励模型在少数类别上的准确分类</li>
 </ul>
-<p>python 代码</p>
-<pre class=" language-language-python"><code class="language-language-python">import torch
+<p>python代码</p>
+<pre class=" language-lang-python"><code class="language-lang-python">import torch
 import torch.nn as nn
 import torch.optim as optim
 
@@ -174,12 +168,12 @@ class FocalLoss(nn.Module):
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
-        
+
     def forward(self, inputs, targets):
         ce_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
         pt = torch.exp(-ce_loss)
         focal_loss = self.alpha * (1 - pt) ** self.gamma * ce_loss
-        
+
         if self.reduction == 'mean':
             return torch.mean(focal_loss)
         elif self.reduction == 'sum':
@@ -200,11 +194,11 @@ class KappaLoss(nn.Module):
 
         kappa = (observed_agreement - chance_agreement) / (expected_agreement - chance_agreement + epsilon)
         kappa_loss = 1 - torch.mean(kappa)
-        
+
         return kappa_loss
 </code></pre>
 <p>其他参考代码</p>
-<pre class=" language-language-python"><code class="language-language-python">import os,sys,time
+<pre class=" language-lang-python"><code class="language-lang-python">import os,sys,time
 import re
 import json, jsonlines
 import numpy as np
@@ -238,18 +232,18 @@ class FocalLoss(nn.Module):
         self.alpha = alpha
         self.gamma = gamma
         self.reduction = reduction
-        
+
     def forward(self, inputs, targets):
         ce_loss = nn.CrossEntropyLoss(reduction='none')(inputs, targets)
         pt = torch.exp(-ce_loss)
         focal_loss = self.alpha * (1 - pt) ** self.gamma * ce_loss
-        
+
         if self.reduction == 'mean':
             return torch.mean(focal_loss)
         elif self.reduction == 'sum':
             return torch.sum(focal_loss)
         return focal_loss
-    
+
 # 设置训练相关参数
 epochs = 100
 learning_rate = 1e-5
@@ -322,7 +316,7 @@ for epoch in range(epochs):
         labels = batch[2]
         outputs = model(**inputs)
         logits = outputs.logits
-        
+
         train_step_loss = criterion(logits, labels)
         train_loss += train_step_loss.item()
 
@@ -344,11 +338,11 @@ for epoch in range(epochs):
             optimizer.zero_grad()
             outputs = model(**inputs)
             logits = outputs.logits
-            
+
             test_step_loss = criterion(logits, labels)
             test_loss += test_step_loss.item()
             optimizer.step()  
-        
+
     train_avg_loss = train_loss / len(train_loader)
     test_avg_loss = test_loss / len(test_loader)
 
@@ -359,11 +353,11 @@ for epoch in range(epochs):
     all_time = all_time + t2 - t1
     # 打印训练日志
     print(f"Epoch &#123;epoch+1&#125;/&#123;epochs&#125;, Train-Loss: &#123;train_avg_loss:.4f&#125;, Test-Loss: &#123;test_avg_loss:.4f&#125;, make time: &#123;t2-t1:.4f&#125;s, all time: &#123;all_time:.4f&#125;s")
-    
+
     # 保存日志到tensorboard
     writer.add_scalar('TrainLoss', train_avg_loss, epoch+1)
     writer.add_scalar('TestLoss', test_avg_loss, epoch+1)
-    
+
     # 每 save_epoch 保存一次模型 
     if (epoch+1)%save_epoch==0:
         try:
@@ -459,7 +453,7 @@ print("模型和分词器已保存.")
     <div class="item left">
       
 
-  <a href="75f60fdc.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva4.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyonbf9j20zk0m8e81.jpg" title="VUE2的Hello World">
+  <a href="75f60fdc.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclize41wj20zk0m87gk.jpg" title="VUE2的Hello World">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 前端</span>
   <h3>VUE2的Hello World</h3>
@@ -506,7 +500,7 @@ print("模型和分词器已保存.")
     </div>
     <div class="item categories">
       <a href="../categories/">
-        <span class="count">11</span>
+        <span class="count">10</span>
         <span class="name">categories</span>
       </a>
     </div>
@@ -600,30 +594,10 @@ print("模型和分词器已保存.")
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
-</div>
-
-    <span><a href="6a10ae94.html" title="机器学习-ROC与AUC详解-03">机器学习-ROC与AUC详解-03</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="../categories/%E9%83%A8%E7%BD%B2/" title="In 部署">部署</a>
 </div>
 
-    <span><a href="8a5cf894.html" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="../categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" title="In 深度学习">深度学习</a>
-</div>
-
-    <span><a href="bc57630c.html" title="LSTM 昇腾平台全框架指南">LSTM 昇腾平台全框架指南</a></span>
+    <span><a href="53b3d661.html" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></span>
   </li>
 
       
@@ -633,7 +607,7 @@ print("模型和分词器已保存.")
 <a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
 </div>
 
-    <span><a href="8bafc714.html" title="“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试">“DLL Load Failed: 找不到指定的模块。”的一种解法，可以尝试</a></span>
+    <span><a href="92f60f59.html" title="Git远程无法clone仓库或者链接不到">Git远程无法clone仓库或者链接不到</a></span>
   </li>
 
       
@@ -643,7 +617,7 @@ print("模型和分词器已保存.")
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="45098d0e.html" title="遗传算法案例-货物派送Matlab&#x2F;Python">遗传算法案例-货物派送Matlab/Python</a></span>
+    <span><a href="1699753b.html" title="机器学习-模型评估与选择(下)-02">机器学习-模型评估与选择(下)-02</a></span>
   </li>
 
       
@@ -653,17 +627,17 @@ print("模型和分词器已保存.")
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="6c46850c.html" title="多维标度数据降维之MDS(python× Matlab√)">多维标度数据降维之MDS(python× Matlab√)</a></span>
+    <span><a href="5b4295ff.html" title="聚类阶段整理（4）-评价指标【下】">聚类阶段整理（4）-评价指标【下】</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="../categories/%E7%88%AC%E8%99%AB/" title="In 爬虫">爬虫</a>
+<a href="../categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" title="In 计算机视觉">计算机视觉</a>
 </div>
 
-    <span><a href="6ada926f.html" title="什么是爬虫-个人理解向">什么是爬虫-个人理解向</a></span>
+    <span><a href="9c9efd15.html" title="摄像头抓取保存帧成视频">摄像头抓取保存帧成视频</a></span>
   </li>
 
       
@@ -673,7 +647,27 @@ print("模型和分词器已保存.")
 <a href="../categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" title="In 机器学习">机器学习</a>
 </div>
 
-    <span><a href="b2f00d31.html" title="机器学习-模型评估与选择(上)-01">机器学习-模型评估与选择(上)-01</a></span>
+    <span><a href="d5527f55.html" title="聚类阶段整理（2）-聚类介绍">聚类阶段整理（2）-聚类介绍</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+</div>
+
+    <span><a href="702c472.html" title="推荐给刚开始使用Python的小白">推荐给刚开始使用Python的小白</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="../categories/%E6%8A%80%E5%B7%A7/" title="In 技巧">技巧</a>
+</div>
+
+    <span><a href="c1ca115b.html" title="py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题">py3.7+win10的cv2.xfeatures2d_SIFT.create()函数不存在问题</a></span>
   </li>
 
       
@@ -691,9 +685,11 @@ print("模型和分词器已保存.")
     
 <div class="breadcrumb">
 <a href="../categories/%E5%89%8D%E7%AB%AF/" title="In 前端">前端</a>
+<i class="ic i-angle-right"></i>
+<a href="../categories/%E5%89%8D%E7%AB%AF/%E5%90%8E%E7%AB%AF/" title="In 后端">后端</a>
 </div>
 
-    <span><a href="75f60fdc.html" title="VUE2的Hello World">VUE2的Hello World</a></span>
+    <span><a href="d71e34f5.html" title="Django的路由关系与静态资源路径设置">Django的路由关系与静态资源路径设置</a></span>
   </li>
 
   </ul>
