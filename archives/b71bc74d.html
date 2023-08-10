@@ -1,0 +1,133 @@
+<!-- build time:Thu Aug 10 2023 11:25:41 GMT+0800 (中国标准时间) --><!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2"><meta name="theme-color" content="#FFF"><link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png"><link rel="icon" type="image/ico" sizes="32x32" href="../images/favicon.ico"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="alternate" type="application/rss+xml" title="绯色鱼的博客" href="https://colsons.github.io/rss.xml"><link rel="alternate" type="application/atom+xml" title="绯色鱼的博客" href="https://colsons.github.io/atom.xml"><link rel="alternate" type="application/json" title="绯色鱼的博客" href="https://colsons.github.io/feed.json"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext"><link rel="stylesheet" href="../css/app.css?v=0.2.5"><meta name="keywords" content="python,DMOJ,docker"><link rel="canonical" href="https://colsons.github.io/archives/b71bc74d.html"><title>DMOJ我的三周目换你一周目速通 - 部署 | Lab Chen = 绯色鱼的博客</title><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body itemscope itemtype="http://schema.org/WebPage"><div id="loading"><div class="cat"><div class="body"></div><div class="head"><div class="face"></div></div><div class="foot"><div class="tummy-end"></div><div class="bottom"></div><div class="legs left"></div><div class="legs right"></div></div><div class="paw"><div class="hands left"></div><div class="hands right"></div></div></div></div><div id="container"><header id="header" itemscope itemtype="http://schema.org/WPHeader"><div class="inner"><div id="brand"><div class="pjax"><h1 itemprop="name headline">DMOJ我的三周目换你一周目速通</h1><div class="meta"><span class="item" title="Created: 2023-04-08 10:52:39"><span class="icon"><i class="ic i-calendar"></i> </span><span class="text">Posted on</span> <time itemprop="dateCreated datePublished" datetime="2023-04-08T10:52:39+08:00">2023-04-08</time></span></div></div></div><nav id="nav"><div class="inner"><div class="toggle"><div class="lines" aria-label="Toggle navigation bar"><span class="line"></span> <span class="line"></span> <span class="line"></span></div></div><ul class="menu"><li class="item title"><a href="/" rel="start">Lab Chen</a></li></ul><ul class="right"><li class="item theme"><i class="ic i-sun"></i></li><li class="item search"><i class="ic i-search"></i></li></ul></div></nav></div><div id="imgs" class="pjax"><ul><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclhnx9glj20zk0m8npd.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipevuctzzj20zk0m84qp.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclxxcb6rj20zk0m8b29.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li><li class="item" data-background-image="https://tva3.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li></ul></div></header><div id="waves"><svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/></defs><g class="parallax"><use xlink:href="#gentle-wave" x="48" y="0"/><use xlink:href="#gentle-wave" x="48" y="3"/><use xlink:href="#gentle-wave" x="48" y="5"/><use xlink:href="#gentle-wave" x="48" y="7"/></g></svg></div><main><div class="inner"><div id="main" class="pjax"><div class="article wrap"><div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList"><i class="ic i-home"></i> <span><a href="../index.html">Home</a></span><i class="ic i-angle-right"></i> <span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="../categories/%E9%83%A8%E7%BD%B2/" itemprop="item" rel="index" title="In 部署"><span itemprop="name">部署</span></a><meta itemprop="position" content="1"></span></div><article itemscope itemtype="http://schema.org/Article" class="post block" lang="en"><link itemprop="mainEntityOfPage" href="https://colsons.github.io/archives/b71bc74d.html"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="image" content="../images/avatar.jpg"><meta itemprop="name" content="绯色鱼"><meta itemprop="description" content=", "></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="绯色鱼的博客"></span><div class="body md" itemprop="articleBody"><p>试了三遍，终于挂载成功了 DMOJ</p><span id="more"></span><p>Ubuntu20.04、Ubuntu20.04【WSL】适用</p><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLmRtb2ouY2EvIy9zaXRlL2luc3RhbGxhdGlvbg==">官方提供的开发文档</span></p><p><span class="exturl" data-url="aHR0cHM6Ly9kbW9qLmNhLw==">DMOJ 官网</span></p><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovb25saW5lLWp1ZGdl">GitHub 地址</span></p><p><strong>1. 环境配置</strong></p><pre class="language-language-shell"><code class="language-language-shell">apt update
+# 大前置
+apt install git gcc g++ make python3-dev python3-pip libxml2-dev libxslt1-dev zlib1g-dev gettext curl redis-server
+# npm相关,这是官方方式，这里不推荐
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+apt install nodejs
+
+# npm相关 推荐 一定要采用nvm的安装npm，或者记得npm+node==14.19.1，不然ubuntu20下面./make_style.sh会报错[会爆一种语法格式判断错误，if...，如果你也遇到了，那大概是这里的问题，具体原因暂时未知]，导致css静态资源无法转换迁移
+cd ~
+git clone https://github.com/creationix/nvm.git .nvm
+cd .nvm
+git checkout v0.33.11
+执行install.sh安装即可
+nvm --version
+# 用nvm安装node和npm
+nvm install v14.19.1
+nvm use 14.19.1
+# 验证
+node -v
+npm -v
+# 如果用npm下载其他包慢 更换国内源
+npm config set registry https://registry.npm.taobao.org
+# 几个sass转换工具[scss->css，目前我是这么理解的]
+npm install -g sass postcss-cli postcss autoprefixer
+</code></pre><p><strong>2. 数据库</strong></p><p><mariadb user password>注意修改成你自己密码</mariadb></p><p>官网用的这种，mysql 其实也可以</p><p>PS：如果开发环境为 wsl，而且你 win 上本来就有 mysql 了，大概会各种冲突，会有锁之类的问题，这里建议拉一个小型服务器，阿里云 / 腾讯云的，数据库单独部署。</p><pre class="language-language-shell"><code class="language-language-shell">apt update
+# mariadbDB数据库下载
+apt install mariadb-server libmysqlclient-dev
+sudo mysql
+# 创建dmoj数据库
+mariadb> CREATE DATABASE dmoj DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_general_ci;
+# <mariadb user password> -》 dmoj123.
+# 这里注意一下，首先我们登陆了root用户，防止其他数据库暴露，创建了dmoj的子用户，%表示dmoj用户任何主机都能访问，你也可以锁自己IP，密码是dmoj123.
+mariadb> GRANT ALL PRIVILEGES ON dmoj.* TO 'dmoj'@'%' IDENTIFIED BY 'dmoj123.';
+mariadb> exit
+</mariadb></code></pre><p>自行下载 anaonda3 的 sh 文件，运行安装</p><p>创建名为 dmojsite 的 python3.8 的虚拟环境，并切换到新环境，如果后面没有说明，所有操作均在此环境下。</p><p><strong>3. 项目拉取</strong></p><pre class="language-language-shell"><code class="language-language-shell">git clone https://github.com/DMOJ/online-judge.git
+cd online-judge
+git checkout v4.0.0  # 两种判断服务器方式，1.PyPi 2.docker，只有用1.才用此行命令，个人推荐测试先用PiPy，后面换docker
+git submodule init
+git submodule update
+# 安装python依赖
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+# 如果下面命令下不了或提示没有，pip装一个pymysql也行
+# 官方这个命令不太懂 大概是在下mysql服务？！
+pip install mysqlclient -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+python manage.py check
+</code></pre><p><strong>4. 项目修改</strong></p><p>在 dmoj 文件夹创建 local_settings.py，官方案例：<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0RNT0ovZG9jcy9ibG9iL21hc3Rlci9zYW1wbGVfZmlsZXMvbG9jYWxfc2V0dGluZ3MucHk=">local_settings.py</span></p><pre><code>SECRET_KEY按照上面注释的命令生成并替换
+DEBUG正式运行记得关，我们测试可以先开着
+注释的ALLOWED_HOST改成['*'],并取消注释
+DATABASES密码改成你创建数据库设置的
+CELERY的两个设置注释都取消
+【一个个人感觉不太重要的：80多行EMAIL6个设置都打开，改成自己邮箱 密码】
+</code></pre><p><strong>5. 项目资源迁移 [最大事故区]</strong></p><pre class="language-language-shell"><code class="language-language-shell"># 下面这个命令如果均是ok，不报错，算是到一段落了
+./make_style.sh
+python manage.py collectstatic
+python manage.py compilemessages
+python manage.py compilejsi18n
+python manage.py makemigrations
+python manage.py migrate
+python manage.py loaddata navbar
+python manage.py loaddata language_small
+python manage.py loaddata demo
+# 创建后台管理员
+python manage.py createsuperuser
+# 起一下看看，没问题Ctrl+C关闭
+python manage.py runserver
+</code></pre><p><strong>6.redis uwsgi supervisord nginx 代理部署</strong> *</p><pre class="language-language-shell"><code class="language-language-shell">service redis-server start
+
+# 测试后关闭
+python manage.py runserver 0.0.0.0:8000
+
+# 起一下等10s，不报错Ctrl+C关闭
+python manage.py runbridged
+
+celery -A dmoj_celery worker
+
+# 安装uwsgi
+pip install uwsgi
+# uwsgi.ini文件官方案例 https://github.com/DMOJ/docs/blob/master/sample_files/uwsgi.ini
+# 记得path改成你自己的，前两个是项目路径，第三个python路径，下面是我的，可以借鉴 不要直接copy
+# chdir = /mnt/z/Aproject/online-judge
+# pythonpath = /mnt/z/Aproject/online-judge
+# virtualenv = /home/boy/anaconda3/envs/dmojsite
+# 建议在新窗口拉起
+uwsgi --ini uwsgi.ini
+# 可以查到四个相关进程
+ps -ef |grep uwsgi
+# 杀死进程，但是上面我没杀掉，应该是杀死瞬间又拉起了新的
+# 小问题，
+kill -9 id
+
+# 设置主管
+apt install supervisor
+sudo service supervisor start
+# 查看下版本，这里注意最好脱离虚拟环境到base下查看版本，supervisor是装在全局的，
+# 有时候他会去python环境下检测有没有此包，如果报错注意一下
+supervisord -v
+# 三个配置
+# 新建三个文件
+sudo vim /etc/supervisor/conf.d/site.conf
+sudo vim /etc/supervisor/conf.d/bridged.conf
+sudo vim /etc/supervisor/conf.d/celery.conf
+# 官方案例，同样记得修改内容，改path即可
+# https://github.com/DMOJ/docs/blob/master/sample_files/site.conf
+# https://github.com/DMOJ/docs/blob/master/sample_files/bridged.conf
+# https://github.com/DMOJ/docs/blob/master/sample_files/celery.conf
+
+# 同上如果运行不了 退回base环境
+supervisorctl update
+supervisorctl status
+</code></pre><p>nginx 代理目前个人没有需求，未实验，可以去看官网</p><p><strong>7. 判断服务器设置 PyPi</strong></p><pre class="language-language-shell"><code class="language-language-shell">apt install python3-dev python3-pip build-essential libseccomp-dev
+pip install dmoj
+# 注意命令输出的runtime内容
+dmoj-autoconf
+</code></pre><p>创建一个 judge.yml 文件，手动创建 problems 文件夹</p><pre class="language-language-yaml"><code class="language-language-yaml"># id和key登陆你挂起的django服务，登陆进入管理后台，添加你的判断服务器，记得设置的id和key
+# 碎碎念：id最好是judge，我之前用了judge01，一直连不上，换成judge瞬间连上了，痛苦面具，key记得复制全，因为随机生成的有时候会有两个/，
+# 我鼠标点击复制了一部分，两个痛苦面具
+id: <judge name>
+key: <judge authentication key>
+problem_storage_root:
+  - /mnt/problems
+# 看dmoj-autoconf的输出
+runtime:
+   ...
+</judge></judge></code></pre><pre class="language-language-shell"><code class="language-language-shell"># 进入管理后端，更改站点8081-》8000 或者vscode搜索下8081，改成8000也行，只需要改一个地方。
+# 不然判断服务器连不上 
+
+# 本机测试
+dmoj -c judge.yml localhost
+# 如果是正式 指定端口 IP
+dmoj -c judge.yml -p "$PORT" "$IP"
+# PS:如果连接不到，回去检查nginx之前的配置，是否都正常。
+</code></pre><p>后端挂起 + 判断服务器挂起，打开管理看到判断服务器绿色对勾，测试完毕。</p><div class="tags"><a href="../tags/python/" rel="tag"><i class="ic i-tag"></i> python</a> <a href="../tags/DMOJ/" rel="tag"><i class="ic i-tag"></i> DMOJ</a> <a href="../tags/docker/" rel="tag"><i class="ic i-tag"></i> docker</a></div></div><footer><div class="meta"><span class="item"><span class="icon"><i class="ic i-calendar-check"></i> </span><span class="text">Edited on</span> <time title="Modified: 2023-08-09 16:03:37" itemprop="dateModified" datetime="2023-08-09T16:03:37+08:00">2023-08-09</time> </span><span id="archives/b71bc74d.html" class="item leancloud_visitors" data-flag-title="DMOJ我的三周目换你一周目速通" title="Views"><span class="icon"><i class="ic i-eye"></i> </span><span class="text">Views</span> <span class="leancloud-visitors-count"></span> <span class="text">times</span></span></div><div class="reward"><button><i class="ic i-heartbeat"></i> Donate</button><p>Give me a cup of [coffee]~(￣▽￣)~*</p><div id="qr"><div><img data-src="../images/wechatpay.png" alt="绯色鱼 WeChat Pay"><p>WeChat Pay</p></div><div><img data-src="../images/alipay.png" alt="绯色鱼 Alipay"><p>Alipay</p></div></div></div><div id="copyright"><ul><li class="author"><strong>Post author: </strong>绯色鱼 <i class="ic i-at"><em>@</em></i>绯色鱼的博客</li><li class="link"><strong>Post link: </strong><a href="../https:/colsons.github.io/archives/b71bc74d.html" title="DMOJ我的三周目换你一周目速通">https://colsons.github.io/archives/b71bc74d.html</a></li><li class="license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.</li></ul></div></footer></article></div><div class="post-nav"><div class="item left"><a href="53b3d661.html" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyvx1d4j20zk0m8hdt.jpg" title="QDUOJ手动部署借鉴参考 [警告]"><span class="type">Previous Post</span> <span class="category"><i class="ic i-flag"></i> 部署</span><h3>QDUOJ手动部署借鉴参考 [警告]</h3></a></div><div class="item right"><a href="9348a75e.html" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva3.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipewf5l51j20zk0m8b29.jpg" title="Docker学习[Dockerfile]"><span class="type">Next Post</span> <span class="category"><i class="ic i-flag"></i> 部署</span><h3>Docker学习[Dockerfile]</h3></a></div></div><div class="wrap" id="comments"></div></div><div id="sidebar"><div class="inner"><div class="panels"><div class="inner"><div class="contents panel pjax" data-title="Contents"></div><div class="related panel pjax" data-title="Related"><ul><li><a href="8a5cf894.html" rel="bookmark" title="django2.2+Ubuntu+nginx+uwsgi">django2.2+Ubuntu+nginx+uwsgi</a></li><li><a href="53b3d661.html" rel="bookmark" title="QDUOJ手动部署借鉴参考 [警告]">QDUOJ手动部署借鉴参考 [警告]</a></li><li class="active"><a href="" rel="bookmark" title="DMOJ我的三周目换你一周目速通">DMOJ我的三周目换你一周目速通</a></li><li><a href="9348a75e.html" rel="bookmark" title="Docker学习[Dockerfile]">Docker学习[Dockerfile]</a></li></ul></div><div class="overview panel" data-title="Overview"><div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="image" itemprop="image" alt="绯色鱼" data-src="../images/avatar.jpg"><p class="name" itemprop="name">绯色鱼</p><div class="description" itemprop="description"></div></div><nav class="state"><div class="item posts"><a href="../archives/"><span class="count">37</span> <span class="name">posts</span></a></div><div class="item categories"><a href="../categories/"><span class="count">10</span> <span class="name">categories</span></a></div><div class="item tags"><a href="../tags/"><span class="count">31</span> <span class="name">tags</span></a></div></nav><div class="social"><span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NvbHNvbnM=" title="https:&#x2F;&#x2F;github.com&#x2F;colsons"><i class="ic i-github"></i></span> <span class="exturl item email" data-url="bWFpbHRvOjMzNTYwMTYzNjlAcXEuY29t" title="mailto:3356016369@qq.com"><i class="ic i-envelope"></i></span></div><ul class="menu"><li class="item"><a href="../index.html" rel="section"><i class="ic i-home"></i>首页</a></li><li class="item dropdown"><a href="javascript:void(0);"><i class="ic i-feather"></i>汇总</a><ul class="submenu"><li class="item"><a href="../categories/" rel="section"><i class="ic i-th"></i>分类</a></li><li class="item"><a href="../tags/" rel="section"><i class="ic i-tags"></i>标签</a></li><li class="item"><a href="../archives/" rel="section"><i class="ic i-list-alt"></i>归档</a></li></ul></li><li class="item"><a href="../friends/" rel="section"><i class="ic i-heart"></i>码友</a></li><li class="item"><a href="../links/" rel="section"><i class="ic i-magic"></i>链接</a></li><li class="item"><a href="../about/" rel="section"><i class="ic i-user"></i>关于</a></li></ul></div></div></div><ul id="quick"><li class="prev pjax"><a href="53b3d661.html" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a></li><li class="up"><i class="ic i-arrow-up"></i></li><li class="down"><i class="ic i-arrow-down"></i></li><li class="next pjax"><a href="9348a75e.html" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a></li><li class="percent"></li></ul></div></div><div class="dimmer"></div></div></main><footer id="footer"><div class="inner"><div class="widgets"><div><h2>Recent Comments</h2><ul class="leancloud-recent-comment"></ul></div></div><div class="status"><div class="copyright">&copy; 2010 – <span itemprop="copyrightYear">2023</span> <span class="with-love"><i class="ic i-sakura rotate"></i> </span><span class="author" itemprop="copyrightHolder">绯色鱼 @ Lab Chen</span></div><div class="powered-by">Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span></div></div></div></footer></div><script data-config type="text/javascript">var LOCAL={path:"archives/b71bc74d.html",favicon:{show:"（●´3｀●）Goooood",hide:"(´Д｀)Booooom"},search:{placeholder:"Search for Posts",empty:"We didn't find any results for the search: ${query}",stats:"${hits} results found in ${time} ms"},valine:!0,fancybox:!0,copyright:'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',ignores:[function(e){return e.includes("#")},function(e){return new RegExp(LOCAL.path+"$").test(e)}]}</script><script src="https://cdn.polyfill.io/v2/polyfill.js"></script><script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script><script src="../js/app.js?v=0.2.5"></script></body></html><!-- rebuild by hrmmi -->
