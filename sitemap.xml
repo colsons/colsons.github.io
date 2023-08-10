@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://colsons.github.io/archives/53b3d661.html</loc>
+    <loc>https://colsons.github.io/archives/14a38ce5.html</loc>
     
-    <lastmod>2023-08-09</lastmod>
+    <lastmod>2023-08-10</lastmod>
     
   </url>
   
   <url>
-    <loc>https://colsons.github.io/archives/14a38ce5.html</loc>
+    <loc>https://colsons.github.io/archives/53b3d661.html</loc>
     
     <lastmod>2023-08-09</lastmod>
     
@@ -291,13 +291,6 @@
 
   
   <url>
-    <loc>https://colsons.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/tags/%E8%81%9A%E7%B1%BB/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -305,14 +298,14 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
+    <loc>https://colsons.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/python/</loc>
+    <loc>https://colsons.github.io/tags/debug/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -333,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/MATLAB/</loc>
+    <loc>https://colsons.github.io/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -347,14 +340,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/debug/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0/</loc>
+    <loc>https://colsons.github.io/tags/python/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -382,7 +368,14 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/DMOJ/</loc>
+    <loc>https://colsons.github.io/tags/tensorFlow/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -396,7 +389,14 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/tensorFlow/</loc>
+    <loc>https://colsons.github.io/tags/DMOJ/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/Git/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -410,7 +410,35 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/Git/</loc>
+    <loc>https://colsons.github.io/tags/MATLAB/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/torch/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/transformers/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/NLP/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://colsons.github.io/tags/selenium/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -438,13 +466,6 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/tags/torch/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/tags/tensorflow/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -460,27 +481,6 @@
   
   <url>
     <loc>https://colsons.github.io/tags/VUE2/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/selenium/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/transformers/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://colsons.github.io/tags/NLP/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -510,13 +510,6 @@
 
   
   <url>
-    <loc>https://colsons.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2023-08-10</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://colsons.github.io/categories/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -524,7 +517,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/categories/%E7%88%AC%E8%99%AB/</loc>
+    <loc>https://colsons.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -552,6 +545,13 @@
   </url>
   
   <url>
+    <loc>https://colsons.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2023-08-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://colsons.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
@@ -559,7 +559,7 @@
   </url>
   
   <url>
-    <loc>https://colsons.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://colsons.github.io/categories/%E7%88%AC%E8%99%AB/</loc>
     <lastmod>2023-08-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
